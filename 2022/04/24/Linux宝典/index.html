@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="软件学习笔记,Linux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Linux个人宝典资料合集 学习路线   基本知识内建命令与外部命令 内建命令实际上是 shell 程序的一部分，其中包含的是一些比较简单的 Linux 系统命令，这些命令是写在 bash 源码的 builtins 里面的，由 shell 程序识别并在 shell 程序内部完成运行，通常在 Linux 系统加载运行时 shell 就被加载并驻留在系统内存中。而且解析内部命令 shell 不需要创建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux宝典">
+<meta property="og:url" content="https://770690988.github.io/blog.github.io/2022/04/24/Linux%E5%AE%9D%E5%85%B8/index.html">
+<meta property="og:site_name" content="人工智能">
+<meta property="og:description" content="Linux个人宝典资料合集 学习路线   基本知识内建命令与外部命令 内建命令实际上是 shell 程序的一部分，其中包含的是一些比较简单的 Linux 系统命令，这些命令是写在 bash 源码的 builtins 里面的，由 shell 程序识别并在 shell 程序内部完成运行，通常在 Linux 系统加载运行时 shell 就被加载并驻留在系统内存中。而且解析内部命令 shell 不需要创建">
+<meta property="og:locale">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/05/11/28f48e366401c7cf.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2021/04/c6f535136315b734.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/05/11/c21e44019e785e84.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid18510labid59timestamp1482919171956.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/05/11/8a3a00fbf9df6005.gif">
+<meta property="article:published_time" content="2022-04-24T13:55:32.000Z">
+<meta property="article:modified_time" content="2022-04-24T13:55:32.000Z">
+<meta property="article:author" content="虞程龙">
+<meta property="article:tag" content="软件学习笔记">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/05/11/28f48e366401c7cf.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://770690988.github.io/blog.github.io/2022/04/24/Linux宝典/"/>
+
+
+
+
+
+  <title>Linux宝典 | 人工智能</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人工智能</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人工智能与智能财务的结合</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://770690988.github.io/blog.github.io/2022/04/24/Linux%E5%AE%9D%E5%85%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人工智能">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux宝典</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-24T21:55:32+08:00">
+                2022-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">软件学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2022/04/24/Linux%E5%AE%9D%E5%85%B8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2022/04/24/Linux%E5%AE%9D%E5%85%B8/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Linux个人宝典资料合集"><a href="#Linux个人宝典资料合集" class="headerlink" title="Linux个人宝典资料合集"></a>Linux个人宝典资料合集</h1><ul>
+<li>学习路线</li>
+</ul>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/11/28f48e366401c7cf.png" alt="img"></p>
+<h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><h3 id="内建命令与外部命令"><a href="#内建命令与外部命令" class="headerlink" title="内建命令与外部命令"></a>内建命令与外部命令</h3><blockquote>
+<p><strong>内建命令</strong>实际上是 shell 程序的一部分，其中包含的是一些比较简单的 Linux 系统命令，这些命令是写在 bash 源码的 builtins 里面的，由 shell 程序识别并在 shell 程序内部完成运行，通常在 Linux 系统加载运行时 shell 就被加载并驻留在系统内存中。而且解析内部命令 shell 不需要创建子进程，因此其执行速度比外部命令快。比如：history、cd、exit 等等。</p>
+<p>可以用help + 命令来看所有内建命令的帮助信息</p>
+</blockquote>
+<blockquote>
+<p><strong>外部命令</strong>是 Linux 系统中的实用程序部分，因为实用程序的功能通常都比较强大，所以其包含的程序量也会很大，在系统加载时并不随系统一起被加载到内存中，而是在需要时才将其调入内存。虽然其不包含在 shell 中，但是其命令执行过程是由 shell 程序控制的。外部命令是在 Bash 之外额外安装的，通常放在/bin，/usr/bin，/sbin，/usr/sbin 等等。比如：ls、vi 等。</p>
+<p>可以用命令 + –help 来获取外部命令的帮助信息</p>
+</blockquote>
+<p>用于区分类型的命令为：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">type</span> <span class="built_in">exit</span></span><br><span class="line">$ <span class="built_in">type</span> vim</span><br><span class="line">$ <span class="built_in">type</span> ls</span><br><span class="line">/*</span><br><span class="line"><span class="comment">#得到这样的结果说明是内建命令，正如上文所说内建命令都是在 bash 源码中的 builtins 的.def中</span></span><br><span class="line">xxx is a shell <span class="built_in">builtin</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#得到这样的结果说明是外部命令，正如上文所说，外部命令在/usr/bin or /usr/sbin等等中</span></span><br><span class="line">xxx is /usr/bin/xxx</span><br><span class="line"></span><br><span class="line"><span class="comment">#若是得到alias的结果，说明该指令为命令别名所设定的名称；</span></span><br><span class="line">xxx is an <span class="built_in">alias</span> <span class="keyword">for</span> xx --xxx</span><br><span class="line">*</span><br></pre></td></tr></table></figure>
+
+<h3 id="FHS标准"><a href="#FHS标准" class="headerlink" title="FHS标准"></a>FHS标准</h3><blockquote>
+<p>FHS（英文：Filesystem Hierarchy Standard 中文：文件系统层次结构标准），多数 Linux 版本采用这种文件组织形式，FHS 定义了系统中每个区域的用途、所需要的最小构成的文件和目录同时还给出了例外处理与矛盾处理。</p>
+</blockquote>
+<p><img src="https://i.bmp.ovh/imgs/2021/04/c6f535136315b734.png" alt="img"></p>
+<p>关于上面提到的 FHS，这里还有个很重要的内容你一定要明白，FHS 是根据以往无数 Linux 用户和开发者的经验总结出来的，并且会维持更新，FHS 依据文件系统使用的频繁与否以及是否允许用户随意改动（注意，不是不能，学习过程中，不要怕这些），将目录定义为四种交互作用的形态，如下表所示：</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/11/c21e44019e785e84.png" alt="img"></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h4 id="查看版本内核"><a href="#查看版本内核" class="headerlink" title="查看版本内核"></a>查看版本内核</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/redhat-release</span><br><span class="line">$ cat /etc/issue</span><br><span class="line">$ uname -r</span><br></pre></td></tr></table></figure>
+
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h4><h5 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a>man命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ man ls</span><br></pre></td></tr></table></figure>
+
+<p>man命令的章节说明</p>
+<table>
+<thead>
+<tr>
+<th>章节数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>1</code></td>
+<td>Standard commands （标准命令）</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>System calls （系统调用）</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>Library functions （库函数）</td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td>Special devices （设备说明）</td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td>File formats （文件格式）</td>
+</tr>
+<tr>
+<td><code>6</code></td>
+<td>Games and toys （游戏和娱乐）</td>
+</tr>
+<tr>
+<td><code>7</code></td>
+<td>Miscellaneous （杂项）</td>
+</tr>
+<tr>
+<td><code>8</code></td>
+<td>Administrative Commands （管理员命令）</td>
+</tr>
+<tr>
+<td><code>9</code></td>
+<td>其他（Linux 特定的）， 用来存放内核例行程序的文档。</td>
+</tr>
+</tbody></table>
+<p>打开手册之后我们可以通过 pgup 与 pgdn 或者上下键来上下翻看，可以按 q 退出当前页面</p>
+<h5 id="info命令"><a href="#info命令" class="headerlink" title="info命令"></a>info命令</h5><ul>
+<li><p>命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 info</span></span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install info</span><br><span class="line"><span class="comment"># 查看 ls 命令的 info</span></span><br><span class="line">$ info ls</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><h5 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h5><ol>
+<li><p>复制文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cp <span class="built_in">test</span> father/son/grandson <span class="comment">#将之前创建的 test 文件复制到 /home/shiyanlou/father/son/grandson 目录中</span></span><br></pre></td></tr></table></figure></li>
+<li><p>复制目录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">$ mkdir family</span><br><span class="line">$ cp -r father family</span><br><span class="line"><span class="comment">#要成功复制目录需要加上 -r 或者 -R 参数，表示递归复制，就是说有点目录及其下面的子目录层层进入复制的意思：</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="file命令"><a href="#file命令" class="headerlink" title="file命令"></a>file命令</h5><h5 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h5><h5 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h5><h5 id="tree命令"><a href="#tree命令" class="headerlink" title="tree命令"></a>tree命令</h5><h4 id="目录路径"><a href="#目录路径" class="headerlink" title="目录路径"></a>目录路径</h4><h5 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ..</span><br><span class="line">$ <span class="built_in">cd</span> ~ <span class="comment">#进入home目录 # 或者 cd /home/&lt;你的用户名&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绝对路径</span></span><br><span class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/bin</span><br><span class="line"><span class="comment"># 相对路径</span></span><br><span class="line">$ <span class="built_in">cd</span> ../../usr/<span class="built_in">local</span>/bin</span><br><span class="line"><span class="comment">#提示：在进行目录切换的过程中请多使用 Tab 键自动补全，可避免输入错误，连续按两次 Tab 可以显示全部候选结果。</span></span><br></pre></td></tr></table></figure>
+
+<p>这个命令可以看到路径下的树结构</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ tree /</span><br><span class="line">/*</span><br><span class="line">如果没有安装那么需要先 sudo apt-get install tree (先update)</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/document-uid18510labid59timestamp1482919171956.png" alt="img"></p>
+<h5 id="cp命令-1"><a href="#cp命令-1" class="headerlink" title="cp命令"></a>cp命令</h5><ol>
+<li><p>复制文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cp <span class="built_in">test</span> father/son/grandson <span class="comment">#将之前创建的 test 文件复制到 /home/shiyanlou/father/son/grandson 目录中</span></span><br></pre></td></tr></table></figure></li>
+<li><p>复制目录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">$ mkdir family</span><br><span class="line">$ cp -r father family</span><br><span class="line"><span class="comment">#要成功复制目录需要加上 -r 或者 -R 参数，表示递归复制，就是说有点目录及其下面的子目录层层进入复制的意思：</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h5><p>获取当前路径</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">pwd</span> <span class="comment">#获取当前路径</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h5><p>新建目录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir mydir <span class="comment">#当前路径下创建mydir目录</span></span><br></pre></td></tr></table></figure>
+
+<p>还有一点需要注意的是，若当前目录已经创建了一个 test 文件，再使用 <code>mkdir test</code> 新建同名的文件夹，系统会报错文件已存在。这符合 Linux 一切介文件的理念。</p>
+<p>若当前目录存在一个 test 文件夹，则 <code>touch</code> 命令，则会更改该文件夹的时间戳而不是新建文件。</p>
+<h4 id="文本命令（文本编辑三剑客）"><a href="#文本命令（文本编辑三剑客）" class="headerlink" title="文本命令（文本编辑三剑客）"></a>文本命令（文本编辑三剑客）</h4><h5 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h5><h5 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h5><h5 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h5><h5 id="cut"><a href="#cut" class="headerlink" title="* cut"></a>* cut</h5><h4 id="文件打包压缩"><a href="#文件打包压缩" class="headerlink" title="文件打包压缩"></a>文件打包压缩</h4><p>压缩文件说明</p>
+<table>
+<thead>
+<tr>
+<th>文件后缀名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*.zip</code></td>
+<td>zip 程序打包压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.rar</code></td>
+<td>rar 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.7z</code></td>
+<td>7zip 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.tar</code></td>
+<td>tar 程序打包，未压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.gz</code></td>
+<td>gzip 程序（GNU zip）压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.xz</code></td>
+<td>xz 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.bz2</code></td>
+<td>bzip2 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.tar.gz</code></td>
+<td>tar 打包，gzip 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.tar.xz</code></td>
+<td>tar 打包，xz 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*tar.bz2</code></td>
+<td>tar 打包，bzip2 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.tar.7z</code></td>
+<td>tar 打包，7z 程序压缩的文件</td>
+</tr>
+</tbody></table>
+<h5 id="zip命令"><a href="#zip命令" class="headerlink" title="zip命令"></a>zip命令</h5><ul>
+<li><p>打包文件夹</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ zip -r -q -o shiyanlou.zip /home/shiyanlou/Desktop</span><br><span class="line">$ du -h shiyanlou.zip</span><br><span class="line">$ file shiyanlou.zip</span><br><span class="line"><span class="comment">#上面命令将目录 /home/shiyanlou/Desktop 打包成一个文件，并查看了打包后文件的大小和类型。第一行命令中，-r 参数表示递归打包包含子目录的全部内容，-q 参数表示为安静模式，即不向屏幕输出信息，-o，表示输出文件，需在其后紧跟打包输出文件名。后面使用 du 命令查看打包后文件的大小（后面会具体说明该命令）。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>设置压缩级别为 9 和 1（9 最大，1 最小），重新打包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ zip -r -9 -q -o shiyanlou_9.zip /home/shiyanlou/Desktop -x ~/*.zip</span><br><span class="line">$ zip -r -1 -q -o shiyanlou_1.zip /home/shiyanlou/Desktop -x ~/*.zip</span><br><span class="line"><span class="comment">#这里添加了一个参数用于设置压缩级别 -[1-9]，1 表示最快压缩但体积大，9 表示体积最小但耗时最久。最后那个 -x 是为了排除我们上一次创建的 zip 文件，否则又会被打包进这一次的压缩文件中，注意：这里只能使用绝对路径，否则不起作用。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>创建加密zip包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ zip -r -e -o shiyanlou_encryption.zip /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#使用 -e 参数可以创建加密压缩包</span></span><br></pre></td></tr></table></figure></li>
+<li><p>windows适配</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ zip -r -l -o shiyanlou.zip /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#需要加上 -l 参数将 LF 转换为 CR+LF 来达到以上目的。</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="unzip命令"><a href="#unzip命令" class="headerlink" title="unzip命令"></a>unzip命令</h5><ul>
+<li><p>解压命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ unzip shiyanlou.zip</span><br></pre></td></tr></table></figure></li>
+<li><p>使用安静模式，将文件解压到指定目录：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ unzip -q shiyanlou.zip -d ziptest</span><br><span class="line"><span class="comment"># -q表示安静模式 -d表示文件解压的指定目录，如果上述目录不存在，将会自动创建</span></span><br></pre></td></tr></table></figure></li>
+<li><p>查看压缩包内的内容</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ unzip -l shiyanlou.zip</span><br><span class="line"><span class="comment"># -l参数可以查看压缩包的内容</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>PS</p>
+<p><strong>注意：</strong> 使用 unzip 解压文件时我们同样应该注意兼容问题，不过这里我们关心的不再是上面的问题，而是中文编码的问题，通常 Windows 系统上面创建的压缩文件，如果有有包含中文的文档或以中文作为文件名的文件时默认会采用 GBK 或其它编码，而 Linux 上面默认使用的是 UTF-8 编码，如果不加任何处理，直接解压的话可能会出现中文乱码的问题（有时候它会自动帮你处理），为了解决这个问题，我们可以在解压时指定编码类型。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -O GBK 中文压缩文件.zip</span><br></pre></td></tr></table></figure>
+
+<h5 id="du命令"><a href="#du命令" class="headerlink" title="du命令"></a>du命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ du -h -d 0 *.zip ~ | sort</span><br><span class="line"><span class="comment"># h， --human-readable（顾名思义，你可以试试不加的情况）</span></span><br><span class="line"><span class="comment"># d， --max-depth（所查看文件的深度）</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h5><p>在 Linux 上面更常用的是 <code>tar</code> 工具，tar 原本只是一个打包工具，只是同时还是实现了对 7z、gzip、xz、bzip2 等工具的支持，这些压缩工具本身只能实现对文件或目录（单独压缩目录中的文件）的压缩，没有实现对文件的打包压缩，所以我们也无需再单独去学习其他几个工具，tar 的解压和压缩都是同一个命令，只需参数不同，使用比较方便。</p>
+<ul>
+<li><p>创建一个tar包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">$ tar -P -cf shiyanlou.tar /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#上面命令中，-P 保留绝对路径符，-c 表示创建一个 tar 包文件，-f 用于指定创建的文件名，注意文件名必须紧跟在 -f 参数之后，比如不能写成 tar -fc shiyanlou.tar，可以写成 tar -f shiyanlou.tar -c ~。你还可以加上 -v 参数以可视的的方式输出打包的文件。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>解包一个文件到指定路径的已存在目录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir tardir</span><br><span class="line">$ tar -xf shiyanlou.tar -C tardir</span><br><span class="line"><span class="comment">#  -x 参数 解包  -C参数 已存在路径</span></span><br></pre></td></tr></table></figure></li>
+<li><p>只查看不解包文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ tar -tf shiyanlou.tar</span><br><span class="line"><span class="comment"># -t参数</span></span><br></pre></td></tr></table></figure></li>
+<li><p>解包时保留文件属性和跟随链接（符号链接或软链接）</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ tar -cphf etc.tar /etc</span><br><span class="line"><span class="comment"># -p 保留文件的属性  -h 备份链接指向的源文件而不是链接本身</span></span><br></pre></td></tr></table></figure></li>
+<li><p>对其他压缩文件格式解压</p>
+<table>
+<thead>
+<tr>
+<th>压缩文件格式</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*.tar.gz</code></td>
+<td><code>-z</code></td>
+</tr>
+<tr>
+<td><code>*.tar.xz</code></td>
+<td><code>-J</code></td>
+</tr>
+<tr>
+<td><code>*tar.bz2</code></td>
+<td><code>-j</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>创建tar.gz文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ tar -czf shiyanlou.tar.gz /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment"># 这里的-z就是表示为gz文件</span></span><br></pre></td></tr></table></figure></li>
+<li><p>解压 <code>*.tar.gz</code>文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -xzf shiyanlou.tar.gz</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl+d</code></td>
+<td>键盘输入结束或退出终端</td>
+</tr>
+<tr>
+<td><code>Ctrl+s</code></td>
+<td>暂停当前程序，暂停后按下任意键恢复运行</td>
+</tr>
+<tr>
+<td><code>Ctrl+z</code></td>
+<td>将当前程序放到后台运行，恢复到前台为命令<code>fg</code></td>
+</tr>
+<tr>
+<td><code>Ctrl+a</code></td>
+<td>将光标移至输入行头，相当于<code>Home</code>键</td>
+</tr>
+<tr>
+<td><code>Ctrl+e</code></td>
+<td>将光标移至输入行末，相当于<code>End</code>键</td>
+</tr>
+<tr>
+<td><code>Ctrl+k</code></td>
+<td>删除从光标所在位置到行末</td>
+</tr>
+<tr>
+<td><code>Alt+Backspace</code></td>
+<td>向前删除一个单词</td>
+</tr>
+<tr>
+<td><code>Shift+PgUp</code></td>
+<td>将终端显示向上滚动</td>
+</tr>
+<tr>
+<td><code>Shift+PgDn</code></td>
+<td>将终端显示向下滚动</td>
+</tr>
+</tbody></table>
+<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><h3 id="Banner"><a href="#Banner" class="headerlink" title="Banner"></a>Banner</h3><ul>
+<li><p>环境配置</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update </span><br><span class="line">sudo apt-get install sysvbanner</span><br></pre></td></tr></table></figure></li>
+<li><p>命令代码</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ printerbanner -w 50 A</span><br><span class="line">/*</span><br><span class="line">-w 参数指定打印宽度，因为我们的环境在屏幕中显示比较小，必须要加上宽度限制。</span><br><span class="line">还有两个类似的命令toilet,figlet，也可以安装试用。</span><br><span class="line">*/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="aafire"><a href="#aafire" class="headerlink" title="aafire"></a>aafire</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install libaa-bin</span><br><span class="line"><span class="comment"># 提示 command not found ，请自行解决</span></span><br><span class="line">$ aafire</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/11/8a3a00fbf9df6005.gif" alt="gif"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@2516981474c674cb2ba848e3cfb9129ada69158b/2021/05/24/04097c727fca444a967c26f9414b2dc5.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@ab82d2a586ac84374e28c4b5ab161a313c5c06f4/2021/05/24/1e5712180a0136d3b0b76ff8d4309866.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@b0ca80fc8b37cbaa46583f14f0b3d18c5438ac3b/2021/05/24/24f620630fd03c9363d0d435c42f9a0d.png" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 软件学习笔记</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/03/16/JavaWeb%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A/" rel="next" title="JavaWeb第一次作业">
+                <i class="fa fa-chevron-left"></i> JavaWeb第一次作业
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/770690988" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:770690988@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/sssstruggle" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/770690988/infocenter" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E4%B8%AA%E4%BA%BA%E5%AE%9D%E5%85%B8%E8%B5%84%E6%96%99%E5%90%88%E9%9B%86"><span class="nav-text">Linux个人宝典资料合集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="nav-text">基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%BB%BA%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">内建命令与外部命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FHS%E6%A0%87%E5%87%86"><span class="nav-text">FHS标准</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD"><span class="nav-text">功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC%E5%86%85%E6%A0%B8"><span class="nav-text">查看版本内核</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="nav-text">帮助命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#man%E5%91%BD%E4%BB%A4"><span class="nav-text">man命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#info%E5%91%BD%E4%BB%A4"><span class="nav-text">info命令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#touch%E5%91%BD%E4%BB%A4"><span class="nav-text">touch命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cp%E5%91%BD%E4%BB%A4"><span class="nav-text">cp命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file%E5%91%BD%E4%BB%A4"><span class="nav-text">file命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#rm%E5%91%BD%E4%BB%A4"><span class="nav-text">rm命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mv%E5%91%BD%E4%BB%A4"><span class="nav-text">mv命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tree%E5%91%BD%E4%BB%A4"><span class="nav-text">tree命令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E8%B7%AF%E5%BE%84"><span class="nav-text">目录路径</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#cd%E5%91%BD%E4%BB%A4"><span class="nav-text">cd命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cp%E5%91%BD%E4%BB%A4-1"><span class="nav-text">cp命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#pwd%E5%91%BD%E4%BB%A4"><span class="nav-text">pwd命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mkdir%E5%91%BD%E4%BB%A4"><span class="nav-text">mkdir命令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%91%BD%E4%BB%A4%EF%BC%88%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E4%B8%89%E5%89%91%E5%AE%A2%EF%BC%89"><span class="nav-text">文本命令（文本编辑三剑客）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#grep"><span class="nav-text">grep</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sed"><span class="nav-text">sed</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#awk"><span class="nav-text">awk</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cut"><span class="nav-text">* cut</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E5%8E%8B%E7%BC%A9"><span class="nav-text">文件打包压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#zip%E5%91%BD%E4%BB%A4"><span class="nav-text">zip命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#unzip%E5%91%BD%E4%BB%A4"><span class="nav-text">unzip命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#du%E5%91%BD%E4%BB%A4"><span class="nav-text">du命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tar%E5%91%BD%E4%BB%A4"><span class="nav-text">tar命令</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">常用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%82%E9%A1%B9"><span class="nav-text">杂项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Banner"><span class="nav-text">Banner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aafire"><span class="nav-text">aafire</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">虞程龙</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'tFhwHkc8bkgfgQwmhzrtupVR-gzGzoHsz',
+        appKey: 'zwHnoVjxXcHrTxENnsIia9E6',
+        placeholder: '欢迎交流讨论...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
