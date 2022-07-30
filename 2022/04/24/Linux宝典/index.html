@@ -83,7 +83,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux宝典">
 <meta property="og:url" content="https://770690988.github.io/blog.github.io/2022/04/24/Linux%E5%AE%9D%E5%85%B8/index.html">
-<meta property="og:site_name" content="人工智能">
+<meta property="og:site_name" content="BiuBiu的个人小站">
 <meta property="og:description" content="Linux个人宝典资料合集 学习路线   基本知识内建命令与外部命令 内建命令实际上是 shell 程序的一部分，其中包含的是一些比较简单的 Linux 系统命令，这些命令是写在 bash 源码的 builtins 里面的，由 shell 程序识别并在 shell 程序内部完成运行，通常在 Linux 系统加载运行时 shell 就被加载并驻留在系统内存中。而且解析内部命令 shell 不需要创建">
 <meta property="og:locale">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/05/11/28f48e366401c7cf.png">
@@ -91,8 +91,8 @@
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/05/11/c21e44019e785e84.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/05/17/ceec156ad37d5b64.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/05/17/f04098fd59c0a8dc.png">
-<meta property="og:image" content="https://doc.shiyanlou.com/document-uid18510labid59timestamp1482919171956.png">
-<meta property="og:image" content="https://doc.shiyanlou.com/document-uid735639labid63timestamp1532414709836.png">
+<meta property="og:image" content="https://770690988.github.io/2022/04/24/Linux%E5%AE%9D%E5%85%B8/linuxmenu.png">
+<meta property="og:image" content="https://770690988.github.io/2022/04/24/Linux%E5%AE%9D%E5%85%B8/grepshow.png">
 <meta property="og:image" content="https://doc.shiyanlou.com/document-uid735639labid63timestamp1532414808838.png">
 <meta property="og:image" content="https://doc.shiyanlou.com/document-uid600404labid6125timestamp1523946094712.png">
 <meta property="og:image" content="https://doc.shiyanlou.com/document-uid735639labid63timestamp1532414849333.png">
@@ -196,7 +196,7 @@
 
 
 
-  <title>Linux宝典 | 人工智能</title>
+  <title>Linux宝典 | BiuBiu的个人小站</title>
   
 
 
@@ -226,12 +226,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">人工智能</span>
+        <span class="site-title">BiuBiu的个人小站</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">人工智能与智能财务的结合</p>
+        <p class="site-subtitle">软件工程</p>
       
   </div>
 
@@ -376,7 +376,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="人工智能">
+      <meta itemprop="name" content="BiuBiu的个人小站">
     </span>
 
     
@@ -641,32 +641,41 @@
 </tbody></table>
 <p>打开手册之后我们可以通过 pgup 与 pgdn 或者上下键来上下翻看，可以按 q 退出当前页面</p>
 <h5 id="info命令"><a href="#info命令" class="headerlink" title="info命令"></a>info命令</h5><ul>
-<li>命令<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 info</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install info</span><br><span class="line"><span class="comment"># 查看 ls 命令的 info</span></span><br><span class="line">info ls</span><br></pre></td></tr></table></figure></li>
+<li><p>命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 info</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install info</span><br><span class="line"><span class="comment"># 查看 ls 命令的 info</span></span><br><span class="line">info ls</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><h5 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 
 <h5 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h5><ol>
-<li>复制文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp <span class="built_in">test</span> father/son/grandson <span class="comment">#将之前创建的 test 文件复制到 /home/shiyanlou/father/son/grandson 目录中</span></span><br></pre></td></tr></table></figure></li>
-<li>复制目录<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">mkdir family</span><br><span class="line">cp -r father family</span><br><span class="line"><span class="comment">#要成功复制目录需要加上 -r 或者 -R 参数，表示递归复制，就是说有点目录及其下面的子目录层层进入复制的意思：</span></span><br></pre></td></tr></table></figure></li>
+<li><p>复制文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp <span class="built_in">test</span> father/son/grandson <span class="comment">#将之前创建的 test 文件复制到 /home/shiyanlou/father/son/grandson 目录中</span></span><br></pre></td></tr></table></figure></li>
+<li><p>复制目录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">mkdir family</span><br><span class="line">cp -r father family</span><br><span class="line"><span class="comment">#要成功复制目录需要加上 -r 或者 -R 参数，表示递归复制，就是说有点目录及其下面的子目录层层进入复制的意思：</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <h5 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h5><ul>
-<li>删除文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rm <span class="built_in">test</span></span><br><span class="line"><span class="comment">#删除一个文件</span></span><br><span class="line"></span><br><span class="line">rm -f <span class="built_in">test</span></span><br><span class="line"><span class="comment">#为了忽略删除只读文件的权限，可以直接使用-f参数强制删除</span></span><br></pre></td></tr></table></figure></li>
-<li>删除目录<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -r family</span><br><span class="line"><span class="comment"># 同复制目录一样，要删除一个目录也要加上一个-r或者-R参数 权限不足的时候也可以加上-f强制删除</span></span><br></pre></td></tr></table></figure></li>
+<li><p>删除文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rm <span class="built_in">test</span></span><br><span class="line"><span class="comment">#删除一个文件</span></span><br><span class="line"></span><br><span class="line">rm -f <span class="built_in">test</span></span><br><span class="line"><span class="comment">#为了忽略删除只读文件的权限，可以直接使用-f参数强制删除</span></span><br></pre></td></tr></table></figure></li>
+<li><p>删除目录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -r family</span><br><span class="line"><span class="comment"># 同复制目录一样，要删除一个目录也要加上一个-r或者-R参数 权限不足的时候也可以加上-f强制删除</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h5><ul>
-<li>移动文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir Documents</span><br><span class="line">touch file1</span><br><span class="line">mv file1 Documents</span><br><span class="line"><span class="comment"># 将文件“ file1 ”移动到 Documents 目录</span></span><br></pre></td></tr></table></figure></li>
-<li>重命名文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv file1 myfile</span><br><span class="line"><span class="comment">#file1为旧文件名 myfile为新文件名</span></span><br></pre></td></tr></table></figure></li>
+<li><p>移动文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir Documents</span><br><span class="line">touch file1</span><br><span class="line">mv file1 Documents</span><br><span class="line"><span class="comment"># 将文件“ file1 ”移动到 Documents 目录</span></span><br></pre></td></tr></table></figure></li>
+<li><p>重命名文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv file1 myfile</span><br><span class="line"><span class="comment">#file1为旧文件名 myfile为新文件名</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="rename命令"><a href="#rename命令" class="headerlink" title="rename命令"></a>rename命令</h5><p><code>rename</code> 命令并不是内置命令，若提示无该命令可以使用 <code>sudo apt-get install rename</code> 命令自行安装。</p>
 <ul>
-<li>批量重命名<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用通配符批量创建 5 个文件:</span></span><br><span class="line">touch file&#123;1..5&#125;.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 批量将这 5 个后缀为 .txt 的文本文件重命名为以 .c 为后缀的文件:</span></span><br><span class="line">rename <span class="string">&#x27;s/\.txt/\.c/&#x27;</span> *.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 批量将这 5 个文件，文件名和后缀改为大写:</span></span><br><span class="line">rename <span class="string">&#x27;y/a-z/A-Z/&#x27;</span> *.c</span><br></pre></td></tr></table></figure></li>
+<li><p>批量重命名</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用通配符批量创建 5 个文件:</span></span><br><span class="line">touch file&#123;1..5&#125;.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 批量将这 5 个后缀为 .txt 的文本文件重命名为以 .c 为后缀的文件:</span></span><br><span class="line">rename <span class="string">&#x27;s/\.txt/\.c/&#x27;</span> *.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 批量将这 5 个文件，文件名和后缀改为大写:</span></span><br><span class="line">rename <span class="string">&#x27;y/a-z/A-Z/&#x27;</span> *.c</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="cat命令与tac命令"><a href="#cat命令与tac命令" class="headerlink" title="cat命令与tac命令"></a>cat命令与tac命令</h5><p>前两个命令都是用来打印文件内容到标准输出（终端），其中 <code>cat</code> 为正序显示，<code>tac</code> 为倒序显示。</p>
 <blockquote>
 <p>标准输入输出：当我们执行一个 shell 命令行时通常会自动打开三个标准文件，即标准输入文件（stdin），默认对应终端的键盘、标准输出文件（stdout）和标准错误输出文件（stderr），后两个文件都对应被重定向到终端的屏幕，以便我们能直接看到输出内容。进程将从标准输入文件中得到输入数据，将正常输出数据输出到标准输出文件，而将错误信息送到标准错误文件中。</p>
 </blockquote>
 <ul>
-<li>查看文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">cp /etc/passwd passwd</span><br><span class="line">cat passwd</span><br><span class="line">cat -n passwd <span class="comment">#加上-n显示行号</span></span><br></pre></td></tr></table></figure></li>
+<li><p>查看文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">cp /etc/passwd passwd</span><br><span class="line">cat passwd</span><br><span class="line">cat -n passwd <span class="comment">#加上-n显示行号</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="nl命令"><a href="#nl命令" class="headerlink" title="nl命令"></a>nl命令</h5><p>添加行号并打印，这是个比 <code>cat -n</code> 更专业的行号打印命令。</p>
 <blockquote>
@@ -680,18 +689,24 @@
 </blockquote>
 <h5 id="more命令与less命令"><a href="#more命令与less命令" class="headerlink" title="more命令与less命令"></a>more命令与less命令</h5><p>其中 <code>more</code> 命令比较简单，只能向一个方向滚动，而 <code>less</code> 为基于 <code>more</code> 和 <code>vi</code> （一个强大的编辑器，我们有单独的课程来让你学习）开发，功能更强大。<code>less</code> 的使用基本和 <code>more</code> 一致</p>
 <ul>
-<li>查看文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more passwd</span><br></pre></td></tr></table></figure>
+<li><p>查看文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more passwd</span><br></pre></td></tr></table></figure>
 
-打开后默认只显示一屏内容，终端底部显示当前阅读的进度。可以使用 <code>Enter</code> 键向下滚动一行，使用 <code>Space</code> 键向下滚动一屏，按下 <code>h</code> 显示帮助，<code>q</code> 退出。</li>
+<p>打开后默认只显示一屏内容，终端底部显示当前阅读的进度。可以使用 <code>Enter</code> 键向下滚动一行，使用 <code>Space</code> 键向下滚动一屏，按下 <code>h</code> 显示帮助，<code>q</code> 退出。</p>
+</li>
 </ul>
 <h5 id="head命令与tail命令"><a href="#head命令与tail命令" class="headerlink" title="head命令与tail命令"></a>head命令与tail命令</h5><ul>
-<li>查看文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail /etc/passwd</span><br></pre></td></tr></table></figure></li>
-<li>查看文件后几行<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tail -n 1 /etc/passwd</span><br><span class="line"><span class="comment"># 加上 -n 参数，后面紧跟行数</span></span><br><span class="line"><span class="comment"># -f可以动态查看日志，做到监视的目的</span></span><br></pre></td></tr></table></figure></li>
+<li><p>查看文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail /etc/passwd</span><br></pre></td></tr></table></figure></li>
+<li><p>查看文件后几行</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tail -n 1 /etc/passwd</span><br><span class="line"><span class="comment"># 加上 -n 参数，后面紧跟行数</span></span><br><span class="line"><span class="comment"># -f可以动态查看日志，做到监视的目的</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="file命令"><a href="#file命令" class="headerlink" title="file命令"></a>file命令</h5><ul>
-<li>查看文件类型<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file /bin/ls</span><br></pre></td></tr></table></figure>
+<li><p>查看文件类型</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file /bin/ls</span><br></pre></td></tr></table></figure>
 
-ps Linux中的文件类型不是通过后缀来区分的，而是依照文件的内容进行处理</li>
+<p>ps Linux中的文件类型不是通过后缀来区分的，而是依照文件的内容进行处理</p>
+</li>
 </ul>
 <h5 id="whereis命令"><a href="#whereis命令" class="headerlink" title="whereis命令"></a>whereis命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">whereis who</span><br><span class="line">whereis find</span><br></pre></td></tr></table></figure>
 
@@ -703,14 +718,16 @@ ps Linux中的文件类型不是通过后缀来区分的，而是依照文件的
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locate /etc/sh</span><br><span class="line"><span class="comment"># 注意，它不只是在 /etc 目录下查找，还会自动递归子目录进行查找。</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>查找 /usr/share/ 下所有 jpg 文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locate /usr/share/\*.jpg</span><br><span class="line"><span class="comment"># *号前面的反斜杠转义一定要添加，否则无法找到</span></span><br></pre></td></tr></table></figure></li>
+<li><p>查找 /usr/share/ 下所有 jpg 文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locate /usr/share/\*.jpg</span><br><span class="line"><span class="comment"># *号前面的反斜杠转义一定要添加，否则无法找到</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="which命令"><a href="#which命令" class="headerlink" title="which命令"></a>which命令</h5><p><code>which</code> 本身是 Shell 内建的一个命令，我们通常使用 <code>which</code> 来确定是否安装了某个指定的程序，因为它只从 <code>PATH</code> 环境变量指定的路径中去搜索命令并且返回第一个搜索到的结果。也就是说，我们可以看到某个系统命令是否存在以及执行的到底是哪一个地方的命令。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> man</span><br><span class="line"><span class="built_in">which</span> nginx</span><br><span class="line"><span class="built_in">which</span> ping</span><br></pre></td></tr></table></figure>
 
 <h5 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h5><p><code>find</code> 应该是这几个命令中最强大的了，它不但可以通过文件类型、文件名进行查找而且可以根据文件的属性（如文件的时间戳，文件的权限等）进行搜索。<code>find</code> 命令强大到，要把它讲明白至少需要单独好几节课程才行，我们这里只介绍一些常用的内容。</p>
 <ul>
-<li>语法<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find [path][option] [action] </span><br></pre></td></tr></table></figure></li>
+<li><p>语法</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find [path][option] [action] </span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="tee命令"><a href="#tee命令" class="headerlink" title="tee命令"></a>tee命令</h5><p>在标准输出到屏幕不变的情况下保存在文件中</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;Hello World!&#x27;</span> | tee filename</span><br></pre></td></tr></table></figure>
@@ -720,10 +737,14 @@ ps Linux中的文件类型不是通过后缀来区分的，而是依照文件的
 <p>这个命令可以看到路径下的树结构</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tree /</span><br><span class="line">/*</span><br><span class="line">如果没有安装那么需要先 sudo apt-get install tree (先update)</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://doc.shiyanlou.com/document-uid18510labid59timestamp1482919171956.png" alt="img"></p>
+
+
+<p><img src="/2022/04/24/Linux%E5%AE%9D%E5%85%B8/linuxmenu.png" alt="img"></p>
 <h5 id="cp命令-1"><a href="#cp命令-1" class="headerlink" title="cp命令"></a>cp命令</h5><ol>
-<li>复制文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp <span class="built_in">test</span> father/son/grandson <span class="comment">#将之前创建的 test 文件复制到 /home/shiyanlou/father/son/grandson 目录中</span></span><br></pre></td></tr></table></figure></li>
-<li>复制目录<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">mkdir family</span><br><span class="line">cp -r father family</span><br><span class="line"><span class="comment">#要成功复制目录需要加上 -r 或者 -R 参数，表示递归复制，就是说有点目录及其下面的子目录层层进入复制的意思：</span></span><br></pre></td></tr></table></figure></li>
+<li><p>复制文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp <span class="built_in">test</span> father/son/grandson <span class="comment">#将之前创建的 test 文件复制到 /home/shiyanlou/father/son/grandson 目录中</span></span><br></pre></td></tr></table></figure></li>
+<li><p>复制目录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">mkdir family</span><br><span class="line">cp -r father family</span><br><span class="line"><span class="comment">#要成功复制目录需要加上 -r 或者 -R 参数，表示递归复制，就是说有点目录及其下面的子目录层层进入复制的意思：</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <h5 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h5><p>获取当前路径</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span> <span class="comment">#获取当前路径</span></span><br></pre></td></tr></table></figure>
@@ -787,15 +808,22 @@ ps Linux中的文件类型不是通过后缀来区分的，而是依照文件的
 </tr>
 </tbody></table>
 <h5 id="zip命令"><a href="#zip命令" class="headerlink" title="zip命令"></a>zip命令</h5><ul>
-<li>打包文件夹<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zip -r -q -o shiyanlou.zip /home/shiyanlou/Desktop</span><br><span class="line">du -h shiyanlou.zip</span><br><span class="line">file shiyanlou.zip</span><br><span class="line"><span class="comment">#上面命令将目录 /home/shiyanlou/Desktop 打包成一个文件，并查看了打包后文件的大小和类型。第一行命令中，-r 参数表示递归打包包含子目录的全部内容，-q 参数表示为安静模式，即不向屏幕输出信息，-o，表示输出文件，需在其后紧跟打包输出文件名。后面使用 du 命令查看打包后文件的大小（后面会具体说明该命令）。</span></span><br></pre></td></tr></table></figure></li>
-<li>设置压缩级别为 9 和 1（9 最大，1 最小），重新打包<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zip -r -9 -q -o shiyanlou_9.zip /home/shiyanlou/Desktop -x ~/*.zip</span><br><span class="line">zip -r -1 -q -o shiyanlou_1.zip /home/shiyanlou/Desktop -x ~/*.zip</span><br><span class="line"><span class="comment">#这里添加了一个参数用于设置压缩级别 -[1-9]，1 表示最快压缩但体积大，9 表示体积最小但耗时最久。最后那个 -x 是为了排除我们上一次创建的 zip 文件，否则又会被打包进这一次的压缩文件中，注意：这里只能使用绝对路径，否则不起作用。</span></span><br></pre></td></tr></table></figure></li>
-<li>创建加密zip包<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip -r -e -o shiyanlou_encryption.zip /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#使用 -e 参数可以创建加密压缩包</span></span><br></pre></td></tr></table></figure></li>
-<li>windows适配<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip -r -l -o shiyanlou.zip /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#需要加上 -l 参数将 LF 转换为 CR+LF 来达到以上目的。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>打包文件夹</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zip -r -q -o shiyanlou.zip /home/shiyanlou/Desktop</span><br><span class="line">du -h shiyanlou.zip</span><br><span class="line">file shiyanlou.zip</span><br><span class="line"><span class="comment">#上面命令将目录 /home/shiyanlou/Desktop 打包成一个文件，并查看了打包后文件的大小和类型。第一行命令中，-r 参数表示递归打包包含子目录的全部内容，-q 参数表示为安静模式，即不向屏幕输出信息，-o，表示输出文件，需在其后紧跟打包输出文件名。后面使用 du 命令查看打包后文件的大小（后面会具体说明该命令）。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>设置压缩级别为 9 和 1（9 最大，1 最小），重新打包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zip -r -9 -q -o shiyanlou_9.zip /home/shiyanlou/Desktop -x ~/*.zip</span><br><span class="line">zip -r -1 -q -o shiyanlou_1.zip /home/shiyanlou/Desktop -x ~/*.zip</span><br><span class="line"><span class="comment">#这里添加了一个参数用于设置压缩级别 -[1-9]，1 表示最快压缩但体积大，9 表示体积最小但耗时最久。最后那个 -x 是为了排除我们上一次创建的 zip 文件，否则又会被打包进这一次的压缩文件中，注意：这里只能使用绝对路径，否则不起作用。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>创建加密zip包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip -r -e -o shiyanlou_encryption.zip /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#使用 -e 参数可以创建加密压缩包</span></span><br></pre></td></tr></table></figure></li>
+<li><p>windows适配</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip -r -l -o shiyanlou.zip /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#需要加上 -l 参数将 LF 转换为 CR+LF 来达到以上目的。</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="unzip命令"><a href="#unzip命令" class="headerlink" title="unzip命令"></a>unzip命令</h5><ul>
-<li>解压命令<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip shiyanlou.zip</span><br></pre></td></tr></table></figure></li>
-<li>使用安静模式，将文件解压到指定目录：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip -q shiyanlou.zip -d ziptest</span><br><span class="line"><span class="comment"># -q表示安静模式 -d表示文件解压的指定目录，如果上述目录不存在，将会自动创建</span></span><br></pre></td></tr></table></figure></li>
-<li>查看压缩包内的内容<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip -l shiyanlou.zip</span><br><span class="line"><span class="comment"># -l参数可以查看压缩包的内容</span></span><br></pre></td></tr></table></figure></li>
+<li><p>解压命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip shiyanlou.zip</span><br></pre></td></tr></table></figure></li>
+<li><p>使用安静模式，将文件解压到指定目录：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip -q shiyanlou.zip -d ziptest</span><br><span class="line"><span class="comment"># -q表示安静模式 -d表示文件解压的指定目录，如果上述目录不存在，将会自动创建</span></span><br></pre></td></tr></table></figure></li>
+<li><p>查看压缩包内的内容</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip -l shiyanlou.zip</span><br><span class="line"><span class="comment"># -l参数可以查看压缩包的内容</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>PS</p>
 <p><strong>注意：</strong> 使用 unzip 解压文件时我们同样应该注意兼容问题，不过这里我们关心的不再是上面的问题，而是中文编码的问题，通常 Windows 系统上面创建的压缩文件，如果有有包含中文的文档或以中文作为文件名的文件时默认会采用 GBK 或其它编码，而 Linux 上面默认使用的是 UTF-8 编码，如果不加任何处理，直接解压的话可能会出现中文乱码的问题（有时候它会自动帮你处理），为了解决这个问题，我们可以在解压时指定编码类型。</p>
@@ -805,11 +833,16 @@ ps Linux中的文件类型不是通过后缀来区分的，而是依照文件的
 
 <h5 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h5><p>在 Linux 上面更常用的是 <code>tar</code> 工具，tar 原本只是一个打包工具，只是同时还是实现了对 7z、gzip、xz、bzip2 等工具的支持，这些压缩工具本身只能实现对文件或目录（单独压缩目录中的文件）的压缩，没有实现对文件的打包压缩，所以我们也无需再单独去学习其他几个工具，tar 的解压和压缩都是同一个命令，只需参数不同，使用比较方便。</p>
 <ul>
-<li>创建一个tar包<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">tar -P -cf shiyanlou.tar /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#上面命令中，-P 保留绝对路径符，-c 表示创建一个 tar 包文件，-f 用于指定创建的文件名，注意文件名必须紧跟在 -f 参数之后，比如不能写成 tar -fc shiyanlou.tar，可以写成 tar -f shiyanlou.tar -c ~。你还可以加上 -v 参数以可视的的方式输出打包的文件。</span></span><br></pre></td></tr></table></figure></li>
-<li>解包一个文件到指定路径的已存在目录<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir tardir</span><br><span class="line">tar -xf shiyanlou.tar -C tardir</span><br><span class="line"><span class="comment">#  -x 参数 解包  -C参数 已存在路径</span></span><br></pre></td></tr></table></figure></li>
-<li>只查看不解包文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -tf shiyanlou.tar</span><br><span class="line"><span class="comment"># -t参数</span></span><br></pre></td></tr></table></figure></li>
-<li>解包时保留文件属性和跟随链接（符号链接或软链接）<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -cphf etc.tar /etc</span><br><span class="line"><span class="comment"># -p 保留文件的属性  -h 备份链接指向的源文件而不是链接本身</span></span><br></pre></td></tr></table></figure></li>
-<li>对其他压缩文件格式解压<table>
+<li><p>创建一个tar包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">tar -P -cf shiyanlou.tar /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#上面命令中，-P 保留绝对路径符，-c 表示创建一个 tar 包文件，-f 用于指定创建的文件名，注意文件名必须紧跟在 -f 参数之后，比如不能写成 tar -fc shiyanlou.tar，可以写成 tar -f shiyanlou.tar -c ~。你还可以加上 -v 参数以可视的的方式输出打包的文件。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>解包一个文件到指定路径的已存在目录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir tardir</span><br><span class="line">tar -xf shiyanlou.tar -C tardir</span><br><span class="line"><span class="comment">#  -x 参数 解包  -C参数 已存在路径</span></span><br></pre></td></tr></table></figure></li>
+<li><p>只查看不解包文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -tf shiyanlou.tar</span><br><span class="line"><span class="comment"># -t参数</span></span><br></pre></td></tr></table></figure></li>
+<li><p>解包时保留文件属性和跟随链接（符号链接或软链接）</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -cphf etc.tar /etc</span><br><span class="line"><span class="comment"># -p 保留文件的属性  -h 备份链接指向的源文件而不是链接本身</span></span><br></pre></td></tr></table></figure></li>
+<li><p>对其他压缩文件格式解压</p>
+<table>
 <thead>
 <tr>
 <th>压缩文件格式</th>
@@ -830,8 +863,10 @@ ps Linux中的文件类型不是通过后缀来区分的，而是依照文件的
 </tr>
 </tbody></table>
 <ul>
-<li>创建tar.gz文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -czf shiyanlou.tar.gz /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment"># 这里的-z就是表示为gz文件</span></span><br></pre></td></tr></table></figure></li>
-<li>解压 <code>*.tar.gz</code>文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzf shiyanlou.tar.gz</span><br></pre></td></tr></table></figure></li>
+<li><p>创建tar.gz文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -czf shiyanlou.tar.gz /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment"># 这里的-z就是表示为gz文件</span></span><br></pre></td></tr></table></figure></li>
+<li><p>解压 <code>*.tar.gz</code>文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzf shiyanlou.tar.gz</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -847,7 +882,7 @@ ps Linux中的文件类型不是通过后缀来区分的，而是依照文件的
 <p>搜索<code>/home/shiyanlou</code>目录下所有包含”shiyanlou”的文本文件，并显示出现在文本中的行号：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ grep -rnI <span class="string">&quot;shiyanlou&quot;</span> ~</span><br><span class="line"><span class="comment"># -r 参数表示递归搜索子目录中的文件</span></span><br><span class="line"><span class="comment"># -n表示打印匹配项行号</span></span><br><span class="line"><span class="comment"># -I表示忽略二进制文件</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://doc.shiyanlou.com/document-uid735639labid63timestamp1532414709836.png" alt="此处输入图片的描述"></p>
+<p><img src="/2022/04/24/Linux%E5%AE%9D%E5%85%B8/grepshow.png" alt="img"></p>
 <p>匹配字段中使用正则表达式</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看环境变量中以&quot;yanlou&quot;结尾的字符串</span></span><br><span class="line"><span class="variable">$</span> export | grep <span class="string">&quot;.*yanlou<span class="variable">$</span>&quot;</span></span><br><span class="line"><span class="comment"># $表示一行的末尾</span></span><br></pre></td></tr></table></figure>
 
@@ -892,19 +927,29 @@ ps Linux中的文件类型不是通过后缀来区分的，而是依照文件的
 
 <h4 id="定时服务"><a href="#定时服务" class="headerlink" title="定时服务"></a>定时服务</h4><p><img src="https://labfile.oss.aliyuncs.com/courses/2585/at%2Bcron%2Banacron.png" alt="at+cron+anacron.png"></p>
 <h5 id="at命令"><a href="#at命令" class="headerlink" title="at命令"></a>at命令</h5><ul>
-<li>安装<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install at</span><br></pre></td></tr></table></figure></li>
-<li>检查at服务是否启动：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep -v grep | grep atd</span><br></pre></td></tr></table></figure></li>
-<li>启动<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service atd start</span><br></pre></td></tr></table></figure>
+<li><p>安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install at</span><br></pre></td></tr></table></figure></li>
+<li><p>检查at服务是否启动：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep -v grep | grep atd</span><br></pre></td></tr></table></figure></li>
+<li><p>启动</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service atd start</span><br></pre></td></tr></table></figure>
 
-<img src="https://labfile.oss.aliyuncs.com/courses/2585/at1.png" alt="at1.png"></li>
-<li>使用添加计划任务<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">at now + 1 minute</span><br><span class="line">at&gt; date &gt;&gt; at.log</span><br><span class="line">at&gt; &lt;EOT&gt;  <span class="comment"># Ctrl+D结束</span></span><br><span class="line"><span class="comment"># 上述命令表示1分钟之后执行任务date</span></span><br><span class="line"><span class="comment"># 按Ctrl+D结束任务编辑</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://labfile.oss.aliyuncs.com/courses/2585/at1.png" alt="at1.png"></p>
+</li>
+<li><p>使用</p>
+<p>添加计划任务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">at now + 1 minute</span><br><span class="line">at&gt; date &gt;&gt; at.log</span><br><span class="line">at&gt; &lt;EOT&gt;  <span class="comment"># Ctrl+D结束</span></span><br><span class="line"><span class="comment"># 上述命令表示1分钟之后执行任务date</span></span><br><span class="line"><span class="comment"># 按Ctrl+D结束任务编辑</span></span><br></pre></td></tr></table></figure>
 
-灵活的指定时间的形式：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2022年 05月 11日 星期三 10:24:00 CST</span></span><br><span class="line">at -f file now + 1 minutes <span class="comment"># job X at Wed May 11 10:25:00 2022</span></span><br><span class="line">at -f file 4pm + 3 days <span class="comment"># job 11 at Sat May 14 16:00:00 2022</span></span><br><span class="line">at -f file noon Jul 31 <span class="comment"># 12点</span></span><br><span class="line">at -f file 6:00 tomorrow</span><br><span class="line">at -f file tomorrow</span><br><span class="line">at -f file 10am 05/15/2022</span><br><span class="line">at -f file teatime <span class="comment">#下午4点</span></span><br><span class="line">at -f file.sh 05pm + 3 days  <span class="comment"># 3天后的下午5点</span></span><br><span class="line">at -f file.sh tomorrow <span class="comment"># 明天  today</span></span><br><span class="line">at -f file.sh noon <span class="comment"># 中午 midnight/teatime</span></span><br><span class="line">at -f file.sh 16:00 05/05/2021 <span class="comment"># 完整的日期和时间</span></span><br></pre></td></tr></table></figure></li>
-<li>用户控制<ul>
+<p>灵活的指定时间的形式：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2022年 05月 11日 星期三 10:24:00 CST</span></span><br><span class="line">at -f file now + 1 minutes <span class="comment"># job X at Wed May 11 10:25:00 2022</span></span><br><span class="line">at -f file 4pm + 3 days <span class="comment"># job 11 at Sat May 14 16:00:00 2022</span></span><br><span class="line">at -f file noon Jul 31 <span class="comment"># 12点</span></span><br><span class="line">at -f file 6:00 tomorrow</span><br><span class="line">at -f file tomorrow</span><br><span class="line">at -f file 10am 05/15/2022</span><br><span class="line">at -f file teatime <span class="comment">#下午4点</span></span><br><span class="line">at -f file.sh 05pm + 3 days  <span class="comment"># 3天后的下午5点</span></span><br><span class="line">at -f file.sh tomorrow <span class="comment"># 明天  today</span></span><br><span class="line">at -f file.sh noon <span class="comment"># 中午 midnight/teatime</span></span><br><span class="line">at -f file.sh 16:00 05/05/2021 <span class="comment"># 完整的日期和时间</span></span><br></pre></td></tr></table></figure></li>
+<li><p>用户控制</p>
+<ul>
 <li>/etc/at.allow</li>
 <li>/etc/at.deny</li>
 </ul>
-at命令先查询 <code>/etc/at.allow</code> 文件，凡事出现在该文件中的用户都可以使用at命令，这个就是所谓的<code>白名单</code>。如果没有这个文件，则查找 <code>/etc/at.deny</code>，这个就是 <code>黑名单</code> ，凡是不在该文件中的用户都可以使用at命令。一般系统都是允许所有正常用户使用at命令，所以在/etc目录中存放一个空的at.deny文件。查看当前等待运行的任务。<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">atq  <span class="comment">#查看当前还有哪些待执行任务</span></span><br><span class="line"></span><br><span class="line">atrm &lt;num&gt; <span class="comment">#删除计划任务，后跟的是任务的号码</span></span><br></pre></td></tr></table></figure></li>
+<p>at命令先查询 <code>/etc/at.allow</code> 文件，凡事出现在该文件中的用户都可以使用at命令，这个就是所谓的<code>白名单</code>。如果没有这个文件，则查找 <code>/etc/at.deny</code>，这个就是 <code>黑名单</code> ，凡是不在该文件中的用户都可以使用at命令。一般系统都是允许所有正常用户使用at命令，所以在/etc目录中存放一个空的at.deny文件。</p>
+<p>查看当前等待运行的任务。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">atq  <span class="comment">#查看当前还有哪些待执行任务</span></span><br><span class="line"></span><br><span class="line">atrm &lt;num&gt; <span class="comment">#删除计划任务，后跟的是任务的号码</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="crontab命令"><a href="#crontab命令" class="headerlink" title="crontab命令"></a>crontab命令</h5><p>常见于设置周期性被执行的命令，实现自动进行系统管理的目的</p>
 <p>crontab 命令从输入设备读取指令，并将其存放于 crontab 文件中，以供之后读取和执行。通常，crontab 储存的指令被守护进程激活，crond 为其守护进程，crond 常常在后台运行，每一分钟会检查一次是否有预定的作业需要执行。</p>
@@ -993,7 +1038,8 @@ at命令先查询 <code>/etc/at.allow</code> 文件，凡事出现在该文件�
 <p>这四个域表示的含义如下图所示：</p>
 <p><img src="https://labfile.oss.aliyuncs.com/courses/2585/anacron3.png" alt="anacron3.png"></p>
 <ul>
-<li>period： 指明天数<ul>
+<li><p>period： 指明天数</p>
+<ul>
 <li>1 - daily</li>
 <li>7 - weekly</li>
 <li>30 - monthly</li>
@@ -1001,9 +1047,13 @@ at命令先查询 <code>/etc/at.allow</code> 文件，凡事出现在该文件�
 <li>@monthly - 每月执行job</li>
 </ul>
 </li>
-<li>delay： 执行job之前延迟的分钟数</li>
-<li>identifier：记录job执行的时间戳的文件名</li>
-<li>command：要执行的job，命令或者shell脚本。在/var/spool/anacron/目录下会出现一些文件，这些文件对应着配置的job，记录了最近一次执行job的日期。</li>
+<li><p>delay： 执行job之前延迟的分钟数</p>
+</li>
+<li><p>identifier：记录job执行的时间戳的文件名</p>
+</li>
+<li><p>command：要执行的job，命令或者shell脚本。</p>
+<p>在/var/spool/anacron/目录下会出现一些文件，这些文件对应着配置的job，记录了最近一次执行job的日期。</p>
+</li>
 </ul>
 <h4 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h4><h5 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h5><p> <code>top</code> 实时的查看进程的状态，以及系统的一些信息（如 CPU、内存信息等）</p>
 <p> <code>ps</code> 来静态查看当前的进程信息</p>
@@ -1587,10 +1637,14 @@ at命令先查询 <code>/etc/at.allow</code> 文件，凡事出现在该文件�
 
 <p><img src="https://doc.shiyanlou.com/document-uid13labid3timestamp1454035698068.png" alt="此处输入图片的描述"></p>
 <ul>
-<li><code>/etc/group</code> 文件格式说明<code>/etc/group</code> 的内容包括用户组（Group）、用户组口令、GID（组 ID） 及该用户组所包含的用户（User），每个用户组一条记录。格式如下：    <blockquote>
+<li><p><code>/etc/group</code> 文件格式说明</p>
+<p><code>/etc/group</code> 的内容包括用户组（Group）、用户组口令、GID（组 ID） 及该用户组所包含的用户（User），每个用户组一条记录。格式如下：    </p>
+<blockquote>
 <p>group_name:password:GID:user_list</p>
 </blockquote>
-你看到上面的 password 字段为一个 <code>x</code>，并不是说密码就是它，只是表示密码不可见而已。这里需要注意，如果用户的 GID 等于用户组的 GID，那么最后一个字段 <code>user_list</code> 就是空的，这里的 GID 是指用户默认所在组的 GID，可以使用 <code>id</code> 命令查看。比如 <code>shiyanlou</code> 用户，在 <code>/etc/group</code> 中的 <code>shiyanlou</code> 用户组后面是不会显示的。<code>lilei</code> 用户，在 <code>/etc/group</code> 中的 <code>lilei</code> 用户组后面是不会显示的。</li>
+<p>你看到上面的 password 字段为一个 <code>x</code>，并不是说密码就是它，只是表示密码不可见而已。</p>
+<p>这里需要注意，如果用户的 GID 等于用户组的 GID，那么最后一个字段 <code>user_list</code> 就是空的，这里的 GID 是指用户默认所在组的 GID，可以使用 <code>id</code> 命令查看。比如 <code>shiyanlou</code> 用户，在 <code>/etc/group</code> 中的 <code>shiyanlou</code> 用户组后面是不会显示的。<code>lilei</code> 用户，在 <code>/etc/group</code> 中的 <code>lilei</code> 用户组后面是不会显示的。</p>
+</li>
 </ul>
 <h6 id="将其它用户加入-sudo-用户组"><a href="#将其它用户加入-sudo-用户组" class="headerlink" title="将其它用户加入 sudo 用户组"></a>将其它用户加入 sudo 用户组</h6><p>默认情况下新创建的用户是不具有 root 权限的，也不在 sudo 用户组，可以让其加入 sudo 用户组从而获取 root 权限：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意 Linux 上输入密码是不会显示的</span></span><br><span class="line">$ su -l lilei</span><br><span class="line">$ sudo ls</span><br></pre></td></tr></table></figure>
@@ -1759,8 +1813,10 @@ at命令先查询 <code>/etc/at.allow</code> 文件，凡事出现在该文件�
 </tr>
 </tbody></table>
 <h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><h3 id="Banner"><a href="#Banner" class="headerlink" title="Banner"></a>Banner</h3><ul>
-<li>环境配置<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update </span><br><span class="line">sudo apt-get install sysvbanner</span><br></pre></td></tr></table></figure></li>
-<li>命令代码<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">printerbanner -w 50 A</span><br><span class="line">/*</span><br><span class="line">-w 参数指定打印宽度，因为我们的环境在屏幕中显示比较小，必须要加上宽度限制。</span><br><span class="line">还有两个类似的命令toilet,figlet，也可以安装试用。</span><br><span class="line">*/</span><br></pre></td></tr></table></figure></li>
+<li><p>环境配置</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update </span><br><span class="line">sudo apt-get install sysvbanner</span><br></pre></td></tr></table></figure></li>
+<li><p>命令代码</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">printerbanner -w 50 A</span><br><span class="line">/*</span><br><span class="line">-w 参数指定打印宽度，因为我们的环境在屏幕中显示比较小，必须要加上宽度限制。</span><br><span class="line">还有两个类似的命令toilet,figlet，也可以安装试用。</span><br><span class="line">*/</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="aafire"><a href="#aafire" class="headerlink" title="aafire"></a>aafire</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libaa-bin</span><br><span class="line"><span class="comment"># 提示 command not found ，请自行解决</span></span><br><span class="line">aafire</span><br></pre></td></tr></table></figure>
 
@@ -1792,21 +1848,21 @@ at命令先查询 <code>/etc/at.allow</code> 文件，凡事出现在该文件�
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@2516981474c674cb2ba848e3cfb9129ada69158b/2021/05/24/04097c727fca444a967c26f9414b2dc5.png" alt=" 微信支付"/>
+        <img id="wechat_qr" src="https://i.bmp.ovh/imgs/2022/07/30/4dc81703c3a4512e.png" alt=" 微信支付"/>
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@ab82d2a586ac84374e28c4b5ab161a313c5c06f4/2021/05/24/1e5712180a0136d3b0b76ff8d4309866.png" alt=" 支付宝"/>
+        <img id="alipay_qr" src="https://s3.bmp.ovh/imgs/2022/07/30/813185b98202ebb1.jpg" alt=" 支付宝"/>
         <p>支付宝</p>
       </div>
     
 
     
       <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@b0ca80fc8b37cbaa46583f14f0b3d18c5438ac3b/2021/05/24/24f620630fd03c9363d0d435c42f9a0d.png" alt=" 比特币"/>
+        <img id="bitcoin_qr" src="https://s3.bmp.ovh/imgs/2022/07/30/8c06adabb2a5e461.png" alt=" 比特币"/>
         <p>比特币</p>
       </div>
     
@@ -1934,7 +1990,7 @@ at命令先查询 <code>/etc/at.allow</code> 文件，凡事出现在该文件�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1945,7 +2001,7 @@ at命令先查询 <code>/etc/at.allow</code> 文件，凡事出现在该文件�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1956,7 +2012,7 @@ at命令先查询 <code>/etc/at.allow</code> 文件，凡事出现在该文件�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
