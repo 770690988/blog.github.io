@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="程序设计实践课程作业,排序算法," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="八大排序比较：冒泡排序，选择排序，插入排序，归并排序，快速排序，桶排序，基数排序的比较啊排序算法实现与性能分析，评测：编写程序，实现冒泡排序，简单选择排序，简单插入排序，归并排序，快速排序和其他各类排序方法，产生规模分别为100，1000，10000，100000，1000000的模拟数组，使用上述排序方法对同样的模拟数据进行排序，在验证排序结果正确性（编写排序结果验证函数）的同时，利用系统时间函">
+<meta property="og:type" content="article">
+<meta property="og:title" content="各个排序方式">
+<meta property="og:url" content="https://770690988.github.io/blog.github.io/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:site_name" content="人工智能">
+<meta property="og:description" content="八大排序比较：冒泡排序，选择排序，插入排序，归并排序，快速排序，桶排序，基数排序的比较啊排序算法实现与性能分析，评测：编写程序，实现冒泡排序，简单选择排序，简单插入排序，归并排序，快速排序和其他各类排序方法，产生规模分别为100，1000，10000，100000，1000000的模拟数组，使用上述排序方法对同样的模拟数据进行排序，在验证排序结果正确性（编写排序结果验证函数）的同时，利用系统时间函">
+<meta property="og:locale">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px3.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px4.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px5.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px6.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px7.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px8.png">
+<meta property="article:published_time" content="2021-06-29T11:32:11.000Z">
+<meta property="article:modified_time" content="2021-06-29T11:32:11.000Z">
+<meta property="article:author" content="虞程龙">
+<meta property="article:tag" content="程序设计实践课程作业">
+<meta property="article:tag" content="排序算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://770690988.github.io/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://770690988.github.io/blog.github.io/2021/06/29/各个排序方式/"/>
+
+
+
+
+
+  <title>各个排序方式 | 人工智能</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人工智能</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人工智能与智能财务的结合</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://770690988.github.io/blog.github.io/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人工智能">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">各个排序方式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-29T19:32:11+08:00">
+                2021-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">程序设计作业</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%BD%9C%E4%B8%9A/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">排序算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="八大排序比较：冒泡排序，选择排序，插入排序，归并排序，快速排序，桶排序，基数排序的比较啊"><a href="#八大排序比较：冒泡排序，选择排序，插入排序，归并排序，快速排序，桶排序，基数排序的比较啊" class="headerlink" title="八大排序比较：冒泡排序，选择排序，插入排序，归并排序，快速排序，桶排序，基数排序的比较啊"></a>八大排序比较：冒泡排序，选择排序，插入排序，归并排序，快速排序，桶排序，基数排序的比较啊</h2><p>排序算法实现与性能分析，评测：<br>编写程序，实现冒泡排序，简单选择排序，简单插入排序，归并排序，快速排序和其他各类排序方法，产生规模分别为100，1000，10000，100000，1000000的模拟数组，使用上述排序方法对同样的模拟数据进行排序，在验证排序结果正确性（编写排序结果验证函数）的同时，利用系统时间函数分别记录各排序开始时间和结束时间，计算各排序所需时间（若超过5分钟则记录，并在结果分析中标出）。再对已排序数据稍加次序调整，模拟几乎有序数组，再重复上述排序过程。给出评测结果表，总结，分析上述排序结果。</p>
+<h3 id="当数组无序"><a href="#当数组无序" class="headerlink" title="当数组无序"></a>当数组无序</h3><p><img src="/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px1.png" alt="img"></p>
+<h3 id="当数组几乎有序"><a href="#当数组几乎有序" class="headerlink" title="当数组几乎有序"></a>当数组几乎有序</h3><p><img src="/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px2.png" alt="img"></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><h4 id="时间复杂度："><a href="#时间复杂度：" class="headerlink" title="时间复杂度："></a>时间复杂度：</h4><p>归并排序，快速排序，计数排序，基数排序以及桶数较多的桶排序用时明显更短，而冒泡排序，简单选择排序，简单插入排序用时较长</p>
+<h4 id="稳定性："><a href="#稳定性：" class="headerlink" title="稳定性："></a>稳定性：</h4><p>当数组由无序变为有序，耗时减少越多说明算法越稳定，由图中对比可以看出，冒泡排序，简单插入排序，归并排序，基数排序，计数排序是稳定的排序算法，另外，由于桶排序所用桶内的排序方法，所以桶排序也是稳定的，而简单选择排序，快速排序不稳定。</p>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px3.png" alt="img"></p>
+<p><img src="/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px4.png" alt="img"></p>
+<p><img src="/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px5.png" alt="img"></p>
+<p><img src="/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px6.png" alt="img"></p>
+<p><img src="/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px7.png" alt="img"></p>
+<p><img src="/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/px8.png" alt="img"></p>
+<h2 id="源文件下载"><a href="#源文件下载" class="headerlink" title="源文件下载"></a>源文件下载</h2><p><a href="%E6%8E%92%E5%BA%8F%E7%A8%8B%E5%BA%8F.rar" title="C语言源代码下载">点击下载代码文件和运行文件</a></p>
+<h2 id="以下为源代码"><a href="#以下为源代码" class="headerlink" title="以下为源代码"></a>以下为源代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;assert.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;			<span class="comment">//调用sort函数对数据次序进行调整</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> maxkey 32767			<span class="comment">//定义计数排序最大关键字</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span>					<span class="comment">//定义桶排序和基数排序所需链表结构</span></span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">list</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span>					<span class="comment">//定义基数排序所需链表结构</span></span><br><span class="line">	<span class="built_in">list</span> head, tail;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">space</span>;</span></span><br><span class="line"><span class="type">int</span> a[<span class="number">1000000</span>];					<span class="comment">//定义排序所需数组</span></span><br><span class="line"><span class="type">int</span> n;							<span class="comment">//存储数组大小</span></span><br><span class="line"><span class="type">double</span> consumetime;				<span class="comment">//存储排序所需时间</span></span><br><span class="line"><span class="type">clock_t</span> START, END;				<span class="comment">//定义记录系统时间的变量</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">check</span><span class="params">(<span class="type">int</span>* a)</span>;				<span class="comment">//检验排序结果函数</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span>* <span class="title function_">Arraycopy</span><span class="params">(<span class="type">int</span>* a)</span>;			<span class="comment">//数组拷贝函数</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Bubblesort</span><span class="params">(<span class="type">int</span>* a)</span>;		<span class="comment">//冒泡排序</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Simpleselectionsort</span><span class="params">(<span class="type">int</span>* a)</span>;<span class="comment">//简单选择排序</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Simpleinsertsort</span><span class="params">(<span class="type">int</span>* a)</span>;	<span class="comment">//简单插入排序</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Mergesort</span><span class="params">(<span class="type">int</span>* a)</span>;			</span><br><span class="line"><span class="type">void</span> <span class="title function_">MergeSort</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> low, <span class="type">int</span> high, <span class="type">int</span>* b)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Merge</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> low, <span class="type">int</span> m, <span class="type">int</span> high, <span class="type">int</span>* b)</span>;<span class="comment">//归并排序所需函数</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Quicksort</span><span class="params">(<span class="type">int</span>* a)</span>;			</span><br><span class="line"><span class="type">void</span> <span class="title function_">QuickSort</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> low, <span class="type">int</span> high)</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">QuickPass</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> low, <span class="type">int</span> high)</span>;<span class="comment">//快速排序所需函数</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Countsort</span><span class="params">(<span class="type">int</span>* a)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">CountSort</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> n,<span class="type">int</span> *b,<span class="type">int</span> max,<span class="type">int</span> *c)</span>;<span class="comment">//计数排序所需函数</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Bucketsort</span><span class="params">(<span class="type">int</span>* a)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">BucketSort</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> n, <span class="type">int</span> m)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">insert</span><span class="params">(<span class="built_in">list</span> p, <span class="type">int</span> y)</span>;		<span class="comment">//桶排序所需函数</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Cardinalsort</span><span class="params">(<span class="type">int</span>* a)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">CardinalSort</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> n, <span class="type">int</span> Base, <span class="type">int</span> m)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Insert</span><span class="params">(space p, <span class="type">int</span> y)</span>;	<span class="comment">//基数排序所需函数</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	srand((<span class="type">unsigned</span>)time(<span class="literal">NULL</span>));<span class="comment">//设置生成随机数种子</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">1000000</span>; i++) &#123;</span><br><span class="line">		a[i] = rand();			<span class="comment">//生成0~32767随机数作为数组元素</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> k = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">while</span> (k--) &#123;				<span class="comment">//无序数组排序，几乎有序数组排序，共两次循环</span></span><br><span class="line">		n = <span class="number">100</span>;</span><br><span class="line">		<span class="keyword">while</span> (n &lt;= <span class="number">1000000</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (k == <span class="number">1</span>)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;当无序数组大小为%d时:\n\n&quot;</span>, n);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;当几乎有序数组大小为%d时:\n\n&quot;</span>, n);</span><br><span class="line">			Bubblesort(a);</span><br><span class="line">			Simpleselectionsort(a);</span><br><span class="line">			Simpleinsertsort(a);</span><br><span class="line">			Mergesort(a);</span><br><span class="line">			Quicksort(a);</span><br><span class="line">			Countsort(a);</span><br><span class="line">			Bucketsort(a);</span><br><span class="line">			Cardinalsort(a);	<span class="comment">//以上调用排序函数</span></span><br><span class="line">			n *= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">int</span> i;</span><br><span class="line">		sort(a, a + <span class="number">1000000</span>);	<span class="comment">//将无序数组变为几乎有序数组</span></span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; ++i) &#123;</span><br><span class="line">			a[i * <span class="number">100</span>] = rand();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">check</span><span class="params">(<span class="type">int</span>* a)</span> &#123;			<span class="comment">//检验函数定义</span></span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (a[i] &gt; a[i + <span class="number">1</span>])<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (i == n - <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;排序结果正确\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;排序结果错误\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span>* <span class="title function_">Arraycopy</span><span class="params">(<span class="type">int</span>* a)</span> &#123;		<span class="comment">//数组拷贝函数定义</span></span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="type">int</span>* b = (<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>) * n);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		b[i] = a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Bubblesort</span><span class="params">(<span class="type">int</span>* a)</span> &#123;		<span class="comment">//冒泡排序函数定义</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;冒泡排序:\n&quot;</span>);</span><br><span class="line">	<span class="type">int</span> *b= Arraycopy(a);		<span class="comment">//调用拷贝函数，以下同此处</span></span><br><span class="line">	<span class="type">clock_t</span> halfway;			<span class="comment">//定时中途时间变量，用于检验是否超时，以下同此处</span></span><br><span class="line">	START = clock();			<span class="comment">//调用系统时间函数记录排序开始时间，以下同此处</span></span><br><span class="line">	<span class="type">int</span> i, j, temp;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; n - i - <span class="number">1</span>; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span> (b[j + <span class="number">1</span>] &lt; b[j]) &#123;</span><br><span class="line">				temp = b[j + <span class="number">1</span>];</span><br><span class="line">				b[j + <span class="number">1</span>] = b[j];</span><br><span class="line">				b[j] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		halfway = clock();		<span class="comment">//即时检验是否超时</span></span><br><span class="line">		<span class="keyword">if</span> ((((<span class="type">double</span>)halfway - (<span class="type">double</span>)START) / CLOCKS_PER_SEC) &gt;= <span class="number">300</span>) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;超过5分钟\n\n&quot;</span>);</span><br><span class="line">			<span class="built_in">free</span>(b);			</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	END = clock();				<span class="comment">//记录排序结束时间</span></span><br><span class="line">	check(b);					<span class="comment">//检验结果正确性</span></span><br><span class="line">	<span class="built_in">free</span>(b);</span><br><span class="line">	consumetime = ((<span class="type">double</span>)END -(<span class="type">double</span>)START ) / CLOCKS_PER_SEC;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;耗费时间:    %fseconds\n\n&quot;</span>, consumetime);<span class="comment">//计算并打印耗费时间</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Simpleselectionsort</span><span class="params">(<span class="type">int</span>* a)</span> &#123;<span class="comment">//简单选择排序函数定义</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;简单选择排序:\n&quot;</span>);</span><br><span class="line">	<span class="type">int</span>* b = Arraycopy(a);</span><br><span class="line">	<span class="type">clock_t</span> halfway;</span><br><span class="line">	START = clock();</span><br><span class="line">	<span class="type">int</span> i, j, l,temp;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; ++i)&#123;</span><br><span class="line">		l = i;</span><br><span class="line">		<span class="keyword">for</span> (j = i + <span class="number">1</span>; j &lt; n; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span> (b[j] &lt; b[l]) &#123;</span><br><span class="line">				l = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">			temp = b[i];</span><br><span class="line">			b[i] = b[l];</span><br><span class="line">			b[l] = temp;</span><br><span class="line">			halfway = clock();</span><br><span class="line">			<span class="keyword">if</span> ((((<span class="type">double</span>)halfway - (<span class="type">double</span>)START) / CLOCKS_PER_SEC )&gt;= <span class="number">300</span>) &#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;超过5分钟\n\n&quot;</span>);</span><br><span class="line">				delete[] b;</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	END = clock();</span><br><span class="line">	check(b);</span><br><span class="line">	<span class="built_in">free</span>(b);</span><br><span class="line">	consumetime = ((<span class="type">double</span>)END - (<span class="type">double</span>)START) / CLOCKS_PER_SEC;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;耗费时间:    %fseconds\n\n&quot;</span>,consumetime);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Simpleinsertsort</span><span class="params">(<span class="type">int</span>* a)</span> &#123;	<span class="comment">//简单插入排序函数定义</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;简单插入排序:\n&quot;</span>);</span><br><span class="line">	<span class="type">int</span>* b = Arraycopy(a);</span><br><span class="line">	<span class="type">clock_t</span> halfway;</span><br><span class="line">	 START= clock();</span><br><span class="line">	<span class="type">int</span> i, j,x;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		x = b[i];</span><br><span class="line">		j = i - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; x &lt; b[j]) &#123;</span><br><span class="line">			b[j + <span class="number">1</span>] = b[j];</span><br><span class="line">			--j;</span><br><span class="line">		&#125;</span><br><span class="line">		b[j + <span class="number">1</span>] = x;</span><br><span class="line">		halfway = clock();</span><br><span class="line">		<span class="keyword">if</span> ((((<span class="type">double</span>)halfway - (<span class="type">double</span>)START) / CLOCKS_PER_SEC) &gt;= <span class="number">300</span>) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;超过5分钟\n\n&quot;</span>);</span><br><span class="line">			<span class="built_in">free</span>(b);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	END = clock();</span><br><span class="line">	check(b);</span><br><span class="line">	<span class="built_in">free</span>(b);</span><br><span class="line">	consumetime = ((<span class="type">double</span>)END - (<span class="type">double</span>)START) / CLOCKS_PER_SEC;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;耗费时间:    %fseconds\n\n&quot;</span>,consumetime);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Mergesort</span><span class="params">(<span class="type">int</span>* a)</span> &#123;						<span class="comment">//归并排序函数定义</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;归并排序:\n&quot;</span>);</span><br><span class="line">	<span class="type">int</span>* b = Arraycopy(a);</span><br><span class="line">	<span class="type">int</span>* c = (<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>) * n);		<span class="comment">//定义辅助数组，以下同此处</span></span><br><span class="line">	START = clock();</span><br><span class="line">	MergeSort(b, <span class="number">0</span>, n<span class="number">-1</span>, c);</span><br><span class="line">	END = clock();</span><br><span class="line">	check(b);</span><br><span class="line">	delete[] b;</span><br><span class="line">	delete[] c;</span><br><span class="line">	consumetime = ((<span class="type">double</span>)END - (<span class="type">double</span>)START) / CLOCKS_PER_SEC;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;耗费时间:    %fseconds\n\n&quot;</span>, consumetime);</span><br><span class="line">	<span class="keyword">if</span> (consumetime &gt;= <span class="number">300</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;超过五分钟\n\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">MergeSort</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> low, <span class="type">int</span> high, <span class="type">int</span>* b)</span> &#123;<span class="comment">//归并排序</span></span><br><span class="line">	<span class="keyword">if</span> (low &gt;= high) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> m = (low + high) / <span class="number">2</span>;</span><br><span class="line">	MergeSort(a, low, m, b);</span><br><span class="line">	MergeSort(a, m+<span class="number">1</span>, high, b);						<span class="comment">//递归调用</span></span><br><span class="line">	Merge(a, low, m, high, b);						<span class="comment">//调用函数合并数组</span></span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = low; i &lt;= high; ++i) &#123;</span><br><span class="line">		a[i] = b[i];</span><br><span class="line">	&#125;												<span class="comment">//元素转移至原数组</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Merge</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> low, <span class="type">int</span> m, <span class="type">int</span> high, <span class="type">int</span>* b)</span> &#123;<span class="comment">//合并数组函数</span></span><br><span class="line">	<span class="type">int</span> i = low;</span><br><span class="line">	<span class="type">int</span> j = m + <span class="number">1</span>;</span><br><span class="line">	<span class="type">int</span> k = i;</span><br><span class="line">	<span class="keyword">while</span> (i &lt;= m &amp;&amp; j &lt;= high) &#123;</span><br><span class="line">		<span class="keyword">if</span> (a[i] &lt;= a[j]) &#123;</span><br><span class="line">			b[k++] = a[i++];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			b[k++] = a[j++];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (i &lt;= m) &#123;</span><br><span class="line">		b[k++] = a[i++];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (j &lt;= high) &#123;</span><br><span class="line">		b[k++] = a[j++];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Quicksort</span><span class="params">(<span class="type">int</span>* a)</span> &#123;					<span class="comment">//快速排序定义</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;快速排序:\n&quot;</span>);</span><br><span class="line">	<span class="type">int</span>* b = Arraycopy(a);</span><br><span class="line">	<span class="type">int</span>* c = new <span class="type">int</span>[n];</span><br><span class="line">	START = clock();</span><br><span class="line">	QuickSort(b, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">	END = clock();</span><br><span class="line">	check(b);</span><br><span class="line">	<span class="built_in">free</span>(b);</span><br><span class="line">	<span class="built_in">free</span>(c);</span><br><span class="line">	consumetime = ((<span class="type">double</span>)END - (<span class="type">double</span>)START) / CLOCKS_PER_SEC;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;耗费时间:    %fseconds\n\n&quot;</span>, consumetime);</span><br><span class="line">	<span class="keyword">if</span> (consumetime &gt;= <span class="number">300</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;超过五分钟\n\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">QuickSort</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;<span class="comment">//快速排序</span></span><br><span class="line">	<span class="keyword">if</span> (low &gt;= high) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> p = QuickPass(a, low, high);	<span class="comment">//调用划分函数同时取枢轴元素的位置</span></span><br><span class="line">	QuickSort(a, low, p - <span class="number">1</span>);</span><br><span class="line">	QuickSort(a, p + <span class="number">1</span>, high);			<span class="comment">//划分并递归调用</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">QuickPass</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;<span class="comment">//划分函数</span></span><br><span class="line">	<span class="type">int</span> x = a[low];</span><br><span class="line">	<span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">		<span class="keyword">while</span> (low &lt; high &amp;&amp; x &lt;= a[high]) &#123;<span class="comment">//从右往左，保留大于等于枢轴元素的所有元素位置不变</span></span><br><span class="line">			--high;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (low == high) &#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		a[low++] = a[high];					<span class="comment">//右边较小元素移动到左边空位</span></span><br><span class="line">		<span class="keyword">while</span> (low &lt; high &amp;&amp; x &gt;= a[low])&#123;	<span class="comment">//从左往右，保留小于等于枢轴元素的所有元素位置不变</span></span><br><span class="line">				++low;						</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (low == high) &#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		a[high--] = a[low];					<span class="comment">//左边较大元素移动到右边空位</span></span><br><span class="line">	&#125;</span><br><span class="line">	a[low] = x;								<span class="comment">//枢轴元素放回空余位置</span></span><br><span class="line">	<span class="keyword">return</span> low;								<span class="comment">//返回枢轴元素所在位置</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Countsort</span><span class="params">(<span class="type">int</span>* a)</span> &#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;计数排序:\n&quot;</span>);</span><br><span class="line">	<span class="type">int</span>* b = Arraycopy(a);</span><br><span class="line">	<span class="type">int</span>* c =(<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>)*n);</span><br><span class="line">	<span class="type">int</span>* d = (<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>) * maxkey);</span><br><span class="line">	START = clock();</span><br><span class="line">	CountSort(b, n , d, maxkey, c);</span><br><span class="line">	END = clock();</span><br><span class="line">	check(c);</span><br><span class="line">	<span class="built_in">free</span>(b);</span><br><span class="line">	consumetime = ((<span class="type">double</span>)END - (<span class="type">double</span>)START) / CLOCKS_PER_SEC;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;耗费时间:    %fseconds\n\n&quot;</span>, consumetime);</span><br><span class="line">	<span class="keyword">if</span> (consumetime &gt;= <span class="number">300</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;超过五分钟\n\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">CountSort</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> n, <span class="type">int</span>* b, <span class="type">int</span> max, <span class="type">int</span>* c)</span> &#123;<span class="comment">//计数排序函数定义</span></span><br><span class="line">	<span class="type">int</span> i,key;</span><br><span class="line">	<span class="keyword">for</span> (key = <span class="number">0</span>; key &lt;= maxkey; ++key) &#123;				<span class="comment">//初始化</span></span><br><span class="line">		b[key] = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; ++i) &#123;							<span class="comment">//相同关键字计数</span></span><br><span class="line">		++b[a[i]];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> iStartPos = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> iNextPos;</span><br><span class="line">	<span class="keyword">for</span> (key = <span class="number">0</span>; key &lt;= maxkey; ++key) &#123;				</span><br><span class="line">		iNextPos = iStartPos + b[key];					<span class="comment">//计算下一个key起始下标</span></span><br><span class="line">		b[key] = iStartPos;								<span class="comment">//设置存放key起始下标</span></span><br><span class="line">		iStartPos = iNextPos;							<span class="comment">//调整下一个key起始下标</span></span><br><span class="line">	&#125;</span><br><span class="line">	assert(iStartPos == n);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		c[b[a[i]]++] = a[i];							<span class="comment">//存入后调整位置</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Bucketsort</span><span class="params">(<span class="type">int</span>* a)</span> &#123;				<span class="comment">//桶排序函数定义</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;桶排序:\n&quot;</span>);</span><br><span class="line">	<span class="type">int</span>* b = Arraycopy(a);</span><br><span class="line">	<span class="type">int</span> t[<span class="number">3</span>];</span><br><span class="line">	t[<span class="number">0</span>] = (<span class="type">int</span>)<span class="built_in">sqrt</span>(n);</span><br><span class="line">	t[<span class="number">1</span>] = n / <span class="number">2</span>;</span><br><span class="line">	t[<span class="number">2</span>] = n;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">		START = clock();</span><br><span class="line">		BucketSort(b, n, t[i]);</span><br><span class="line">		END = clock();</span><br><span class="line">		check(b);</span><br><span class="line">		consumetime = ((<span class="type">double</span>)END - (<span class="type">double</span>)START) / CLOCKS_PER_SEC;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;耗费时间:    %fseconds\n(桶的数量为%d)\n\n&quot;</span>, consumetime,t[i]);</span><br><span class="line">		<span class="keyword">if</span> (consumetime &gt;= <span class="number">300</span>) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;超过五分钟\n\n&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	delete[] b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">BucketSort</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> n, <span class="type">int</span> m)</span> &#123;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="built_in">list</span>* bucket = (<span class="built_in">list</span>*)<span class="built_in">malloc</span>((<span class="keyword">sizeof</span>(<span class="built_in">list</span>)) * m);<span class="comment">//用链表实习桶</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; m; ++i) &#123;						<span class="comment">//初始化</span></span><br><span class="line">		bucket[i] = (<span class="built_in">list</span>)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> node));</span><br><span class="line">		bucket[i]-&gt;next=<span class="literal">NULL</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">double</span> h = (<span class="type">double</span>)<span class="number">35000</span>/ m;					<span class="comment">//定义桶的容量</span></span><br><span class="line">	<span class="type">int</span> d = (<span class="type">int</span>)h + <span class="number">1</span>;								<span class="comment">//确保包含所有元素</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; ++i) &#123;						<span class="comment">//元素入桶</span></span><br><span class="line">		insert(bucket[a[i] / d], a[i]);				<span class="comment">//插入同时保证有序（必须排序）</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> k=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; m; ++i) &#123;						<span class="comment">//元素出桶</span></span><br><span class="line">			<span class="built_in">list</span> p = bucket[i]-&gt;next;</span><br><span class="line">			<span class="keyword">while</span> (p != <span class="literal">NULL</span>) &#123;</span><br><span class="line">				a[k++] = p-&gt;x;</span><br><span class="line">				p = p-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">insert</span><span class="params">(<span class="built_in">list</span> p, <span class="type">int</span> y)</span> &#123;						<span class="comment">//有序插入函数</span></span><br><span class="line">	<span class="built_in">list</span> q = (<span class="built_in">list</span>)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> node));</span><br><span class="line">	q-&gt;x = y;</span><br><span class="line">	<span class="keyword">while</span> (p-&gt;next != <span class="literal">NULL</span> &amp;&amp; y &gt; p-&gt;next-&gt;x) &#123;</span><br><span class="line">		p = p-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	q-&gt;next = p-&gt;next;</span><br><span class="line">	p-&gt;next = q;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Cardinalsort</span><span class="params">(<span class="type">int</span>* a)</span> &#123;				<span class="comment">//基数排序定义</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;基数排序:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;(基数为整数各位上的数)\n&quot;</span>);</span><br><span class="line">	<span class="type">int</span>* b = Arraycopy(a);</span><br><span class="line">	START = clock();</span><br><span class="line">	CardinalSort(b, n, <span class="number">10</span>,<span class="number">5</span>);</span><br><span class="line">	END = clock();</span><br><span class="line">	check(b);</span><br><span class="line">	delete[] b;</span><br><span class="line">	consumetime = ((<span class="type">double</span>)END - (<span class="type">double</span>)START) / CLOCKS_PER_SEC;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;耗费时间:    %fseconds\n\n&quot;</span>, consumetime);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">CardinalSort</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span> n, <span class="type">int</span> Base, <span class="type">int</span> m)</span> &#123;<span class="comment">//基数排序</span></span><br><span class="line">	<span class="type">int</span> j;</span><br><span class="line">	<span class="type">int</span> x = <span class="number">10</span>;												<span class="comment">//用于取对应位关键字</span></span><br><span class="line">	<span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= m; ++j) &#123;								<span class="comment">//根据关键字个数循环（关键字为数据各位上数字）</span></span><br><span class="line">		space* bucket = (space*)<span class="built_in">malloc</span>((<span class="keyword">sizeof</span>(space))*Base);<span class="comment">//用链表实现桶</span></span><br><span class="line">		<span class="type">int</span> i;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; Base; ++i) &#123;						<span class="comment">//初始化</span></span><br><span class="line">			bucket[i] = (space)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> Node));</span><br><span class="line">			bucket[i]-&gt;head = bucket[i]-&gt;tail = <span class="literal">NULL</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; ++i) &#123;							<span class="comment">//元素入桶</span></span><br><span class="line">			<span class="type">int</span> k = (a[i] % x)/(x/<span class="number">10</span>);						<span class="comment">//取关键字</span></span><br><span class="line">			Insert(bucket[k], a[i]);						<span class="comment">//无序插入，更快（无须排序）</span></span><br><span class="line">		&#125;</span><br><span class="line">		x *= <span class="number">10</span>;</span><br><span class="line">		<span class="type">int</span> l;</span><br><span class="line">		<span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (l = <span class="number">0</span>; l &lt; Base; ++l) &#123;						<span class="comment">//元素出桶</span></span><br><span class="line">			<span class="built_in">list</span> p = bucket[l]-&gt;head;</span><br><span class="line">			<span class="keyword">while</span> (p != <span class="literal">NULL</span>) &#123;</span><br><span class="line">				a[t++] = p-&gt;x;</span><br><span class="line">				p = p-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">free</span>(bucket[l]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">free</span>(bucket);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Insert</span><span class="params">(space p, <span class="type">int</span> y)</span> &#123;			<span class="comment">//无序插入函数</span></span><br><span class="line">	<span class="built_in">list</span> q = (<span class="built_in">list</span>)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> node));</span><br><span class="line">	q-&gt;x = y;</span><br><span class="line">	q-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span> (p-&gt;head== <span class="literal">NULL</span>) &#123;</span><br><span class="line">		p-&gt;head = p-&gt;tail = q;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">list</span> s = p-&gt;tail;</span><br><span class="line">	s-&gt;next = q;</span><br><span class="line">	p-&gt;tail = q;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@2516981474c674cb2ba848e3cfb9129ada69158b/2021/05/24/04097c727fca444a967c26f9414b2dc5.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@ab82d2a586ac84374e28c4b5ab161a313c5c06f4/2021/05/24/1e5712180a0136d3b0b76ff8d4309866.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@b0ca80fc8b37cbaa46583f14f0b3d18c5438ac3b/2021/05/24/24f620630fd03c9363d0d435c42f9a0d.png" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/" rel="tag"># 程序设计实践课程作业</a>
+          
+            <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="tag"># 排序算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/06/21/VS%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%9C%A8%E5%85%B6%E4%BB%96%E7%94%B5%E8%84%91%E8%BF%90%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/" rel="next" title="VS文件无法在其他电脑运行的问题">
+                <i class="fa fa-chevron-left"></i> VS文件无法在其他电脑运行的问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="prev" title="离散数学">
+                离散数学 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/770690988" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:770690988@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/sssstruggle" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/770690988/infocenter" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E6%AF%94%E8%BE%83%EF%BC%9A%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%8C%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%EF%BC%8C%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%8C%E6%A1%B6%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F%E7%9A%84%E6%AF%94%E8%BE%83%E5%95%8A"><span class="nav-text">八大排序比较：冒泡排序，选择排序，插入排序，归并排序，快速排序，桶排序，基数排序的比较啊</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E6%95%B0%E7%BB%84%E6%97%A0%E5%BA%8F"><span class="nav-text">当数组无序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E6%95%B0%E7%BB%84%E5%87%A0%E4%B9%8E%E6%9C%89%E5%BA%8F"><span class="nav-text">当数组几乎有序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90"><span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%EF%BC%9A"><span class="nav-text">时间复杂度：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7%EF%BC%9A"><span class="nav-text">稳定性：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="nav-text">源文件下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8B%E4%B8%BA%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-text">以下为源代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">虞程龙</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'tFhwHkc8bkgfgQwmhzrtupVR-gzGzoHsz',
+        appKey: 'zwHnoVjxXcHrTxENnsIia9E6',
+        placeholder: '欢迎交流讨论...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="课程,Java作业,单链表," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="项目下载Java上机5package cn.edu.hdu.account.coreAccount1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java_上机5_6">
+<meta property="og:url" content="https://770690988.github.io/blog.github.io/2021/12/20/Java-%E4%B8%8A%E6%9C%BA5-6/index.html">
+<meta property="og:site_name" content="人工智能">
+<meta property="og:description" content="项目下载Java上机5package cn.edu.hdu.account.coreAccount1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-12-20T00:54:29.000Z">
+<meta property="article:modified_time" content="2021-12-20T00:54:29.000Z">
+<meta property="article:author" content="虞程龙">
+<meta property="article:tag" content="课程">
+<meta property="article:tag" content="Java作业">
+<meta property="article:tag" content="单链表">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://770690988.github.io/blog.github.io/2021/12/20/Java-上机5-6/"/>
+
+
+
+
+
+  <title>Java_上机5_6 | 人工智能</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人工智能</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人工智能与智能财务的结合</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://770690988.github.io/blog.github.io/2021/12/20/Java-%E4%B8%8A%E6%9C%BA5-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人工智能">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java_上机5_6</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-20T08:54:29+08:00">
+                2021-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">课程作业</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/java%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">java作业</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/java%E4%BD%9C%E4%B8%9A/Java-%E4%B8%8A%E6%9C%BA5-6/" itemprop="url" rel="index">
+                    <span itemprop="name">Java_上机5_6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/12/20/Java-%E4%B8%8A%E6%9C%BA5-6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/12/20/Java-%E4%B8%8A%E6%9C%BA5-6/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="项目下载"><a href="#项目下载" class="headerlink" title="项目下载"></a><a href="class5-6.zip">项目下载</a></h2><h1 id="Java上机5"><a href="#Java上机5" class="headerlink" title="Java上机5"></a>Java上机5</h1><h2 id="package-cn-edu-hdu-account-core"><a href="#package-cn-edu-hdu-account-core" class="headerlink" title="package cn.edu.hdu.account.core"></a>package cn.edu.hdu.account.core</h2><h3 id="Account"><a href="#Account" class="headerlink" title="Account"></a>Account</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.account.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Account</span> <span class="keyword">implements</span> <span class="title class_">AccountFeature</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> balance;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;Record&gt; records;</span><br><span class="line">    <span class="type">Scanner</span> <span class="variable">input</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showMainMenu</span><span class="params">()</span> &#123;<span class="comment">//显示主菜单</span></span><br><span class="line">        System.out.println(<span class="string">&quot;------------家用收支记账软件-----------&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;1. 收支明细&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;2. 登记收入&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;3. 登记支出&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;4. 退出&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;请选择(1~4)&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showDetailInfo</span><span class="params">()</span> &#123;<span class="comment">//显示账单信息</span></span><br><span class="line">        System.out.println(<span class="string">&quot;--------------当前收支明细记录------------------------------------&quot;</span>);</span><br><span class="line">        System.out.printf(<span class="string">&quot;%-10s\t%-10s\t%-10s\t%-10s\t%-10s%n&quot;</span>, <span class="string">&quot;收支&quot;</span>, <span class="string">&quot;账户金额&quot;</span>, <span class="string">&quot;收支金额&quot;</span>, <span class="string">&quot;说明&quot;</span>, <span class="string">&quot;时间&quot;</span>);</span><br><span class="line">        <span class="comment">//循环遍历账本records中的每个记录，一次输出其变量信息</span></span><br><span class="line">        <span class="comment">//输出格式&quot;%-10s\t%-10s\t%-10s\t%-10s\t%-10s%n&quot;,依次输出收支类型/账户当时余额/单笔记录金额、备注、时间</span></span><br><span class="line">        <span class="type">Record</span> <span class="variable">record</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Record</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; records.size(); i++) &#123;</span><br><span class="line">            record = records.get(i);</span><br><span class="line">            System.out.printf(<span class="string">&quot;%-10s\t%-15s\t%-15s\t%-10s\t%-10s%n&quot;</span>,record.getRecordType(),record.getCurBalance(),record.getAmountOfMoney(),record.getRemark(),record.getDate());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">editIncomeInfo</span><span class="params">()</span> &#123;<span class="comment">//登记收入信息</span></span><br><span class="line">        <span class="comment">//编辑收入信息，收入信息包括：记录类型、当前余额、单笔金额、备注、时间</span></span><br><span class="line">        <span class="comment">//分别获得这些信息，然后调用setRecord函数，将这些信息写入记录</span></span><br><span class="line">        <span class="comment">//当前余额的计算通过updateBalance函数完成</span></span><br><span class="line">        System.out.println(<span class="string">&quot;本次收入金额&quot;</span>);</span><br><span class="line">        <span class="type">Double</span> <span class="variable">money</span> <span class="operator">=</span> input.nextDouble();</span><br><span class="line">        System.out.println(<span class="string">&quot;本次收入说明&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">remark</span> <span class="operator">=</span> input.next();</span><br><span class="line">        <span class="type">String</span> <span class="variable">type</span> <span class="operator">=</span> <span class="string">&quot;收入&quot;</span>;</span><br><span class="line">        updateBalance(<span class="string">&quot;+&quot;</span>,money);</span><br><span class="line">        setRecord(type,<span class="built_in">this</span>.balance,money,remark,<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">editSpendInfo</span><span class="params">()</span> &#123;<span class="comment">//登记支出信</span></span><br><span class="line">        <span class="comment">//编辑支出信息，收入信息包括：记录类型、当前余额、单笔记录金额、备注、时间</span></span><br><span class="line">        <span class="comment">//分别获得这些信息，然后调用setRecord函数，将这些信息写入记录</span></span><br><span class="line">        <span class="comment">//当前余额的计算通过updateBalance函数完成</span></span><br><span class="line">        System.out.println(<span class="string">&quot;本次支出金额&quot;</span>);</span><br><span class="line">        <span class="type">Double</span> <span class="variable">money</span> <span class="operator">=</span> input.nextDouble();</span><br><span class="line">        System.out.println(<span class="string">&quot;本次支出说明&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">remark</span> <span class="operator">=</span> input.next();</span><br><span class="line">        <span class="type">String</span> <span class="variable">type</span> <span class="operator">=</span> <span class="string">&quot;支出&quot;</span>;</span><br><span class="line">        updateBalance(<span class="string">&quot;-&quot;</span>,money);</span><br><span class="line">        setRecord(type,<span class="built_in">this</span>.balance,money,remark,<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">exitAccount</span><span class="params">()</span> &#123;<span class="comment">//退出记账器</span></span><br><span class="line">        System.exit(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span>&#123;<span class="comment">//初始化账本</span></span><br><span class="line">        <span class="built_in">this</span>.balance = <span class="number">0.0</span>;</span><br><span class="line">        <span class="built_in">this</span>.records = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Record&gt;();</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="comment">//在一个循环中不断显示主菜单showMainMenu,并获取用户输入gerUserInput</span></span><br><span class="line">            <span class="comment">//捕获在getUserInput中可能出现的输入异常，进行异常处理（这里的异常处理就是提示用户信息输错了，请重新输入</span></span><br><span class="line">            showMainMenu();</span><br><span class="line">            <span class="keyword">try</span>&#123;</span><br><span class="line">                getUserInput();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IllegalInputException e) &#123;</span><br><span class="line">                System.out.println();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">getUserInput</span><span class="params">()</span> <span class="keyword">throws</span> IllegalInputException &#123;<span class="comment">//处理逻辑</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">choice</span> <span class="operator">=</span> input.nextInt();<span class="comment">//获取用户的输入</span></span><br><span class="line">        <span class="keyword">switch</span> (choice)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>: &#123;</span><br><span class="line">                <span class="comment">//显示账本详情</span></span><br><span class="line">                showDetailInfo();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>: &#123;</span><br><span class="line">                <span class="comment">//编辑收入信息</span></span><br><span class="line">                editIncomeInfo();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>: &#123;</span><br><span class="line">                <span class="comment">//编辑支出信息</span></span><br><span class="line">                editSpendInfo();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:&#123;</span><br><span class="line">                <span class="comment">//退出账本系统</span></span><br><span class="line">                exitAccount();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">default</span>:&#123;</span><br><span class="line">                <span class="comment">//即输入异常，则抛出IllegalInputException异常</span></span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalInputException</span>(choice);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">setRecord</span><span class="params">(String type, <span class="type">double</span> balance, <span class="type">double</span> money, String remark, Date date)</span>&#123;<span class="comment">//维护账单</span></span><br><span class="line">        <span class="comment">//新建一个Record对象，将参数中的信息置入这俄格Record对象</span></span><br><span class="line">        <span class="comment">//并将该Record对象作为记录加入账本的records列表中</span></span><br><span class="line">        <span class="type">Record</span> <span class="variable">record</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Record</span>();</span><br><span class="line">        record.setRecordType(type);</span><br><span class="line">        record.setCurBalance(balance);</span><br><span class="line">        record.setAmountOfMoney(money);</span><br><span class="line">        record.setRemark(remark);</span><br><span class="line">        record.setDate(date);</span><br><span class="line">        records.add(record);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">updateBalance</span><span class="params">(String op, <span class="type">double</span> money)</span>&#123;<span class="comment">//维护余额</span></span><br><span class="line">        <span class="comment">//根据参数op所指的操作（+或—），完成余额balance的更新</span></span><br><span class="line">        <span class="keyword">switch</span> (op)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;+&quot;</span>: &#123;</span><br><span class="line">                <span class="built_in">this</span>.balance+= money;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;-&quot;</span>: &#123;</span><br><span class="line">                <span class="built_in">this</span>.balance-= money;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="AccountFeature"><a href="#AccountFeature" class="headerlink" title="AccountFeature"></a>AccountFeature</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.account.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AccountFeature</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showMainMenu</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showDetailInfo</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">editIncomeInfo</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">editSpendInfo</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">exitAccount</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="IllegalInputException"><a href="#IllegalInputException" class="headerlink" title="IllegalInputException"></a>IllegalInputException</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.account.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IllegalInputException</span> <span class="keyword">extends</span> <span class="title class_">Exception</span>&#123;</span><br><span class="line">    <span class="comment">//这个变量用来记录用户输入的参数异常，比如输入5那么input就是5</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> input;</span><br><span class="line">    <span class="comment">//构造函数，用异常输入来创建异常类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">IllegalInputException</span><span class="params">(<span class="type">int</span> input)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.input = input;</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入1~4的整数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">InputMismatchException</span><span class="params">(String m)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入1~4的整数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//用于获取该异常参数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getInput</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.input;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Record"><a href="#Record" class="headerlink" title="Record"></a>Record</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.account.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Record</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String recordType; <span class="comment">//记录类型</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> curBalance; <span class="comment">//当前余额</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> amountOfMoney; <span class="comment">//记录金额</span></span><br><span class="line">    <span class="keyword">private</span> String remark; <span class="comment">//记录备注</span></span><br><span class="line">    <span class="keyword">private</span> Date date; <span class="comment">//记录时间</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getRecordType</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> recordType;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setRecordType</span><span class="params">(String recordType)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.recordType = recordType;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getCurBalance</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> curBalance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCurBalance</span><span class="params">(<span class="type">double</span> curBalance)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.curBalance = curBalance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getAmountOfMoney</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> amountOfMoney;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAmountOfMoney</span><span class="params">(<span class="type">double</span> amountOfMoney)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.amountOfMoney = amountOfMoney;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getRemark</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> remark;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setRemark</span><span class="params">(String remark)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.remark = remark;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Date <span class="title function_">getDate</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> date;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setDate</span><span class="params">(Date date)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.date = date;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="package-cn-edu-hdu-account-main"><a href="#package-cn-edu-hdu-account-main" class="headerlink" title="package cn.edu.hdu.account.main"></a>package cn.edu.hdu.account.main</h2><h3 id="MainProcess"><a href="#MainProcess" class="headerlink" title="MainProcess"></a>MainProcess</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.account.main;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.account.core.Account;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainProcess</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Account</span> <span class="variable">account</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Account</span>();</span><br><span class="line">        account.init();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Java上机6"><a href="#Java上机6" class="headerlink" title="Java上机6"></a>Java上机6</h1><h2 id="package-cn-edu-hdu-rent-core"><a href="#package-cn-edu-hdu-rent-core" class="headerlink" title="package cn.edu.hdu.rent.core"></a>package cn.edu.hdu.rent.core</h2><h3 id="Automobile"><a href="#Automobile" class="headerlink" title="Automobile"></a>Automobile</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.rent.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Automobile</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String brand;	 <span class="comment">//品牌</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> price;    <span class="comment">//价格</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getBrand</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> brand;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setBrand</span><span class="params">(String brand)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.brand = brand;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getPrice</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPrice</span><span class="params">(<span class="type">double</span> price)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="AutomobileManager"><a href="#AutomobileManager" class="headerlink" title="AutomobileManager"></a>AutomobileManager</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.rent.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.account.core.IllegalInputException;</span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.rent.util.Management;</span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.rent.util.RentSysConst;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AutomobileManager</span> <span class="keyword">implements</span> <span class="title class_">Management</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> type)</span> <span class="keyword">throws</span> IllegalInputException &#123;</span><br><span class="line">        <span class="comment">//添加汽车</span></span><br><span class="line">        String brand;</span><br><span class="line">        <span class="type">double</span> price;</span><br><span class="line">        <span class="keyword">switch</span> (type)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入品牌&quot;</span>);</span><br><span class="line">                brand = RentSysConst.INPUT.next();</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入佣金&quot;</span>);</span><br><span class="line">                price = RentSysConst.INPUT.nextDouble();</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入载人量：&quot;</span>);</span><br><span class="line">                <span class="type">double</span> <span class="variable">peopleCapacity</span> <span class="operator">=</span> RentSysConst.INPUT.nextDouble();</span><br><span class="line">                Car car=<span class="keyword">new</span> <span class="title class_">Car</span>();</span><br><span class="line">                car.setBrand(brand);</span><br><span class="line">                car.setPeopleCapacity(peopleCapacity);</span><br><span class="line">                car.setPrice(price);</span><br><span class="line">                RentSysConst.AUTO_LIST.put(RentSysConst.AUTO_ID+<span class="number">1</span>,car);</span><br><span class="line">                RentSysConst.AUTO_ID++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入品牌&quot;</span>);</span><br><span class="line">                brand = RentSysConst.INPUT.next();</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入佣金&quot;</span>);</span><br><span class="line">                price = RentSysConst.INPUT.nextDouble();</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入载货量：&quot;</span>);</span><br><span class="line">                <span class="type">double</span> <span class="variable">cargoCapacity</span> <span class="operator">=</span> RentSysConst.INPUT.nextDouble();</span><br><span class="line">                <span class="type">Truck</span> <span class="variable">truck</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Truck</span>();</span><br><span class="line">                truck.setCargoCapacity(cargoCapacity);</span><br><span class="line">                truck.setBrand(brand);</span><br><span class="line">                truck.setPrice(price);</span><br><span class="line">                RentSysConst.AUTO_LIST.put(RentSysConst.AUTO_ID+<span class="number">1</span>,truck);</span><br><span class="line">                RentSysConst.AUTO_ID++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入品牌&quot;</span>);</span><br><span class="line">                brand = RentSysConst.INPUT.next();</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入佣金&quot;</span>);</span><br><span class="line">                price = RentSysConst.INPUT.nextDouble();</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入载人量：&quot;</span>);</span><br><span class="line">                <span class="type">double</span> <span class="variable">peopleCapacity</span> <span class="operator">=</span> RentSysConst.INPUT.nextDouble();</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入载货量：&quot;</span>);</span><br><span class="line">                <span class="type">double</span> <span class="variable">cargoCapacity</span> <span class="operator">=</span> RentSysConst.INPUT.nextDouble();</span><br><span class="line">                <span class="type">PickUp</span> <span class="variable">pickUp</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PickUp</span>();</span><br><span class="line">                pickUp.setPeopleCapacity(peopleCapacity);</span><br><span class="line">                pickUp.setCargoCapacity(cargoCapacity);</span><br><span class="line">                pickUp.setBrand(brand);</span><br><span class="line">                pickUp.setPrice(price);</span><br><span class="line">                RentSysConst.AUTO_LIST.put(RentSysConst.AUTO_ID+<span class="number">1</span>,pickUp);</span><br><span class="line">                RentSysConst.AUTO_ID++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">default</span>:&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalInputException</span>(type);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">delete</span><span class="params">(<span class="type">int</span> ID)</span> &#123;</span><br><span class="line">        RentSysConst.AUTO_LIST.remove(ID);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(<span class="type">int</span> ID)</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//显示已经汽车列表</span></span><br><span class="line">        Iterator&lt;Map.Entry&lt;Integer, Automobile&gt;&gt; iterator = RentSysConst.AUTO_LIST.entrySet().iterator();</span><br><span class="line">        System.out.printf(<span class="string">&quot;%-10s\t%-10s\t%-10s\t%-10s\t%-10s%n&quot;</span>,<span class="string">&quot;序号&quot;</span>,<span class="string">&quot;汽车名称&quot;</span>,<span class="string">&quot;租金&quot;</span>,<span class="string">&quot;载客量&quot;</span>,<span class="string">&quot;载货量&quot;</span>);</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">            Map.Entry&lt;Integer, Automobile&gt; entry = iterator.next();</span><br><span class="line">            <span class="keyword">if</span>(entry.getValue() <span class="keyword">instanceof</span> Car)&#123;</span><br><span class="line">                <span class="type">Car</span> <span class="variable">car</span> <span class="operator">=</span> (Car)entry.getValue();</span><br><span class="line">                System.out.printf(<span class="string">&quot;%-10s\t%-15s\t%-10s\t%-15s\t%-10s%n&quot;</span>,entry.getKey(),car.getBrand(),car.getPrice(),car.getPeopleCapacity(),<span class="string">&quot;0.0&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(entry.getValue() <span class="keyword">instanceof</span> Truck)&#123;</span><br><span class="line">                <span class="type">Truck</span> <span class="variable">truck</span> <span class="operator">=</span> (Truck) entry.getValue();</span><br><span class="line">                System.out.printf(<span class="string">&quot;%-10s\t%-15s\t%-10s\t%-15s\t%-10s%n&quot;</span>,entry.getKey(),truck.getBrand(),truck.getPrice(),<span class="string">&quot;0.0&quot;</span>,truck.getCargoCapacity());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(entry.getValue() <span class="keyword">instanceof</span> PickUp)&#123;</span><br><span class="line">                <span class="type">PickUp</span> <span class="variable">pickUp</span> <span class="operator">=</span> (PickUp) entry.getValue();</span><br><span class="line">                System.out.printf(<span class="string">&quot;%-10s\t%-15s\t%-10s\t%-15s\t%-10s%n&quot;</span>,entry.getKey(),pickUp.getBrand(),pickUp.getPrice(),pickUp.getPeopleCapacity(),pickUp.getCargoCapacity());</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">exit</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//退出函数</span></span><br><span class="line">       <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (flag == <span class="number">1</span>)&#123;</span><br><span class="line">                showMenu();</span><br><span class="line">                <span class="keyword">try</span>&#123;</span><br><span class="line">                    flag = getUserInput();</span><br><span class="line">                &#125;<span class="keyword">catch</span> (IllegalInputException e)&#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;输入了无效信息，请重新输入&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;; <span class="comment">//初始化管理系统</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showMenu</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;=========汽车管理系统=========&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;1.增加汽车&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;2.删除汽车&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;3.显示汽车&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;4.退出系统&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;; <span class="comment">//显示管理系统界面</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">getUserInput</span><span class="params">()</span> <span class="keyword">throws</span> IllegalInputException &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">choice</span> <span class="operator">=</span> RentSysConst.INPUT.nextInt();</span><br><span class="line">        <span class="type">int</span> <span class="variable">type</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">switch</span> (choice)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入汽车类型(1-汽车,2-卡车,3-皮卡):&quot;</span>);</span><br><span class="line">                type = RentSysConst.INPUT.nextInt();</span><br><span class="line">                add(type);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入要删除的汽车ID&quot;</span>);</span><br><span class="line">                type = RentSysConst.INPUT.nextInt();</span><br><span class="line">                delete(type);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:&#123;</span><br><span class="line">                show();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:&#123;</span><br><span class="line">                <span class="keyword">return</span> exit();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">default</span>:&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalInputException</span>(choice);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;; <span class="comment">//处理逻辑</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Car"><a href="#Car" class="headerlink" title="Car"></a>Car</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.rent.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.rent.util.CanCarryPeople;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Car</span> <span class="keyword">extends</span> <span class="title class_">Automobile</span> <span class="keyword">implements</span> <span class="title class_">CanCarryPeople</span>  &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> peopleCapacity;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPeopleCapacity</span><span class="params">(<span class="type">double</span> capacity)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.peopleCapacity = capacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getPeopleCapacity</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.peopleCapacity;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="IllegalInputeException"><a href="#IllegalInputeException" class="headerlink" title="IllegalInputeException"></a>IllegalInputeException</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.rent.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IllegalInputException</span> <span class="keyword">extends</span> <span class="title class_">Exception</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> input;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">IllegalInputException</span><span class="params">(<span class="type">int</span> input)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.input = input;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getInput</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.input;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="PickUp"><a href="#PickUp" class="headerlink" title="PickUp"></a>PickUp</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.rent.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.rent.util.CanCarryCargo;</span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.rent.util.CanCarryPeople;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PickUp</span> <span class="keyword">extends</span> <span class="title class_">Automobile</span> <span class="keyword">implements</span> <span class="title class_">CanCarryPeople</span>, CanCarryCargo &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> peopleCapacity;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> cargoCapacity;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPeopleCapacity</span><span class="params">(<span class="type">double</span> capacity)</span> &#123;</span><br><span class="line">           <span class="built_in">this</span>.peopleCapacity = capacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getPeopleCapacity</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.peopleCapacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCargoCapacity</span><span class="params">(<span class="type">double</span> capacity)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cargoCapacity = capacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getCargoCapacity</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.cargoCapacity;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="RentSystem"><a href="#RentSystem" class="headerlink" title="RentSystem"></a>RentSystem</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.rent.core;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.rent.util.RentSysConst;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RentSystem</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> HashMap&lt;Integer, HashMap&lt;Automobile,Integer&gt;&gt; orders = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;Integer, HashMap&lt;Automobile,Integer&gt;&gt;(); <span class="comment">//汽车品牌</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">ID</span> <span class="operator">=</span> <span class="number">1</span>;  <span class="comment">//订单ID</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showMenu</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;=========你可以租车的类型及其价目表========&quot;</span>);</span><br><span class="line">        Iterator&lt;Map.Entry&lt;Integer, Automobile&gt;&gt; iterator = RentSysConst.AUTO_LIST.entrySet().iterator();</span><br><span class="line">        System.out.printf(<span class="string">&quot;%-10s\t%-10s\t%-10s\t%-10s\t%-10s%n&quot;</span>,<span class="string">&quot;序号&quot;</span>,<span class="string">&quot;汽车名称&quot;</span>,<span class="string">&quot;租金&quot;</span>,<span class="string">&quot;载客量&quot;</span>,<span class="string">&quot;载货量&quot;</span>);</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">            Map.Entry&lt;Integer, Automobile&gt; entry = iterator.next();</span><br><span class="line">            <span class="keyword">if</span>(entry.getValue() <span class="keyword">instanceof</span> Car)&#123;</span><br><span class="line">                <span class="type">Car</span> <span class="variable">car</span> <span class="operator">=</span> (Car)entry.getValue();</span><br><span class="line">                System.out.printf(<span class="string">&quot;%-10s\t%-15s\t%-10s\t%-15s\t%-10s%n&quot;</span>,entry.getKey(),car.getBrand(),car.getPrice(),car.getPeopleCapacity(),<span class="string">&quot;0.0&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(entry.getValue() <span class="keyword">instanceof</span> Truck)&#123;</span><br><span class="line">                <span class="type">Truck</span> <span class="variable">truck</span> <span class="operator">=</span> (Truck) entry.getValue();</span><br><span class="line">                System.out.printf(<span class="string">&quot;%-10s\t%-15s\t%-10s\t%-15s\t%-10s%n&quot;</span>,entry.getKey(),truck.getBrand(),truck.getPrice(),<span class="string">&quot;0.0&quot;</span>,truck.getCargoCapacity());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(entry.getValue() <span class="keyword">instanceof</span> PickUp)&#123;</span><br><span class="line">                <span class="type">PickUp</span> <span class="variable">pickUp</span> <span class="operator">=</span> (PickUp) entry.getValue();</span><br><span class="line">                System.out.printf(<span class="string">&quot;%-10s\t%-15s\t%-10s\t%-15s\t%-10s%n&quot;</span>,entry.getKey(),pickUp.getBrand(),pickUp.getPrice(),pickUp.getPeopleCapacity(),pickUp.getCargoCapacity());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="comment">//显示租车系统界面</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">chooseAutomobiles</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">days</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (flag == <span class="number">1</span>) &#123;</span><br><span class="line">            HashMap&lt;Automobile,Integer&gt; hashMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;Automobile,Integer&gt;();</span><br><span class="line">            <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;请输入要租的汽车ID（-1退出）&quot;</span>);</span><br><span class="line">                id = RentSysConst.INPUT.nextInt();</span><br><span class="line">                <span class="keyword">if</span> (id == -<span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">                System.out.println(<span class="string">&quot;请输入要租的天数：&quot;</span>);</span><br><span class="line">                days = RentSysConst.INPUT.nextInt();</span><br><span class="line">                hashMap.put(RentSysConst.AUTO_LIST.get(id), days);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            orders.put(ID, hashMap);</span><br><span class="line">            ID++;</span><br><span class="line">            flag = showOrder();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">//选择车辆</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">showOrder</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;你的订单&quot;</span>);</span><br><span class="line">        Iterator&lt;Map.Entry&lt;Integer, HashMap&lt;Automobile, Integer&gt;&gt;&gt; iterator = orders.entrySet().iterator();</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">            <span class="type">double</span> <span class="variable">peopleCapacity</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="type">double</span> <span class="variable">cargoCapacity</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="type">double</span> <span class="variable">price</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            Map.Entry&lt;Integer, HashMap&lt;Automobile, Integer&gt;&gt; entry = iterator.next();</span><br><span class="line">            System.out.println(<span class="string">&quot;订单&quot;</span> + entry.getKey() + <span class="string">&quot;:&quot;</span>);</span><br><span class="line">            Iterator&lt;Map.Entry&lt;Automobile, Integer&gt;&gt; entryIterator = entry.getValue().entrySet().iterator();</span><br><span class="line">            <span class="keyword">while</span> (entryIterator.hasNext()) &#123;</span><br><span class="line">                Map.Entry&lt;Automobile, Integer&gt; next = entryIterator.next();</span><br><span class="line">                System.out.println(<span class="string">&quot;&lt;&quot;</span> + next.getKey().getBrand() + <span class="string">&quot;,&quot;</span> + next.getValue() + <span class="string">&quot;天&gt;&quot;</span>);</span><br><span class="line">                price += next.getKey().getPrice();</span><br><span class="line">                <span class="keyword">if</span> (next.getKey() <span class="keyword">instanceof</span> Car) &#123;</span><br><span class="line">                    peopleCapacity += ((Car) next.getKey()).getPeopleCapacity();</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (next.getKey() <span class="keyword">instanceof</span> PickUp) &#123;</span><br><span class="line">                    peopleCapacity += ((PickUp) next.getKey()).getPeopleCapacity();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (next.getKey() <span class="keyword">instanceof</span> Truck) &#123;</span><br><span class="line">                    cargoCapacity += ((Truck) next.getKey()).getCargoCapacity();</span><br><span class="line"></span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (next.getKey() <span class="keyword">instanceof</span> PickUp) &#123;</span><br><span class="line">                    cargoCapacity += ((PickUp) next.getKey()).getCargoCapacity();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;总载客量&quot;</span> + peopleCapacity + <span class="string">&quot;人&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;总载货量&quot;</span> + cargoCapacity + <span class="string">&quot;吨&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;总租车价&quot;</span> + price + <span class="string">&quot;元&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;是否继续: Y or N ?&quot;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="type">String</span> <span class="variable">option</span> <span class="operator">=</span> RentSysConst.INPUT.next();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(option.equals(<span class="string">&quot;Y&quot;</span>))&#123;</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(option.equals(<span class="string">&quot;N&quot;</span>))&#123;</span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line"></span><br><span class="line">    &#125;<span class="comment">//展示订单</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">            showMenu();</span><br><span class="line">            chooseAutomobiles();</span><br><span class="line"></span><br><span class="line">    &#125;<span class="comment">//初始化租车系统</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Truck"><a href="#Truck" class="headerlink" title="Truck"></a>Truck</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.rent.core;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.rent.util.CanCarryCargo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Truck</span> <span class="keyword">extends</span> <span class="title class_">Automobile</span> <span class="keyword">implements</span> <span class="title class_">CanCarryCargo</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> cargoCapacity;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCargoCapacity</span><span class="params">(<span class="type">double</span> capacity)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cargoCapacity = capacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getCargoCapacity</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.cargoCapacity;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="package-cn-edu-hdu-rent-main"><a href="#package-cn-edu-hdu-rent-main" class="headerlink" title="package cn.edu.hdu.rent.main"></a>package cn.edu.hdu.rent.main</h2><h3 id="MainProcess-1"><a href="#MainProcess-1" class="headerlink" title="MainProcess"></a>MainProcess</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.edu.hdu.rent.main;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.rent.core.AutomobileManager;</span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.rent.core.IllegalInputException;</span><br><span class="line"><span class="keyword">import</span> cn.edu.hdu.rent.core.RentSystem;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainProcess</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IllegalInputException &#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">int</span> choice;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;请选择系统&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;1.汽车管理系统&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;2.租车系统&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;3.退出&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入（1-3）：&quot;</span>);</span><br><span class="line">            choice = sc.nextInt();</span><br><span class="line">            <span class="keyword">switch</span> (choice) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>: &#123;</span><br><span class="line">                    <span class="type">AutomobileManager</span> <span class="variable">am</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AutomobileManager</span>();</span><br><span class="line">                    am.init();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>: &#123;</span><br><span class="line">                    <span class="type">RentSystem</span> <span class="variable">rs</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RentSystem</span>();</span><br><span class="line">                    rs.init();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>: &#123;</span><br><span class="line">                    System.exit(<span class="number">0</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">default</span>: &#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;输入值无效，请重新输入&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@2516981474c674cb2ba848e3cfb9129ada69158b/2021/05/24/04097c727fca444a967c26f9414b2dc5.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@ab82d2a586ac84374e28c4b5ab161a313c5c06f4/2021/05/24/1e5712180a0136d3b0b76ff8d4309866.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@b0ca80fc8b37cbaa46583f14f0b3d18c5438ac3b/2021/05/24/24f620630fd03c9363d0d435c42f9a0d.png" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%AF%BE%E7%A8%8B/" rel="tag"># 课程</a>
+          
+            <a href="/tags/Java%E4%BD%9C%E4%B8%9A/" rel="tag"># Java作业</a>
+          
+            <a href="/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/" rel="tag"># 单链表</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%A7%E4%BD%9C%E4%B8%9A2-%E7%94%B5%E6%A2%AF/" rel="next" title="数据结构大作业2-电梯">
+                <i class="fa fa-chevron-left"></i> 数据结构大作业2-电梯
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/03/16/JavaWeb%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A/" rel="prev" title="JavaWeb第一次作业">
+                JavaWeb第一次作业 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/770690988" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:770690988@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/sssstruggle" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/770690988/infocenter" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E4%B8%8B%E8%BD%BD"><span class="nav-text">项目下载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E4%B8%8A%E6%9C%BA5"><span class="nav-text">Java上机5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#package-cn-edu-hdu-account-core"><span class="nav-text">package cn.edu.hdu.account.core</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Account"><span class="nav-text">Account</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AccountFeature"><span class="nav-text">AccountFeature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IllegalInputException"><span class="nav-text">IllegalInputException</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Record"><span class="nav-text">Record</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-cn-edu-hdu-account-main"><span class="nav-text">package cn.edu.hdu.account.main</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MainProcess"><span class="nav-text">MainProcess</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E4%B8%8A%E6%9C%BA6"><span class="nav-text">Java上机6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#package-cn-edu-hdu-rent-core"><span class="nav-text">package cn.edu.hdu.rent.core</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Automobile"><span class="nav-text">Automobile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AutomobileManager"><span class="nav-text">AutomobileManager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Car"><span class="nav-text">Car</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IllegalInputeException"><span class="nav-text">IllegalInputeException</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PickUp"><span class="nav-text">PickUp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RentSystem"><span class="nav-text">RentSystem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Truck"><span class="nav-text">Truck</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-cn-edu-hdu-rent-main"><span class="nav-text">package cn.edu.hdu.rent.main</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MainProcess-1"><span class="nav-text">MainProcess</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">虞程龙</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'tFhwHkc8bkgfgQwmhzrtupVR-gzGzoHsz',
+        appKey: 'zwHnoVjxXcHrTxENnsIia9E6',
+        placeholder: '欢迎交流讨论...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

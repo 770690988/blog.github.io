@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JAVA,并发问题,锁," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="开发中的锁先展示一个账本转账的例子 假设，账户的存在形式真的就是一个账本，这些账本都统一存放在文件架上。银行柜员在给我们做转账时，要去文件架上把转出账本和转入账本都拿到手，然后做转账。 拿账本的规则：  文件架上恰好有转出账本和转入账本，那就同时拿走； 如果文件架上只有转出账本和转入账本之一，那这个柜员就先把文件架上有的账本拿到手，同时等着其他柜员把另外一个账本送回来； 转出账本和转入账本都没有，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发中的锁问题">
+<meta property="og:url" content="https://770690988.github.io/blog.github.io/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="人工智能">
+<meta property="og:description" content="开发中的锁先展示一个账本转账的例子 假设，账户的存在形式真的就是一个账本，这些账本都统一存放在文件架上。银行柜员在给我们做转账时，要去文件架上把转出账本和转入账本都拿到手，然后做转账。 拿账本的规则：  文件架上恰好有转出账本和转入账本，那就同时拿走； 如果文件架上只有转出账本和转入账本之一，那这个柜员就先把文件架上有的账本拿到手，同时等着其他柜员把另外一个账本送回来； 转出账本和转入账本都没有，">
+<meta property="og:locale">
+<meta property="og:image" content="https://770690988.github.io/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/AB%E8%BD%AC%E8%B4%A6%E9%97%AE%E9%A2%98.png">
+<meta property="og:image" content="https://770690988.github.io/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/%E7%AE%A1%E7%A8%8B%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="https://770690988.github.io/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/%E8%AE%B0%E5%BD%95%E9%94%81%E6%A1%88%E4%BE%8B.png">
+<meta property="og:image" content="https://770690988.github.io/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/mysql%E7%9A%84%E7%B4%A2%E5%BC%95.png">
+<meta property="og:image" content="https://770690988.github.io/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/%E9%97%B4%E9%9A%99%E9%94%81%E4%BE%8B%E5%AD%90.png">
+<meta property="article:published_time" content="2023-08-28T13:03:38.000Z">
+<meta property="article:modified_time" content="2023-08-28T13:03:38.000Z">
+<meta property="article:author" content="虞程龙">
+<meta property="article:tag" content="JAVA">
+<meta property="article:tag" content="并发问题">
+<meta property="article:tag" content="锁">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://770690988.github.io/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/AB%E8%BD%AC%E8%B4%A6%E9%97%AE%E9%A2%98.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://770690988.github.io/blog.github.io/2023/08/28/开发中的锁问题/"/>
+
+
+
+
+
+  <title>开发中的锁问题 | 人工智能</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人工智能</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人工智能与智能财务的结合</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://770690988.github.io/blog.github.io/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人工智能">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">开发中的锁问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-08-28T21:03:38+08:00">
+                2023-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">软件学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/JAVA/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">并发编程</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/JAVA/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E9%94%81/" itemprop="url" rel="index">
+                    <span itemprop="name">锁</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="开发中的锁"><a href="#开发中的锁" class="headerlink" title="开发中的锁"></a>开发中的锁</h1><p>先展示一个账本转账的例子</p>
+<p>假设，账户的存在形式真的就是一个账本，这些账本都统一存放在文件架上。<br>银行柜员在给我们做转账时，要去文件架上把转出账本和转入账本都拿到手，然后做转账。</p>
+<p>拿账本的规则：</p>
+<ol>
+<li>文件架上恰好有转出账本和转入账本，那就同时拿走；</li>
+<li>如果文件架上只有转出账本和转入账本之一，那这个柜员就先把文件架上有的账本拿到手，同时等着其他柜员把另外一个账本送回来；</li>
+<li>转出账本和转入账本都没有，那这个柜员就等着两个账本都被送回来。</li>
+</ol>
+<p>拿到这个业务场景就很容易写出以下的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Account</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> balance;</span><br><span class="line">    <span class="comment">//转账</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">transfer</span><span class="params">(Account target,<span class="type">int</span> amt)</span>&#123;</span><br><span class="line">        <span class="comment">//锁定转出账户</span></span><br><span class="line">        <span class="keyword">synchronized</span>(<span class="built_in">this</span>)&#123;</span><br><span class="line">            <span class="comment">//锁定转入账户</span></span><br><span class="line">            <span class="keyword">synchronized</span>(target)&#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">this</span>.balance &gt; amt)&#123;</span><br><span class="line">                    <span class="built_in">this</span>.balance -= amt;</span><br><span class="line">                    target.balance += amt;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我先锁住自己，再锁住target</p>
+<p>乍一看好像很有道理</p>
+<p>那么来考虑一下，现在有很多的并发场景，现在A要给B转账，同时B要给A转账</p>
+<p><img src="/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/AB%E8%BD%AC%E8%B4%A6%E9%97%AE%E9%A2%98.png" alt="AB转账问题"></p>
+<p>但是这个时候张三想从A转到B</p>
+<p>李四想从B转到A</p>
+<p>那么张三把A锁住的同时李四把B锁住</p>
+<p>当他们互相想锁住B和A的时候发现，拿不到对方的锁，那么此时，A和B之间就产生了<a href="#deadLock">死锁</a></p>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a><a id = "deadLock">死锁</a></h2><h3 id="死锁产生的条件"><a href="#死锁产生的条件" class="headerlink" title="死锁产生的条件"></a>死锁产生的条件</h3><ol>
+<li>互斥，共享资源X和Y只能被一个线程占用</li>
+<li>占有且等待，线程T1已经取得共享资源X,在等待共享资源Y的时候，不释放共享资源X</li>
+<li>不可抢占，其他线程不能强行抢占线程T1占有的资源</li>
+<li>循环等待，线程T1等待线程T2占有的资源，线程T2等待线程T1占有的资源，就是循环等待</li>
+</ol>
+<p>从中只要打破一个即可</p>
+<p>但是1和3并不方便进行破坏，因为就是要解决并发场景下面的临界资源的获取</p>
+<h3 id="破坏循环等待"><a href="#破坏循环等待" class="headerlink" title="破坏循环等待"></a>破坏循环等待</h3><p>那么对于上面的例子，我们尝试破坏循环等待这个问题——这个问题比较好的解决办法就是让获取锁是有顺序的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//转账</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">transfer</span><span class="params">(Account2 target,<span class="type">int</span> amt)</span>&#123;</span><br><span class="line">    Account2 left <span class="built_in">this</span>;</span><br><span class="line">    Account2 right target;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.id &gt; target.id)&#123;</span><br><span class="line">        Left target;</span><br><span class="line">        right <span class="built_in">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//锁定序号小的账户</span></span><br><span class="line">    <span class="keyword">synchronized</span>(left)&#123;</span><br><span class="line">        <span class="comment">//锁定序号大的张户</span></span><br><span class="line">        <span class="keyword">synchronized</span>(right)&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">this</span>.balance amt)&#123;</span><br><span class="line">                <span class="built_in">this</span>.balance -amt;</span><br><span class="line">                target.balance +amt;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这个代码中不难发现将所有锁的获取按照顺序进行获取，通过一个判断大小，按照顺序获取锁，就可以避免循环依赖的问题。</p>
+<h3 id="破坏占有且等待"><a href="#破坏占有且等待" class="headerlink" title="破坏占有且等待"></a>破坏占有且等待</h3><p>想要破坏这个条件，可以一次性申请所有资源，也就是同时申请到转出账户和转入账户的资源</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Allocator</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List als <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">//一次性申请所有资源</span></span><br><span class="line">    <span class="keyword">synchronized</span> <span class="type">boolean</span> <span class="title function_">apply</span><span class="params">(Object from,Object to)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(als.contains(from) || als.contains(to))&#123;</span><br><span class="line">        	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            als.add(from)</span><br><span class="line">            als.add(to);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//归还资源</span></span><br><span class="line">    <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">free</span><span class="params">(Object from,Object to)</span>&#123;</span><br><span class="line">        als.remove(from)</span><br><span class="line">        als.remove(to);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>该方法的缺点是容易产生瓶颈点，在申请资源的时候，比较容易产生。因为两个资源都需要进入临界区进行处理</p>
+<p>这一条的核心是要能够主动释放它占有的资源，这一点synchronized是做不到的。<br>synchronized申请资源的时候，如果申请不到，线程直接进入阻塞状态了，而线程进入阻塞状态，啥都干不了，也释放不了线程已经占有的资源。</p>
+<p>Java在语言层次没有解决这个问题，但是在SDK层面还是解决了，java.utl.concurrent下面提供的Lock是可以轻松解决这个问题的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//支持中断的API</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">lockInterruptibly</span><span class="params">()</span><span class="keyword">throws</span> InterruptedException;</span><br><span class="line"><span class="comment">//支持超时的API</span></span><br><span class="line"><span class="type">boolean</span> <span class="title function_">tryLock</span><span class="params">(<span class="type">long</span> time,TimeUnit unit)</span><span class="keyword">throws</span> InterruptedException;</span><br><span class="line"><span class="comment">//支特非阻塞获取锁的API</span></span><br><span class="line"><span class="type">boolean</span> <span class="title function_">tryLock</span><span class="params">()</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="一些并发编程的套路"><a href="#一些并发编程的套路" class="headerlink" title="一些并发编程的套路"></a>一些并发编程的套路</h2><h3 id="管程模型"><a href="#管程模型" class="headerlink" title="管程模型"></a>管程模型</h3><p><img src="/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/%E7%AE%A1%E7%A8%8B%E6%A8%A1%E5%9E%8B.png" alt="管程模型"></p>
+<p>&#x2F;&#x2F;这里还有待补充</p>
+<h2 id="MySQL的锁"><a href="#MySQL的锁" class="headerlink" title="MySQL的锁"></a>MySQL的锁</h2><h3 id="锁的类型"><a href="#锁的类型" class="headerlink" title="锁的类型"></a>锁的类型</h3><ul>
+<li>全局锁</li>
+<li>表级锁<ul>
+<li>表锁</li>
+<li>meta data lock (元数据锁)</li>
+</ul>
+</li>
+<li>行锁<ul>
+<li>Record Lock（记录锁）</li>
+<li>Gap Lock（间隙锁）</li>
+<li>Next-Key Lock （next锁）</li>
+</ul>
+</li>
+</ul>
+<h4 id="全局锁"><a href="#全局锁" class="headerlink" title="全局锁"></a>全局锁</h4><p>MySQL提供了一个加全局读锁的方法，命令是Flush tables with read lock(FTWRL)。当你需要让整个库处于只读状态的时候，可以使用这个命令。<br>全局锁的典型使用场景是，做全库逻辑备份。</p>
+<p>一般来说不会直接使用</p>
+<p>主库在使用中如果直接使用，生产环境会直接拒绝写操作，导致生产线卡死</p>
+<p>备库会接受bin log日志，也不能直接进行该操作，否则bin log日志的同步信息无法操作</p>
+<p>那么全库备份一定要全局加锁么？</p>
+<p>​	– 在可重复读隔离级别下开启一个事务。</p>
+<p>官方自带的逻辑备份工具mysqldump,当使用参数-single-transaction的时候，导数据之前就会启动一个事务，来确保拿到一致性视图。而由于MVCC的支持，这个过程中数据是可以正常更新的。 注意这里的隔离级别必须是可重复读的情况下，如果采用读已提交是不行的。这里涉及到MySQL的<a href = "#transactionIsolationLevel">事务隔离级别</a>，下面做一下补充。</p>
+<h4 id="表级锁"><a href="#表级锁" class="headerlink" title="表级锁"></a>表级锁</h4><h5 id="表锁"><a href="#表锁" class="headerlink" title="表锁"></a>表锁</h5><p>表锁的语法是lock tables..read&#x2F;write。可以用unlock tables主动释放锁，也可以在客户端断开的时候自动释放。</p>
+<p>举个例子，如果在某个线程A中执行lock tables t1read,t2 write;这个语句，则其他线程写t1、读写t2的语句都会被阻塞。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>X</th>
+<th>S</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>X</td>
+<td>不兼容</td>
+<td>不兼容</td>
+</tr>
+<tr>
+<td>S</td>
+<td>不兼容</td>
+<td>兼容</td>
+</tr>
+</tbody></table>
+<p>X：写锁</p>
+<p>S：读锁</p>
+<p>P.S. 一般日常开发不会直接使用这个命令</p>
+<h5 id="元数据锁"><a href="#元数据锁" class="headerlink" title="元数据锁"></a>元数据锁</h5><p>当对一个表做增删改查操作的时候，加MDL读锁；</p>
+<p>当要对表做结构变更操作的时候，加MDL写锁。</p>
+<p>不需要显式使用，在访问一个表的时候会被自动加上。MDL的作用是，保证读写的正确性。</p>
+<table>
+<thead>
+<tr>
+<th>会话1</th>
+<th>会话2</th>
+<th>会话3</th>
+<th>会话4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>begin;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>select * from user;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>select * from user;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>alter table user<br />add f int null;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>select * from user;</td>
+</tr>
+</tbody></table>
+<p>会话3在add操作的时候会阻塞，这里要注意在修改表结构的时候会自动进行元数据锁，直接锁住表</p>
+<p>这里add操作直接阻塞，导致会话4在进行select操作的时候就阻塞了</p>
+<h4 id="行锁"><a href="#行锁" class="headerlink" title="行锁"></a>行锁</h4><h5 id="Record-Lock-记录锁"><a href="#Record-Lock-记录锁" class="headerlink" title="Record Lock(记录锁)"></a>Record Lock(记录锁)</h5><p>仅仅把一条记录锁上</p>
+<p>这里提供一个例子</p>
+<p><img src="/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/%E8%AE%B0%E5%BD%95%E9%94%81%E6%A1%88%E4%BE%8B.png" alt="记录锁例子"></p>
+<p>这里要注意到建立了一个phone的索引，并且其中记录1和记录4两个的phone都是一样的，所以不是唯一索引</p>
+<p><strong>案例一</strong></p>
+<table>
+<thead>
+<tr>
+<th>会话1</th>
+<th>会话2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>begin;</td>
+<td></td>
+</tr>
+<tr>
+<td>update user set age &#x3D; 20<br />where phone &#x3D; ‘88812345’ and name &#x3D; ‘aaa’;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>begin;</td>
+</tr>
+<tr>
+<td></td>
+<td>update user set age &#x3D; 35<br />where phone &#x3D; ‘88812345’ and name &#x3D; ‘ddd’;</td>
+</tr>
+<tr>
+<td>commit;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>commit;</td>
+</tr>
+</tbody></table>
+<p>这里注意到aaa和ddd两个人的手机号相同</p>
+<p>那么这个情况下，会发生阻塞么？</p>
+<p>答案：</p>
+<p>在会话2中更新操作的时候会阻塞</p>
+<p>这里先放一张MySQL的索引结构</p>
+<p><img src="/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/mysql%E7%9A%84%E7%B4%A2%E5%BC%95.png" alt="MySQL索引结构"></p>
+<p>这里因为有索引phone，所以在处理的时候就会自动锁上有88812345的数据，会话1就会阻塞住1,4，</p>
+<p>后面的会话2就没有办法对4进行处理，于是产生了阻塞</p>
+<p><strong>案例二</strong></p>
+<table>
+<thead>
+<tr>
+<th>会话1</th>
+<th>会话2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>begin;</td>
+<td></td>
+</tr>
+<tr>
+<td>update user set age &#x3D; age+1<br />where age &#x3D; 20;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>begin;</td>
+</tr>
+<tr>
+<td></td>
+<td>update user set age &#x3D; age+1<br />where age &#x3D; 30;</td>
+</tr>
+<tr>
+<td>commit;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>commit;</td>
+</tr>
+</tbody></table>
+<p>这里用到的数据结构同上面一样</p>
+<p>这里阻塞会更严重，因为age没有建立索引，所以在处理的时候没有办法直接获取到id，那么就会直接锁住全表，因为需要全部进行检索，这时候表的状态和全表锁住的状态很相似。</p>
+<p><strong>案例三</strong></p>
+<table>
+<thead>
+<tr>
+<th>会话1</th>
+<th>会话2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>begin;</td>
+<td></td>
+</tr>
+<tr>
+<td>update user set age &#x3D; age+1<br />where age &#x3D; 20;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>begin;</td>
+</tr>
+<tr>
+<td></td>
+<td>update user set age &#x3D; age+1<br />where id &#x3D; 3;</td>
+</tr>
+<tr>
+<td>commit;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>commit;</td>
+</tr>
+</tbody></table>
+<p>情况同案例二</p>
+<p><strong>案例四</strong></p>
+<table>
+<thead>
+<tr>
+<th>会话1</th>
+<th>会话2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>begin;</td>
+<td></td>
+</tr>
+<tr>
+<td>update user set age &#x3D; age+1<br />where age &#x3D; 20 limit 1;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>begin;</td>
+</tr>
+<tr>
+<td></td>
+<td>update user set age &#x3D; age+1<br />where id &#x3D; 3;</td>
+</tr>
+<tr>
+<td>commit;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>commit;</td>
+</tr>
+</tbody></table>
+<p>这里不会发生阻塞因为查到limit1的时候就不会继续往下查询了</p>
+<p><strong>案例五</strong></p>
+<table>
+<thead>
+<tr>
+<th>会话1</th>
+<th>会话2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>begin;</td>
+<td></td>
+</tr>
+<tr>
+<td>update user set age &#x3D; age+1<br />where age &#x3D; 20 limit 1;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>begin;</td>
+</tr>
+<tr>
+<td></td>
+<td>update user set age &#x3D; age+1<br />where age &#x3D; 30;</td>
+</tr>
+<tr>
+<td>commit;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>commit;</td>
+</tr>
+</tbody></table>
+<p>这里会发生阻塞，虽然第一个已经把20找完了，但是age &#x3D; 20的锁住了，后面要查询30的时候走age也要从头开始查询，那么这里的20那一条数据也会走，但是堵住了。</p>
+<h5 id="Gap-Lock-间隙锁"><a href="#Gap-Lock-间隙锁" class="headerlink" title="Gap Lock(间隙锁)"></a>Gap Lock(间隙锁)</h5><p>锁定一个范围，但是不包含记录本身</p>
+<p><img src="/2023/08/28/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81%E9%97%AE%E9%A2%98/%E9%97%B4%E9%9A%99%E9%94%81%E4%BE%8B%E5%AD%90.png" alt="间隙锁例子"></p>
+<p>间隙锁就是在两个记录之间的锁</p>
+<p>比如这里就是20<del>25之间 25</del>30之间······</p>
+<p>上图中间隙锁总共有6种</p>
+<p>主要为了读未提交的幻读问题</p>
+<h5 id="Next-Key-Lock-记录锁-间隙锁"><a href="#Next-Key-Lock-记录锁-间隙锁" class="headerlink" title="Next-Key Lock(记录锁+间隙锁)"></a>Next-Key Lock(记录锁+间隙锁)</h5><p>&#x2F;&#x2F;待补充</p>
+<h4 id="其他的一些问题"><a href="#其他的一些问题" class="headerlink" title="其他的一些问题"></a>其他的一些问题</h4><ol>
+<li><p>为什么要使用读写锁？</p>
+<p>使用读写锁的主要目的是提高程序的并发性能和吞吐量。读写锁相较于互斥锁，在处理读取操作时具有更高的灵活性，因为它允许多个读取操作同时进行，而互斥锁则会将所有操作排队执行。以下是使用读写锁的一些优点：<br>提高并发性能：当多个线程同时进行读取操作时，读写锁可以避免互斥锁的串行执行，从而提高并发性能。<br>降低锁的粒度：读写锁可以降低锁的粒度，这意味着在执行读取操作时，不需要对整个资源进行加锁，可以只对资源的部分进行加锁，从而提高并发性能。<br>避免读到临时数据：读锁和写锁是互斥的，当一个线程正在进行写操作时，其他线程需要等待。这样可以确保读取操作不会读取到未提交的临时数据。<br>提高程序执行效率：通过使用读写锁，可以让多个读取操作并发执行，减少排队等待的时间，从而提高程序的执行效率。<br>使用读写锁的场景包括：文件读写操作（如从本地文件中读取数据到内存，或从网络中读取文件到本地）、数据库操作、共享数据结构等。</p>
+</li>
+<li><p>Seata的默认隔离级别为什么是读未提交？</p>
+<p>Seata 的默认隔离级别为读未提交（Read Uncommitted），主要是因为在分布式事务场景下，读未提交可以提供更高的性能和更快的响应速度。在读未提交隔离级别下，事务可以读取另一个未提交的事务所做出的修改，这样就不需要等待其他事务完成提交，从而降低了锁的竞争和事务的延迟。<br>此外，在分布式环境中，读未提交还可以有效地解决幻读问题。因为在分布式系统中，由于网络延迟和数据同步等原因，可能导致事务在读取数据时看不到其他事务的修改，使用读未提交隔离级别可以避免这种情况的发生。<br>需要注意的是，虽然读未提交隔离级别可以提供较高的性能和较快的响应速度，但它同时也可能导致脏读（Dirty Read）问题。脏读是指一个事务在读取数据时，看到了另一个未提交的事务所做出的修改，而这些修改可能会被回滚（Rollback），从而导致读取到的数据是脏数据。为了避免脏读问题，可以使用更高的隔离级别，如可重复读（Repeatable Read）或串行化（Serializable）。<br>总之，Seata 默认采用读未提交隔离级别，主要是为了在分布式事务场景下提供更高的性能和更快的响应速度，同时避免幻读问题。但在实际应用中，根据具体需求和场景，也可以选择其他隔离级别来满足不同需求。</p>
+</li>
+</ol>
+<h3 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a><a id = "transactionIsolationLevel">事务隔离级别</a></h3><p>待补充</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@2516981474c674cb2ba848e3cfb9129ada69158b/2021/05/24/04097c727fca444a967c26f9414b2dc5.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@ab82d2a586ac84374e28c4b5ab161a313c5c06f4/2021/05/24/1e5712180a0136d3b0b76ff8d4309866.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@b0ca80fc8b37cbaa46583f14f0b3d18c5438ac3b/2021/05/24/24f620630fd03c9363d0d435c42f9a0d.png" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+          
+            <a href="/tags/%E5%B9%B6%E5%8F%91%E9%97%AE%E9%A2%98/" rel="tag"># 并发问题</a>
+          
+            <a href="/tags/%E9%94%81/" rel="tag"># 锁</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/08/21/jenkins%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" rel="next" title="jenkins项目搭建">
+                <i class="fa fa-chevron-left"></i> jenkins项目搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/08/31/%E5%87%BD%E6%95%B0%E7%B4%A2%E5%BC%95/" rel="prev" title="函数索引">
+                函数索引 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/770690988" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:770690988@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/sssstruggle" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/770690988/infocenter" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%94%81"><span class="nav-text">开发中的锁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%BB%E9%94%81"><span class="nav-text">死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%BB%E9%94%81%E4%BA%A7%E7%94%9F%E7%9A%84%E6%9D%A1%E4%BB%B6"><span class="nav-text">死锁产生的条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E5%9D%8F%E5%BE%AA%E7%8E%AF%E7%AD%89%E5%BE%85"><span class="nav-text">破坏循环等待</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E5%9D%8F%E5%8D%A0%E6%9C%89%E4%B8%94%E7%AD%89%E5%BE%85"><span class="nav-text">破坏占有且等待</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E7%9A%84%E5%A5%97%E8%B7%AF"><span class="nav-text">一些并发编程的套路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%A1%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-text">管程模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL%E7%9A%84%E9%94%81"><span class="nav-text">MySQL的锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%81%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-text">锁的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E9%94%81"><span class="nav-text">全局锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E7%BA%A7%E9%94%81"><span class="nav-text">表级锁</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%A8%E9%94%81"><span class="nav-text">表锁</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE%E9%94%81"><span class="nav-text">元数据锁</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E9%94%81"><span class="nav-text">行锁</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Record-Lock-%E8%AE%B0%E5%BD%95%E9%94%81"><span class="nav-text">Record Lock(记录锁)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gap-Lock-%E9%97%B4%E9%9A%99%E9%94%81"><span class="nav-text">Gap Lock(间隙锁)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Next-Key-Lock-%E8%AE%B0%E5%BD%95%E9%94%81-%E9%97%B4%E9%9A%99%E9%94%81"><span class="nav-text">Next-Key Lock(记录锁+间隙锁)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98"><span class="nav-text">其他的一些问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="nav-text">事务隔离级别</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">虞程龙</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'tFhwHkc8bkgfgQwmhzrtupVR-gzGzoHsz',
+        appKey: 'zwHnoVjxXcHrTxENnsIia9E6',
+        placeholder: '欢迎交流讨论...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

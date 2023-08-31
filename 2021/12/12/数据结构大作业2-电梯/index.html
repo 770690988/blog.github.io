@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据结构作业,智慧电梯," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="文件下载点击下载 运行文件为解压后的Elevator.exe  如果您发现无法执行，程序显示无法找到V142的生成工具请点击这里 源代码展示dianTi.h1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构大作业2-电梯">
+<meta property="og:url" content="https://770690988.github.io/blog.github.io/2021/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%A7%E4%BD%9C%E4%B8%9A2-%E7%94%B5%E6%A2%AF/index.html">
+<meta property="og:site_name" content="人工智能">
+<meta property="og:description" content="文件下载点击下载 运行文件为解压后的Elevator.exe  如果您发现无法执行，程序显示无法找到V142的生成工具请点击这里 源代码展示dianTi.h1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465#">
+<meta property="og:locale">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2021/12/5e44d318a8fd3804.png">
+<meta property="article:published_time" content="2021-12-12T09:22:03.000Z">
+<meta property="article:modified_time" content="2021-12-12T09:22:03.000Z">
+<meta property="article:author" content="虞程龙">
+<meta property="article:tag" content="数据结构作业">
+<meta property="article:tag" content="智慧电梯">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.bmp.ovh/imgs/2021/12/5e44d318a8fd3804.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://770690988.github.io/blog.github.io/2021/12/12/数据结构大作业2-电梯/"/>
+
+
+
+
+
+  <title>数据结构大作业2-电梯 | 人工智能</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人工智能</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人工智能与智能财务的结合</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://770690988.github.io/blog.github.io/2021/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%A7%E4%BD%9C%E4%B8%9A2-%E7%94%B5%E6%A2%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人工智能">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构大作业2-电梯</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-12T17:22:03+08:00">
+                2021-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">课程作业</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构作业</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%94%B5%E6%A2%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构电梯</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%A7%E4%BD%9C%E4%B8%9A2-%E7%94%B5%E6%A2%AF/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%A7%E4%BD%9C%E4%B8%9A2-%E7%94%B5%E6%A2%AF/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h1><p><a href="Elevator.zip">点击下载</a></p>
+<p>运行文件为解压后的Elevator.exe</p>
+<p><img src="https://i.bmp.ovh/imgs/2021/12/5e44d318a8fd3804.png"></p>
+<h2 id="如果您发现无法执行，程序显示无法找到V142的生成工具"><a href="#如果您发现无法执行，程序显示无法找到V142的生成工具" class="headerlink" title="如果您发现无法执行，程序显示无法找到V142的生成工具"></a>如果您发现无法执行，程序显示无法找到V142的生成工具</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39956356/article/details/103112448">请点击这里</a></p>
+<h1 id="源代码展示"><a href="#源代码展示" class="headerlink" title="源代码展示"></a>源代码展示</h1><h2 id="dianTi-h"><a href="#dianTi-h" class="headerlink" title="dianTi.h"></a>dianTi.h</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;conio.h&gt;</span><span class="comment">//控制台的一些文件</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//颜色的定义</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> RED <span class="string">&quot;\033[0;32;31m&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> NONE <span class="string">&quot;\033[m&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> YELLOW <span class="string">&quot;\033[44;34m&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> BLUE <span class="string">&quot;\033[43;34m&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> GREEN <span class="string">&quot;\033[40;32m&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PURPLE <span class="string">&quot;\033[43;35m&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> DGREEN <span class="string">&quot;\033[40;36m&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> WHITE <span class="string">&quot;\033[46;37m&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> OBLUE <span class="string">&quot;\033[40;34m&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ORED <span class="string">&quot;\033[40;31m&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> OPURPLE <span class="string">&quot;\033[40;35m&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> OWHITE <span class="string">&quot;\033[47;37m&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//基本架构函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">GotoXY</span><span class="params">(<span class="type">int</span>, <span class="type">int</span>)</span>;  <span class="comment">//光标定位函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Hide</span><span class="params">()</span>;<span class="comment">//隐藏光标函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">printElevator</span><span class="params">()</span>;<span class="comment">//打印电梯主函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">clearFormerElevator</span><span class="params">()</span>;<span class="comment">//将之前的电梯去干净</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">printPlatform</span><span class="params">()</span>; <span class="comment">//打印平台函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">kaimen</span><span class="params">(<span class="type">int</span>)</span>;  <span class="comment">//开门函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">guanmen</span><span class="params">(<span class="type">int</span>)</span>; <span class="comment">//关门函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">chushihua</span><span class="params">()</span>; <span class="comment">//初始化相应的一些参数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//附加函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">absto1</span><span class="params">(<span class="type">int</span>)</span>; <span class="comment">//正负转化+-1</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">cengLocation</span><span class="params">(<span class="type">int</span>)</span>; <span class="comment">//层的定位函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">haveshangXingButton</span><span class="params">(<span class="type">int</span>, <span class="type">int</span>)</span>; <span class="comment">//判断上行按钮在两个整数中有无1的值</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">havexiaXingButton</span><span class="params">(<span class="type">int</span>, <span class="type">int</span>)</span>; <span class="comment">//判断下行按钮在两个整数中有无1的值</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">haveTargetButton</span><span class="params">(<span class="type">int</span>, <span class="type">int</span>)</span>; <span class="comment">//判断电梯两个整数间有无要到达的楼层</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">chuLiButton</span><span class="params">(<span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>)</span>; <span class="comment">//将每个楼层按下的button进行可视化处理(方向1上-1下，楼层，按钮1上0下上下)</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">createPeople</span><span class="params">()</span>; <span class="comment">//对人创建的处理</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">movePeople</span><span class="params">()</span>; <span class="comment">//对人物移动的处理</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">scanPeopleStruct</span><span class="params">()</span>;<span class="comment">//扫描所有的人空间，寻找到最近的一个没有使用的人空间如果没有返回0</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">isPaiDui</span><span class="params">(<span class="type">int</span>)</span>; <span class="comment">//判断前面是否有人在排队</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">InOutElevator</span><span class="params">()</span>; <span class="comment">//出入电梯函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">refreshZTL</span><span class="params">()</span>; <span class="comment">//电梯状态栏的刷新</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">countPeopleInElevator</span><span class="params">()</span>; <span class="comment">//电梯内人数的计算</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">countPeopleToFloorElevator</span><span class="params">(<span class="type">int</span>)</span>; <span class="comment">//电梯内前往每层楼人数的总和</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//模块的各个函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">Menu</span><span class="params">()</span>;      <span class="comment">//主菜单函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//下面是开始游戏函数部分</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">Start</span><span class="params">()</span>;       <span class="comment">//开始游戏</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//下面是游戏中一些全局变量</span></span><br><span class="line"><span class="type">int</span> lowFloor; <span class="comment">//定义楼层的个数（&gt;=2）</span></span><br><span class="line"><span class="type">int</span> cengGao; <span class="comment">//定义楼层高度</span></span><br><span class="line"><span class="type">int</span> diantiWidth; <span class="comment">//定义电梯宽度</span></span><br><span class="line"><span class="type">int</span> platformWidth; <span class="comment">//定义平台宽度</span></span><br><span class="line"><span class="type">int</span> nowceng; <span class="comment">//定于电梯当前所在的楼层</span></span><br><span class="line"><span class="type">int</span> dianTizhuangTai; <span class="comment">//定义当前天梯是上行1还是下行-1</span></span><br><span class="line"><span class="type">int</span> target[<span class="number">6</span>]; <span class="comment">//定义目标楼层 1表示该楼层电梯内有乘客需要抵达</span></span><br><span class="line"><span class="type">int</span> nowLocation; <span class="comment">//定义当前图片所在位置即乘上cengGao的值</span></span><br><span class="line"><span class="type">int</span> shangXingButton[<span class="number">6</span>];<span class="comment">//上行电梯按钮状态1表示亮起</span></span><br><span class="line"><span class="type">int</span> xiaXingButton[<span class="number">6</span>];<span class="comment">//下行电梯按钮状态1表示亮起</span></span><br><span class="line"><span class="type">int</span> peopleNumMax;  <span class="comment">//定义人数的最大值</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="work-c"><a href="#work-c" class="headerlink" title="work.c"></a>work.c</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;dianTi.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">lowFloor = <span class="number">4</span>; <span class="comment">//暂定楼层为5层</span></span><br><span class="line">cengGao = <span class="number">10</span>; <span class="comment">//暂定层高10</span></span><br><span class="line">diantiWidth = <span class="number">15</span>;  <span class="comment">//暂定电梯宽度为15</span></span><br><span class="line">platformWidth = <span class="number">25</span>; <span class="comment">//暂定平台宽度为25</span></span><br><span class="line">nowceng = <span class="number">1</span>; <span class="comment">//刚开始默认楼层为1</span></span><br><span class="line">peopleNumMax = <span class="number">10</span>; <span class="comment">//定义最多的人数为10个人</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">PeopleStruct</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> isInUse;  <span class="comment">//定义该人的空间是否在使用中，如果在使用，则为1 否则为0</span></span><br><span class="line">    <span class="type">int</span> weight;</span><br><span class="line">    <span class="type">int</span> positionx; <span class="comment">//轴所在的位置</span></span><br><span class="line">    <span class="type">int</span> nowFloor; <span class="comment">//当前楼层</span></span><br><span class="line">    <span class="type">int</span> targetFloor; <span class="comment">//目标楼层</span></span><br><span class="line">    <span class="type">int</span> In_or_Out;<span class="comment">//往电梯进入为1 出电梯为-1 不动为0</span></span><br><span class="line">    <span class="type">int</span> isInElevator;  <span class="comment">//判断是否在电梯中</span></span><br><span class="line">&#125;People;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PeopleList</span>&#123;</span></span><br><span class="line">    People people[<span class="number">10</span>];</span><br><span class="line">&#125;peoplelist;</span><br><span class="line"></span><br><span class="line"><span class="comment">//光标定位函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">GotoXY</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span><br><span class="line">&#123;</span><br><span class="line">    HANDLE hout;</span><br><span class="line">    COORD cor;</span><br><span class="line">    hout = GetStdHandle(STD_OUTPUT_HANDLE);</span><br><span class="line">    cor.X = x;</span><br><span class="line">    cor.Y = y;</span><br><span class="line">    SetConsoleCursorPosition(hout, cor);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//隐藏光标</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Hide</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    HANDLE hout = GetStdHandle(STD_OUTPUT_HANDLE);</span><br><span class="line">    CONSOLE_CURSOR_INFO cor_info = &#123; <span class="number">1</span>, <span class="number">0</span> &#125;;</span><br><span class="line">    SetConsoleCursorInfo(hout, &amp;cor_info);<span class="comment">//隐藏光标</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//菜单栏目</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">Menu</span><span class="params">()</span> &#123;</span><br><span class="line">    Hide();</span><br><span class="line">    GotoXY(<span class="number">36</span>, <span class="number">12</span>);   <span class="comment">//定位光标的位置</span></span><br><span class="line">    <span class="built_in">printf</span>(ORED<span class="string">&quot;欢迎来到电梯小游戏&quot;</span>);</span><br><span class="line">    GotoXY(<span class="number">43</span>, <span class="number">14</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;1. 开始游戏&quot;</span>);</span><br><span class="line">    GotoXY(<span class="number">43</span>, <span class="number">16</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;2. 设置&quot;</span>);</span><br><span class="line">    GotoXY(<span class="number">43</span>, <span class="number">18</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;退出游戏请输入     0&quot;</span>NONE);</span><br><span class="line">    Hide();    <span class="comment">//隐藏光标</span></span><br><span class="line">    <span class="type">char</span> ch;</span><br><span class="line">    <span class="type">int</span> result = <span class="number">1</span>;</span><br><span class="line">    ch = _getch();</span><br><span class="line">    <span class="keyword">switch</span> (ch)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;1&#x27;</span>: result = <span class="number">1</span>; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;2&#x27;</span>: result = <span class="number">2</span>; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;0&#x27;</span>: result = <span class="number">0</span>; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:  result = <span class="number">5</span>; <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    system(<span class="string">&quot;cls&quot;</span>);  <span class="comment">//清空当前页面</span></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化一些参数，包括电梯的状态以及电梯运行的状况</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">chushihua</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= lowFloor; i++) &#123;</span><br><span class="line">        shangXingButton[i] = <span class="number">0</span>;</span><br><span class="line">        xiaXingButton[i] = <span class="number">0</span>;</span><br><span class="line">        target[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        peoplelist.people[i].isInUse = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    nowLocation = cengLocation(nowceng);</span><br><span class="line">    <span class="comment">//zhuangTai = 1; //定义刚开始的状态是上行</span></span><br><span class="line">    refreshZTL();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对人创建的处理</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">createPeople</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> suijiNum = (<span class="type">int</span>)rand() % <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">if</span> (suijiNum &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="type">int</span> position = scanPeopleStruct();</span><br><span class="line">        <span class="keyword">if</span> (position)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> nowFloor = (<span class="type">int</span>)rand() % (lowFloor) + <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> targetFloor = (<span class="type">int</span>)rand() % (lowFloor) + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (targetFloor == nowFloor) &#123;</span><br><span class="line">                targetFloor = (<span class="type">int</span>)rand() % (lowFloor)+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">int</span> weight = (<span class="type">int</span>)rand()%<span class="number">40</span> + <span class="number">40</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//下面就开始对数据进行赋值</span></span><br><span class="line">            peoplelist.people[position - <span class="number">1</span>].isInUse = <span class="number">1</span>;</span><br><span class="line">            peoplelist.people[position - <span class="number">1</span>].nowFloor = nowFloor;</span><br><span class="line">            peoplelist.people[position - <span class="number">1</span>].targetFloor = targetFloor;</span><br><span class="line">            peoplelist.people[position - <span class="number">1</span>].In_or_Out = <span class="number">1</span>;</span><br><span class="line">            peoplelist.people[position - <span class="number">1</span>].positionx = diantiWidth * <span class="number">3</span> + <span class="number">14</span>;</span><br><span class="line">            peoplelist.people[position - <span class="number">1</span>].isInElevator = <span class="number">0</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">movePeople</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> positiony;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//将每个需要移动的人移动一下</span></span><br><span class="line">        <span class="keyword">if</span> (peoplelist.people[i].In_or_Out == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (isPaiDui(i)) &#123;</span><br><span class="line">            peoplelist.people[i].In_or_Out = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">//人到电梯门前的按按钮处理</span></span><br><span class="line">            chuLiButton(absto1(peoplelist.people[i].targetFloor - peoplelist.people[i].nowFloor), peoplelist.people[i].nowFloor, <span class="number">1</span>);</span><br><span class="line">            refreshZTL();</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (peoplelist.people[i].isInUse) &#123;</span><br><span class="line">            positiony = (lowFloor - peoplelist.people[i].nowFloor + <span class="number">1</span>) * cengGao - <span class="number">1</span>;</span><br><span class="line">            GotoXY(peoplelist.people[i].positionx, positiony);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">            GotoXY(peoplelist.people[i].positionx, positiony<span class="number">-1</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">            peoplelist.people[i].positionx = peoplelist.people[i].positionx - peoplelist.people[i].In_or_Out;</span><br><span class="line">            GotoXY(peoplelist.people[i].positionx, positiony);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;!&quot;</span>);</span><br><span class="line">            GotoXY(peoplelist.people[i].positionx, positiony<span class="number">-1</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, peoplelist.people[i].targetFloor);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//人到达电梯后离开的处理操作</span></span><br><span class="line">        <span class="keyword">if</span> (peoplelist.people[i].positionx == diantiWidth * <span class="number">3</span> + <span class="number">16</span>) &#123;</span><br><span class="line">            peoplelist.people[i].isInUse = <span class="number">0</span>;</span><br><span class="line">            positiony = (lowFloor - peoplelist.people[i].nowFloor + <span class="number">1</span>) * cengGao - <span class="number">1</span>;</span><br><span class="line">            GotoXY(peoplelist.people[i].positionx, positiony);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">            GotoXY(peoplelist.people[i].positionx, positiony<span class="number">-1</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断前面是否有人在排队:0 没有人排队:1</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">isPaiDui</span><span class="params">(<span class="type">int</span> peopleNum)</span> &#123;</span><br><span class="line">    <span class="type">int</span> nowFloor = peoplelist.people[peopleNum].nowFloor;</span><br><span class="line">    <span class="type">int</span> positionxNext = peoplelist.people[peopleNum].positionx - peoplelist.people[peopleNum].In_or_Out;</span><br><span class="line">    <span class="type">int</span> positionxi;</span><br><span class="line">    <span class="type">int</span> iFloor;</span><br><span class="line">    <span class="comment">//处理到达墙但是门没开的情况</span></span><br><span class="line">    <span class="keyword">if</span> (peoplelist.people[peopleNum].positionx == <span class="number">2</span> * diantiWidth + <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        positionxi = peoplelist.people[i].positionx;</span><br><span class="line">        iFloor = peoplelist.people[i].nowFloor;</span><br><span class="line">        <span class="keyword">if</span> (peoplelist.people[i].isInUse &amp;&amp; (nowFloor == iFloor) &amp;&amp; (peoplelist.people[i].In_or_Out == <span class="number">0</span>)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (positionxi == positionxNext) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 扫描所有的人空间，寻找到最近的一个没有使用的人空间如果没有返回0</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">scanPeopleStruct</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (peoplelist.people[i].isInUse == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//电梯内人数计算</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">countPeopleInElevator</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> number = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; peopleNumMax; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (peoplelist.people[i].isInUse &amp;&amp; peoplelist.people[i].isInElevator) &#123;</span><br><span class="line">            number++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//电梯内前往每层楼人数的总和</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">countPeopleToFloorElevator</span><span class="params">(targetFloor)</span> &#123;</span><br><span class="line">    <span class="type">int</span> number = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; peopleNumMax; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (peoplelist.people[i].isInUse &amp;&amp; peoplelist.people[i].isInElevator) &#123;</span><br><span class="line">            <span class="keyword">if</span> (peoplelist.people[i].targetFloor == targetFloor) &#123;</span><br><span class="line">                number++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//电梯状态栏的刷新</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">refreshZTL</span><span class="params">()</span> &#123;</span><br><span class="line">    GotoXY(diantiWidth * <span class="number">3</span> + <span class="number">24</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;电梯内状态：&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (dianTizhuangTai == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;停止运行&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (dianTizhuangTai == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;电梯上行&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (dianTizhuangTai == <span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;电梯下行&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    GotoXY(diantiWidth * <span class="number">3</span> + <span class="number">24</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;电梯内按钮状态为：&quot;</span>);</span><br><span class="line">    GotoXY(diantiWidth * <span class="number">3</span> + <span class="number">28</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lowFloor; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (target[i] == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">printf</span>(BLUE<span class="string">&quot;%d&quot;</span>NONE, i);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    GotoXY(diantiWidth * <span class="number">3</span> + <span class="number">24</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;电梯内人数为：%d&quot;</span>, countPeopleInElevator());</span><br><span class="line"></span><br><span class="line">    GotoXY(diantiWidth * <span class="number">3</span> + <span class="number">24</span>, <span class="number">6</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;电梯内前往每层楼的人数:&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lowFloor; i++) &#123;</span><br><span class="line">        GotoXY(diantiWidth * <span class="number">3</span> + <span class="number">26</span>, <span class="number">6</span> + i);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;前往%d楼的人数为：%d&quot;</span>, i, countPeopleToFloorElevator(i));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//开始游戏</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">Start</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    chushihua();</span><br><span class="line">    printPlatform();</span><br><span class="line">    printElevator();</span><br><span class="line">    dianTizhuangTai = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> timeCount = <span class="number">1</span>; <span class="comment">//时间单元，1~100用于分配速度</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        timeCount++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (timeCount % <span class="number">4</span> == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            nowLocation = nowLocation - dianTizhuangTai;</span><br><span class="line">            <span class="keyword">if</span> (nowLocation % cengGao == <span class="number">0</span>) &#123;</span><br><span class="line">                nowceng = lowFloor - (nowLocation / cengGao);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (dianTizhuangTai != <span class="number">0</span>) &#123;</span><br><span class="line">                printElevator();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (dianTizhuangTai == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (haveshangXingButton(nowceng, lowFloor) || havexiaXingButton(nowceng + <span class="number">1</span>, lowFloor) || (haveTargetButton(nowceng, lowFloor) &amp;&amp; nowceng != lowFloor)) &#123;</span><br><span class="line">                <span class="comment">//状态保持不变</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (haveshangXingButton(<span class="number">1</span>, nowceng) || havexiaXingButton(<span class="number">1</span>, nowceng) || haveTargetButton(<span class="number">1</span>, nowceng)) &#123;</span><br><span class="line">                <span class="comment">//状态发生改变</span></span><br><span class="line">                dianTizhuangTai = <span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                dianTizhuangTai = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (dianTizhuangTai == <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (haveshangXingButton(<span class="number">1</span>, nowceng - <span class="number">1</span>) || havexiaXingButton(<span class="number">1</span>, nowceng) || (haveTargetButton(<span class="number">1</span>, nowceng) &amp;&amp; nowceng != <span class="number">1</span>)) &#123;</span><br><span class="line">                <span class="comment">//状态保持不变</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (haveshangXingButton(nowceng, lowFloor) || havexiaXingButton(nowceng + <span class="number">1</span>, lowFloor) || haveTargetButton(nowceng, lowFloor)) &#123;</span><br><span class="line">                <span class="comment">//状态发生改变</span></span><br><span class="line">                dianTizhuangTai = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                dianTizhuangTai = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (dianTizhuangTai == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (haveshangXingButton(nowceng, lowFloor) || havexiaXingButton(nowceng + <span class="number">1</span>, lowFloor) || haveTargetButton(nowceng, lowFloor)) &#123;</span><br><span class="line">                dianTizhuangTai = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (haveshangXingButton(<span class="number">1</span>, nowceng) || havexiaXingButton(<span class="number">1</span>, nowceng) || haveTargetButton(<span class="number">1</span>, nowceng)) &#123;</span><br><span class="line">                dianTizhuangTai = <span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nowLocation % cengGao == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (shangXingButton[nowceng] == <span class="number">1</span> || xiaXingButton[nowceng] == <span class="number">1</span> || target[nowceng] == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (target[nowceng] == <span class="number">1</span>) &#123;</span><br><span class="line">                    target[nowceng] = <span class="number">0</span>;</span><br><span class="line">                    chuLiButton(dianTizhuangTai, nowceng, <span class="number">0</span>);</span><br><span class="line">                    kaimen(nowceng);</span><br><span class="line">                    InOutElevator();<span class="comment">//人进出电梯</span></span><br><span class="line">                    refreshZTL();</span><br><span class="line">                    guanmen(nowceng);</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span> (dianTizhuangTai == <span class="number">1</span> &amp;&amp; shangXingButton[nowceng] == <span class="number">1</span>) &#123;</span><br><span class="line">                    chuLiButton(dianTizhuangTai, nowceng, <span class="number">0</span>);</span><br><span class="line">                    kaimen(nowceng);</span><br><span class="line">                    InOutElevator();<span class="comment">//人进出电梯</span></span><br><span class="line">                    refreshZTL();</span><br><span class="line">                    guanmen(nowceng);</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span> (dianTizhuangTai == <span class="number">-1</span> &amp;&amp; xiaXingButton[nowceng] == <span class="number">1</span>) &#123;</span><br><span class="line">                    chuLiButton(dianTizhuangTai, nowceng, <span class="number">0</span>);</span><br><span class="line">                    kaimen(nowceng);</span><br><span class="line">                    InOutElevator();<span class="comment">//人进出电梯</span></span><br><span class="line">                    refreshZTL();</span><br><span class="line">                    guanmen(nowceng);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        createPeople(); <span class="comment">//定义人的创建过程</span></span><br><span class="line">        movePeople();  <span class="comment">//对人物移动的处理</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">       <span class="keyword">if</span> (timeCount == <span class="number">100</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           timeCount = <span class="number">0</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       Sleep(<span class="number">50</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//出入电梯函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">InOutElevator</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (peoplelist.people[i].In_or_Out == <span class="number">0</span> &amp;&amp; peoplelist.people[i].nowFloor == nowceng &amp;&amp; peoplelist.people[i].isInElevator == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dianTizhuangTai == absto1(peoplelist.people[i].targetFloor - peoplelist.people[i].nowFloor)) &#123;</span><br><span class="line">                <span class="type">int</span> positiony = (lowFloor - peoplelist.people[i].nowFloor + <span class="number">1</span>) * cengGao - <span class="number">1</span>;</span><br><span class="line">                GotoXY(peoplelist.people[i].positionx, positiony);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">                GotoXY(peoplelist.people[i].positionx, positiony - <span class="number">1</span>);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">                peoplelist.people[i].positionx = <span class="number">6</span>;</span><br><span class="line">                target[peoplelist.people[i].targetFloor] = <span class="number">1</span>;</span><br><span class="line">                peoplelist.people[i].isInElevator = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (peoplelist.people[i].isInElevator == <span class="number">1</span> &amp;&amp; peoplelist.people[i].targetFloor == nowceng) &#123;</span><br><span class="line">            <span class="type">int</span> positiony = (lowFloor - peoplelist.people[i].nowFloor + <span class="number">1</span>) * cengGao - <span class="number">1</span>;</span><br><span class="line">            peoplelist.people[i].positionx = diantiWidth * <span class="number">3</span> + <span class="number">6</span>;</span><br><span class="line">            peoplelist.people[i].In_or_Out = <span class="number">-1</span>;</span><br><span class="line">            peoplelist.people[i].nowFloor = nowceng;</span><br><span class="line">            peoplelist.people[i].isInElevator = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印电梯主函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">printElevator</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    Hide();</span><br><span class="line">    clearFormerElevator();</span><br><span class="line">    GotoXY(<span class="number">0</span>, nowLocation); <span class="comment">//电梯上框</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= diantiWidth; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(DGREEN<span class="string">&quot;██&quot;</span>NONE);</span><br><span class="line">    &#125;</span><br><span class="line">    GotoXY(<span class="number">0</span>, nowLocation + <span class="number">10</span>);<span class="comment">//电梯下框</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= diantiWidth; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(DGREEN<span class="string">&quot;██&quot;</span>NONE);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">10</span>; i++) &#123;<span class="comment">//电梯门</span></span><br><span class="line">        GotoXY(diantiWidth * <span class="number">2</span>, i + nowLocation);</span><br><span class="line">        <span class="built_in">printf</span>(DGREEN<span class="string">&quot;██&quot;</span>NONE);</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="comment">//内部人员;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//清理之前的电梯</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">clearFormerElevator</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= lowFloor * cengGao; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= diantiWidth*<span class="number">2</span>; j++) &#123;</span><br><span class="line">            GotoXY(j, i);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;  &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印平台函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">printPlatform</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//平台打印</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= cengGao * lowFloor; i = i + cengGao) &#123;</span><br><span class="line">        GotoXY(diantiWidth * <span class="number">2</span> + <span class="number">4</span>, i); <span class="comment">//平台上框</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">16</span>; i++) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(PURPLE<span class="string">&quot;██&quot;</span>NONE);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//造平台门</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= cengGao * lowFloor; i++) &#123;</span><br><span class="line">        GotoXY(diantiWidth * <span class="number">2</span> + <span class="number">4</span>, i); </span><br><span class="line">        <span class="built_in">printf</span>(YELLOW<span class="string">&quot;██&quot;</span>NONE);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">kaimen</span><span class="params">(<span class="type">int</span> ceng)</span> &#123;</span><br><span class="line">    <span class="type">int</span> dingweiY = (lowFloor - ceng) * cengGao;<span class="comment">//定义楼层上框</span></span><br><span class="line">    <span class="comment">//平台门开启</span></span><br><span class="line">    Sleep(<span class="number">200</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">9</span>; i &gt; <span class="number">2</span>; i--) &#123;</span><br><span class="line">        <span class="comment">//平台门开启</span></span><br><span class="line">        GotoXY(diantiWidth * <span class="number">2</span> + <span class="number">4</span>, i + dingweiY);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;  &quot;</span>);</span><br><span class="line">        <span class="comment">//电梯门开启</span></span><br><span class="line">        GotoXY(diantiWidth * <span class="number">2</span>, i + dingweiY);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;  &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    GotoXY(diantiWidth * <span class="number">2</span> + <span class="number">2</span>, <span class="number">10</span> + dingweiY);</span><br><span class="line">    <span class="built_in">printf</span>(PURPLE<span class="string">&quot;██&quot;</span>NONE);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">guanmen</span><span class="params">(<span class="type">int</span> ceng)</span> &#123;</span><br><span class="line">    <span class="type">int</span> dingweiY = (lowFloor - ceng) * cengGao;<span class="comment">//定义楼层上框</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="comment">//平台门关闭</span></span><br><span class="line">        GotoXY(diantiWidth * <span class="number">2</span> + <span class="number">4</span>, i + dingweiY);</span><br><span class="line">        <span class="built_in">printf</span>(YELLOW<span class="string">&quot;██&quot;</span>NONE);</span><br><span class="line">        <span class="comment">//电梯门关闭</span></span><br><span class="line">        GotoXY(diantiWidth * <span class="number">2</span>, i + dingweiY);</span><br><span class="line">        <span class="built_in">printf</span>(DGREEN<span class="string">&quot;██&quot;</span>NONE);</span><br><span class="line">        Sleep(<span class="number">200</span>);</span><br><span class="line">        GotoXY(diantiWidth * <span class="number">2</span> + <span class="number">2</span>, <span class="number">10</span> + dingweiY);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;  &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="elevator-main-c"><a href="#elevator-main-c" class="headerlink" title="elevator_main.c"></a>elevator_main.c</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;dianTi.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	system(<span class="string">&quot;title 电梯&quot;</span>);</span><br><span class="line">	<span class="type">int</span> flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (flag) &#123;</span><br><span class="line">		system(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">		<span class="keyword">switch</span> (Menu())</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			Start();</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">			flag = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="addition-c"><a href="#addition-c" class="headerlink" title="addition.c"></a>addition.c</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;dianTi.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//正负转化+-1</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">absto1</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (i &gt; <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(i &lt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">cengLocation</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> (lowFloor - i) * cengGao;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断上行按钮在两个整数中有无1的值</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">haveshangXingButton</span><span class="params">(<span class="type">int</span> min, <span class="type">int</span> max)</span> &#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = min; i &lt;= max; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (shangXingButton[i]) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断下行按钮在两个整数中有无1的值</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">havexiaXingButton</span><span class="params">(<span class="type">int</span> min, <span class="type">int</span> max)</span> &#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = min; i &lt;= max; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (xiaXingButton[i]) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断电梯两个整数间有无要到达的楼层</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">haveTargetButton</span><span class="params">(<span class="type">int</span> min, <span class="type">int</span> max)</span> &#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = min; i &lt;= max; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (target[i]) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将每个楼层按下的button进行可视化处理</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">chuLiButton</span><span class="params">(<span class="type">int</span> direction, <span class="type">int</span> ceng, <span class="type">int</span> data)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (direction == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (shangXingButton[ceng] == data) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		shangXingButton[ceng] = data;</span><br><span class="line">		Hide();</span><br><span class="line">		<span class="type">int</span> y = cengLocation(ceng) + <span class="number">2</span>;</span><br><span class="line">		<span class="type">int</span> x = diantiWidth * <span class="number">2</span> + <span class="number">7</span>;</span><br><span class="line">		GotoXY(x, y);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (data == <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;▲&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (data == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;  &quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (direction == <span class="number">-1</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (xiaXingButton[ceng] == data) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		xiaXingButton[ceng] = data;</span><br><span class="line">		Hide();</span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> y = cengLocation(ceng) + <span class="number">5</span>;</span><br><span class="line">		<span class="type">int</span> x = diantiWidth * <span class="number">2</span> + <span class="number">7</span>;</span><br><span class="line">		GotoXY(x, y);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (data == <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;▼&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (data == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;  &quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果对您有帮助，欢迎投币哦~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@2516981474c674cb2ba848e3cfb9129ada69158b/2021/05/24/04097c727fca444a967c26f9414b2dc5.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@ab82d2a586ac84374e28c4b5ab161a313c5c06f4/2021/05/24/1e5712180a0136d3b0b76ff8d4309866.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@b0ca80fc8b37cbaa46583f14f0b3d18c5438ac3b/2021/05/24/24f620630fd03c9363d0d435c42f9a0d.png" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A/" rel="tag"># 数据结构作业</a>
+          
+            <a href="/tags/%E6%99%BA%E6%85%A7%E7%94%B5%E6%A2%AF/" rel="tag"># 智慧电梯</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/12/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A3/" rel="next" title="数据库作业3">
+                <i class="fa fa-chevron-left"></i> 数据库作业3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/12/20/Java-%E4%B8%8A%E6%9C%BA5-6/" rel="prev" title="Java_上机5_6">
+                Java_上机5_6 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/770690988" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:770690988@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/sssstruggle" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/770690988/infocenter" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="nav-text">文件下载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%82%A8%E5%8F%91%E7%8E%B0%E6%97%A0%E6%B3%95%E6%89%A7%E8%A1%8C%EF%BC%8C%E7%A8%8B%E5%BA%8F%E6%98%BE%E7%A4%BA%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0V142%E7%9A%84%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7"><span class="nav-text">如果您发现无法执行，程序显示无法找到V142的生成工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81%E5%B1%95%E7%A4%BA"><span class="nav-text">源代码展示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dianTi-h"><span class="nav-text">dianTi.h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#work-c"><span class="nav-text">work.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#elevator-main-c"><span class="nav-text">elevator_main.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#addition-c"><span class="nav-text">addition.c</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">虞程龙</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'tFhwHkc8bkgfgQwmhzrtupVR-gzGzoHsz',
+        appKey: 'zwHnoVjxXcHrTxENnsIia9E6',
+        placeholder: '欢迎交流讨论...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

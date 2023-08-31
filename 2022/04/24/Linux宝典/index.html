@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="软件学习笔记,Linux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Linux个人宝典资料合集 学习路线   基本知识内建命令与外部命令 内建命令实际上是 shell 程序的一部分，其中包含的是一些比较简单的 Linux 系统命令，这些命令是写在 bash 源码的 builtins 里面的，由 shell 程序识别并在 shell 程序内部完成运行，通常在 Linux 系统加载运行时 shell 就被加载并驻留在系统内存中。而且解析内部命令 shell 不需要创建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux宝典">
+<meta property="og:url" content="https://770690988.github.io/blog.github.io/2022/04/24/Linux%E5%AE%9D%E5%85%B8/index.html">
+<meta property="og:site_name" content="人工智能">
+<meta property="og:description" content="Linux个人宝典资料合集 学习路线   基本知识内建命令与外部命令 内建命令实际上是 shell 程序的一部分，其中包含的是一些比较简单的 Linux 系统命令，这些命令是写在 bash 源码的 builtins 里面的，由 shell 程序识别并在 shell 程序内部完成运行，通常在 Linux 系统加载运行时 shell 就被加载并驻留在系统内存中。而且解析内部命令 shell 不需要创建">
+<meta property="og:locale">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/05/11/28f48e366401c7cf.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2021/04/c6f535136315b734.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/05/11/c21e44019e785e84.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/05/17/ceec156ad37d5b64.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/05/17/f04098fd59c0a8dc.png">
+<meta property="og:image" content="https://770690988.github.io/linuxMenu.png">
+<meta property="og:image" content="https://770690988.github.io/2022/04/24/Linux%E5%AE%9D%E5%85%B8/grepShow.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid735639labid63timestamp1532414808838.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid600404labid6125timestamp1523946094712.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid735639labid63timestamp1532414849333.png">
+<meta property="og:image" content="https://labfile.oss.aliyuncs.com/courses/2585/at%2Bcron%2Banacron.png">
+<meta property="og:image" content="https://labfile.oss.aliyuncs.com/courses/2585/at1.png">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081468201394787">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523941816405.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523941985569.png">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081468202029108">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081468203483143">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081468204230683">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523942683532.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523943532369.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523943327065.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523943647348.png">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081468206283987">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081468206856712">
+<meta property="og:image" content="https://labfile.oss.aliyuncs.com/courses/2585/anacron1.png">
+<meta property="og:image" content="https://labfile.oss.aliyuncs.com/courses/2585/anacron2.png">
+<meta property="og:image" content="https://labfile.oss.aliyuncs.com/courses/2585/anacron3.png">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469070319324">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469086224826">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469086474033">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469088103140">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469089342412">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469089837027">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469090040956">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469004994601">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469090893467">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469091089249">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469092567061">
+<meta property="og:image" content="https://dn-simplecloud.shiyanlou.com/1135081469092779938">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid735639labid3timestamp1531731170296.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583140204433">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583140710447">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid735639labid3timestamp1531731216215.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583141675216">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583142076115">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583142261959">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid13labid3timestamp1454035714557.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid735639labid3timestamp1531731335264.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid13labid3timestamp1454035698068.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583145040679">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583145439247">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583145514469">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583145591124">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid735639labid3timestamp1531731417990.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583146790310">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583147815919">
+<meta property="og:image" content="https://doc.shiyanlou.com/linux_base/3-9.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/linux_base/3-10.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583148438097">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583148552984">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583148845314">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583148964757">
+<meta property="og:image" content="https://doc.shiyanlou.com/linux_base/3-14.png">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583149616295">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583149700161">
+<meta property="og:image" content="https://doc.shiyanlou.com/courses/uid871732-20200302-1583150177369">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/05/11/8a3a00fbf9df6005.gif">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/05/17/9033169fe3c5d33b.gif">
+<meta property="article:published_time" content="2022-04-24T13:55:32.000Z">
+<meta property="article:modified_time" content="2022-04-24T13:55:32.000Z">
+<meta property="article:author" content="虞程龙">
+<meta property="article:tag" content="软件学习笔记">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/05/11/28f48e366401c7cf.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://770690988.github.io/blog.github.io/2022/04/24/Linux宝典/"/>
+
+
+
+
+
+  <title>Linux宝典 | 人工智能</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人工智能</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人工智能与智能财务的结合</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://770690988.github.io/blog.github.io/2022/04/24/Linux%E5%AE%9D%E5%85%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人工智能">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux宝典</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-24T21:55:32+08:00">
+                2022-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">软件学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2022/04/24/Linux%E5%AE%9D%E5%85%B8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2022/04/24/Linux%E5%AE%9D%E5%85%B8/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Linux个人宝典资料合集"><a href="#Linux个人宝典资料合集" class="headerlink" title="Linux个人宝典资料合集"></a>Linux个人宝典资料合集</h1><ul>
+<li>学习路线</li>
+</ul>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/11/28f48e366401c7cf.png" alt="img"></p>
+<h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><h3 id="内建命令与外部命令"><a href="#内建命令与外部命令" class="headerlink" title="内建命令与外部命令"></a>内建命令与外部命令</h3><blockquote>
+<p><strong>内建命令</strong>实际上是 shell 程序的一部分，其中包含的是一些比较简单的 Linux 系统命令，这些命令是写在 bash 源码的 builtins 里面的，由 shell 程序识别并在 shell 程序内部完成运行，通常在 Linux 系统加载运行时 shell 就被加载并驻留在系统内存中。而且解析内部命令 shell 不需要创建子进程，因此其执行速度比外部命令快。比如：history、cd、exit 等等。</p>
+<p>可以用help + 命令来看所有内建命令的帮助信息</p>
+</blockquote>
+<blockquote>
+<p><strong>外部命令</strong>是 Linux 系统中的实用程序部分，因为实用程序的功能通常都比较强大，所以其包含的程序量也会很大，在系统加载时并不随系统一起被加载到内存中，而是在需要时才将其调入内存。虽然其不包含在 shell 中，但是其命令执行过程是由 shell 程序控制的。外部命令是在 Bash 之外额外安装的，通常放在&#x2F;bin，&#x2F;usr&#x2F;bin，&#x2F;sbin，&#x2F;usr&#x2F;sbin 等等。比如：ls、vi 等。</p>
+<p>可以用命令 + –help 来获取外部命令的帮助信息</p>
+</blockquote>
+<p>用于区分类型的命令为：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> <span class="built_in">exit</span></span><br><span class="line"><span class="built_in">type</span> vim</span><br><span class="line"><span class="built_in">type</span> <span class="built_in">ls</span></span><br><span class="line">/*</span><br><span class="line"><span class="comment">#得到这样的结果说明是内建命令，正如上文所说内建命令都是在 bash 源码中的 builtins 的.def中</span></span><br><span class="line">xxx is a shell <span class="built_in">builtin</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#得到这样的结果说明是外部命令，正如上文所说，外部命令在/usr/bin or /usr/sbin等等中</span></span><br><span class="line">xxx is /usr/bin/xxx</span><br><span class="line"></span><br><span class="line"><span class="comment">#若是得到alias的结果，说明该指令为命令别名所设定的名称；</span></span><br><span class="line">xxx is an <span class="built_in">alias</span> <span class="keyword">for</span> xx --xxx</span><br><span class="line">*</span><br></pre></td></tr></table></figure>
+
+<h3 id="FHS标准"><a href="#FHS标准" class="headerlink" title="FHS标准"></a>FHS标准</h3><blockquote>
+<p>FHS（英文：Filesystem Hierarchy Standard 中文：文件系统层次结构标准），多数 Linux 版本采用这种文件组织形式，FHS 定义了系统中每个区域的用途、所需要的最小构成的文件和目录同时还给出了例外处理与矛盾处理。</p>
+</blockquote>
+<p><img src="https://i.bmp.ovh/imgs/2021/04/c6f535136315b734.png" alt="img"></p>
+<p>关于上面提到的 FHS，这里还有个很重要的内容你一定要明白，FHS 是根据以往无数 Linux 用户和开发者的经验总结出来的，并且会维持更新，FHS 依据文件系统使用的频繁与否以及是否允许用户随意改动（注意，不是不能，学习过程中，不要怕这些），将目录定义为四种交互作用的形态，如下表所示：</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/11/c21e44019e785e84.png" alt="img"></p>
+<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><p> Linux 默认提供了三个特殊设备，用于终端的显示和输出，分别为<code>stdin</code>（标准输入,对应于你在终端的输入），<code>stdout</code>（标准输出，对应于终端的输出），<code>stderr</code>（标准错误输出，对应于终端的输出）。</p>
+<table>
+<thead>
+<tr>
+<th>文件描述符</th>
+<th>设备文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>0</code></td>
+<td><code>/dev/stdin</code></td>
+<td>标准输入</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>/dev/stdout</code></td>
+<td>标准输出</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>/dev/stderr</code></td>
+<td>标准错误</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>文件描述符：文件描述符在形式上是一个非负整数。实际上，它是一个索引值，指向内核为每一个进程所维护的该进程打开文件的记录表。当程序打开一个现有文件或者创建一个新文件时，内核向进程返回一个文件描述符。在程序设计中，一些涉及底层的程序编写往往会围绕着文件描述符展开。但是文件描述符这一概念往往只适用于 UNIX、Linux 这样的操作系统。</p>
+</blockquote>
+<h4 id="标准输出-重定向符-gt-gt-gt-lt-lt-lt"><a href="#标准输出-重定向符-gt-gt-gt-lt-lt-lt" class="headerlink" title="标准输出 | 重定向符 &gt;,&gt;&gt;,&lt;,&lt;&lt;"></a>标准输出 | 重定向符 &gt;,&gt;&gt;,&lt;,&lt;&lt;</h4><p><em>&gt;会覆盖目标的原有内容。当文件存在时会先删除原文件，再重新创建文件，然后把内容写入该文件；否则直接创建文件</em>。</p>
+<p><em>&gt;&gt;会在目标原有内容后追加内容。当文件存在时直接在文件末尾进行内容追加，不会删除原文件；否则直接创建文件。</em></p>
+<h4 id="标准错误的重定向"><a href="#标准错误的重定向" class="headerlink" title="标准错误的重定向"></a>标准错误的重定向</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将标准错误重定向到标准输出，再将标准输出重定向到文件，注意要将重定向到文件写到前面</span></span><br><span class="line"><span class="built_in">cat</span> Documents/test.c hello.c &gt;somefile  2&gt;&amp;1</span><br><span class="line"><span class="comment"># 或者只用bash提供的特殊的重定向符号&quot;&amp;&quot;将标准错误和标准输出同时重定向到文件</span></span><br><span class="line"><span class="built_in">cat</span> Documents/test.c hello.c &amp;&gt;somefilehell</span><br></pre></td></tr></table></figure>
+
+<h4 id="永久重定向"><a href="#永久重定向" class="headerlink" title="永久重定向"></a>永久重定向</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先开启一个子 Shell</span></span><br><span class="line">zsh</span><br><span class="line"><span class="comment"># 使用exec替换当前进程的重定向，将标准输出重定向到一个文件</span></span><br><span class="line"><span class="built_in">exec</span> 1&gt;somefile</span><br><span class="line"><span class="comment"># 后面你执行的命令的输出都将被重定向到文件中,直到你退出当前子shell，或取消exec的重定向（后面将告诉你怎么做）</span></span><br><span class="line"><span class="built_in">ls</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="built_in">cat</span> somefile</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.bmp.ovh/imgs/2022/05/17/ceec156ad37d5b64.png" alt="样例"></p>
+<h4 id="创建输出文件描述符"><a href="#创建输出文件描述符" class="headerlink" title="创建输出文件描述符"></a>创建输出文件描述符</h4><p>在 Shell 中有 9 个文件描述符。上面我们使用了也是它默认提供的 0,1,2 号文件描述符。另外我们还可以使用 3-8 的文件描述符，只是它们默认没有打开而已。你可以使用下面命令查看当前 Shell 进程中打开的文件描述符：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /dev/fd/</span><br><span class="line"><span class="built_in">ls</span> -Al</span><br></pre></td></tr></table></figure>
+
+<p>同样使用<code>exec</code>命令可以创建新的文件描述符</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">zsh</span><br><span class="line"><span class="built_in">exec</span> 3&gt;somefile</span><br><span class="line"><span class="comment"># 先进入目录，再查看，否则你可能不能得到正确的结果，然后再回到上一次的目录</span></span><br><span class="line"><span class="built_in">cd</span> /dev/fd/;<span class="built_in">ls</span> -Al;<span class="built_in">cd</span> -</span><br><span class="line"><span class="comment"># 注意下面的命令&gt;与&amp;之间不应该有空格，如果有空格则会出错</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;this is test&quot;</span> &gt;&amp;3</span><br><span class="line"><span class="built_in">cat</span> somefile</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="关闭文件描述符"><a href="#关闭文件描述符" class="headerlink" title="关闭文件描述符"></a>关闭文件描述符</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exec</span> 3&gt;&amp;-</span><br><span class="line"><span class="built_in">cd</span> /dev/fd;<span class="built_in">ls</span> -Al;<span class="built_in">cd</span> -</span><br></pre></td></tr></table></figure>
+
+<h4 id="完全屏蔽命令的输出"><a href="#完全屏蔽命令的输出" class="headerlink" title="完全屏蔽命令的输出"></a>完全屏蔽命令的输出</h4><p>我们可以利用<code>/dev/null</code>屏蔽命令的输出：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> Documents/test.c 1&gt;/dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<p>上面这样的操作将使你得不到任何输出结果。</p>
+<h3 id="组合命令小要点"><a href="#组合命令小要点" class="headerlink" title="组合命令小要点"></a>组合命令小要点</h3><h4 id="顺序执行多条命令"><a href="#顺序执行多条命令" class="headerlink" title="顺序执行多条命令"></a>顺序执行多条命令</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"><span class="comment"># 等待——————————然后输入下面的命令</span></span><br><span class="line">sudo apt-get install some-tool //这里some-tool是指具体的软件包</span><br><span class="line"><span class="comment"># 等待——————————然后输入下面的命令</span></span><br><span class="line">some-tool</span><br></pre></td></tr></table></figure>
+
+<p>将上述命令转化成一次性输入完</p>
+<h5 id="全部执行"><a href="#全部执行" class="headerlink" title="全部执行"></a>全部执行</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update;sudo apt-get install some-tool;some-tool</span><br><span class="line"><span class="comment"># 让它自己运行</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="有选择的执行"><a href="#有选择的执行" class="headerlink" title="有选择的执行"></a>有选择的执行</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> cowsay&gt;/dev/null &amp;&amp; cowsay -f head-in ohch~</span><br><span class="line"><span class="comment"># 上面的&amp;&amp;就是用来实现选择性执行的，它表示如果前面的命令执行结果（不是表示终端输出的内容，而是表示命令执行状态的结果）返回 0 则执行后面的，否则不执行，你可以从$?环境变量获取上一次命令的返回结果：</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">which</span> cowsay&gt;/dev/null &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;exist&quot;</span> || <span class="built_in">echo</span> <span class="string">&quot;not exist&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>可以从<code>$?</code>环境变量获取上一次命令的返回结果：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> $?</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.bmp.ovh/imgs/2022/05/17/f04098fd59c0a8dc.png" alt="流程图"></p>
+<h4 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h4><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h4 id="查看版本内核"><a href="#查看版本内核" class="headerlink" title="查看版本内核"></a>查看版本内核</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /etc/redhat-release</span><br><span class="line"><span class="built_in">cat</span> /etc/issue</span><br><span class="line"><span class="built_in">uname</span> -r</span><br></pre></td></tr></table></figure>
+
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h4><h5 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a>man命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+<p>man命令的章节说明</p>
+<table>
+<thead>
+<tr>
+<th>章节数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>1</code></td>
+<td>Standard commands （标准命令）</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>System calls （系统调用）</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>Library functions （库函数）</td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td>Special devices （设备说明）</td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td>File formats （文件格式）</td>
+</tr>
+<tr>
+<td><code>6</code></td>
+<td>Games and toys （游戏和娱乐）</td>
+</tr>
+<tr>
+<td><code>7</code></td>
+<td>Miscellaneous （杂项）</td>
+</tr>
+<tr>
+<td><code>8</code></td>
+<td>Administrative Commands （管理员命令）</td>
+</tr>
+<tr>
+<td><code>9</code></td>
+<td>其他（Linux 特定的）， 用来存放内核例行程序的文档。</td>
+</tr>
+</tbody></table>
+<p>打开手册之后我们可以通过 pgup 与 pgdn 或者上下键来上下翻看，可以按 q 退出当前页面</p>
+<h5 id="info命令"><a href="#info命令" class="headerlink" title="info命令"></a>info命令</h5><ul>
+<li>命令<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 info</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install info</span><br><span class="line"><span class="comment"># 查看 ls 命令的 info</span></span><br><span class="line">info <span class="built_in">ls</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><h5 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h5><ol>
+<li>复制文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> <span class="built_in">test</span> father/son/grandson <span class="comment">#将之前创建的 test 文件复制到 /home/shiyanlou/father/son/grandson 目录中</span></span><br></pre></td></tr></table></figure></li>
+<li>复制目录<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line"><span class="built_in">mkdir</span> family</span><br><span class="line"><span class="built_in">cp</span> -r father family</span><br><span class="line"><span class="comment">#要成功复制目录需要加上 -r 或者 -R 参数，表示递归复制，就是说有点目录及其下面的子目录层层进入复制的意思：</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h5><ul>
+<li>删除文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> <span class="built_in">test</span></span><br><span class="line"><span class="comment">#删除一个文件</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">rm</span> -f <span class="built_in">test</span></span><br><span class="line"><span class="comment">#为了忽略删除只读文件的权限，可以直接使用-f参数强制删除</span></span><br></pre></td></tr></table></figure></li>
+<li>删除目录<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> -r family</span><br><span class="line"><span class="comment"># 同复制目录一样，要删除一个目录也要加上一个-r或者-R参数 权限不足的时候也可以加上-f强制删除</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h5><ul>
+<li>移动文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> Documents</span><br><span class="line"><span class="built_in">touch</span> file1</span><br><span class="line"><span class="built_in">mv</span> file1 Documents</span><br><span class="line"><span class="comment"># 将文件“ file1 ”移动到 Documents 目录</span></span><br></pre></td></tr></table></figure></li>
+<li>重命名文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> file1 myfile</span><br><span class="line"><span class="comment">#file1为旧文件名 myfile为新文件名</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="rename命令"><a href="#rename命令" class="headerlink" title="rename命令"></a>rename命令</h5><p><code>rename</code> 命令并不是内置命令，若提示无该命令可以使用 <code>sudo apt-get install rename</code> 命令自行安装。</p>
+<ul>
+<li>批量重命名<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用通配符批量创建 5 个文件:</span></span><br><span class="line"><span class="built_in">touch</span> file&#123;1..5&#125;.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 批量将这 5 个后缀为 .txt 的文本文件重命名为以 .c 为后缀的文件:</span></span><br><span class="line">rename <span class="string">&#x27;s/\.txt/\.c/&#x27;</span> *.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 批量将这 5 个文件，文件名和后缀改为大写:</span></span><br><span class="line">rename <span class="string">&#x27;y/a-z/A-Z/&#x27;</span> *.c</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="cat命令与tac命令"><a href="#cat命令与tac命令" class="headerlink" title="cat命令与tac命令"></a>cat命令与tac命令</h5><p>前两个命令都是用来打印文件内容到标准输出（终端），其中 <code>cat</code> 为正序显示，<code>tac</code> 为倒序显示。</p>
+<blockquote>
+<p>标准输入输出：当我们执行一个 shell 命令行时通常会自动打开三个标准文件，即标准输入文件（stdin），默认对应终端的键盘、标准输出文件（stdout）和标准错误输出文件（stderr），后两个文件都对应被重定向到终端的屏幕，以便我们能直接看到输出内容。进程将从标准输入文件中得到输入数据，将正常输出数据输出到标准输出文件，而将错误信息送到标准错误文件中。</p>
+</blockquote>
+<ul>
+<li>查看文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line"><span class="built_in">cp</span> /etc/passwd passwd</span><br><span class="line"><span class="built_in">cat</span> passwd</span><br><span class="line"><span class="built_in">cat</span> -n passwd <span class="comment">#加上-n显示行号</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="nl命令"><a href="#nl命令" class="headerlink" title="nl命令"></a>nl命令</h5><p>添加行号并打印，这是个比 <code>cat -n</code> 更专业的行号打印命令。</p>
+<blockquote>
+<p>-b : 指定添加行号的方式，主要有两种：    </p>
+<p>​        -b a:表示无论是否为空行，同样列出行号(“cat -n”就是这种方式)    </p>
+<p>​        -b t:只列出非空行的编号并列出（默认为这种方式） </p>
+<p>-n : 设置行号的样式，主要有三种：    </p>
+<p>​        -n ln:在行号字段最左端显示    </p>
+<p>​        -n rn:在行号字段最右边显示，且不加 0    </p>
+<p>​        -n rz:在行号字段最右边显示，且加 0 -w : 行号字段占用的位数(默认为 6 位)</p>
+</blockquote>
+<h5 id="more命令与less命令"><a href="#more命令与less命令" class="headerlink" title="more命令与less命令"></a>more命令与less命令</h5><p>其中 <code>more</code> 命令比较简单，只能向一个方向滚动，而 <code>less</code> 为基于 <code>more</code> 和 <code>vi</code> （一个强大的编辑器，我们有单独的课程来让你学习）开发，功能更强大。<code>less</code> 的使用基本和 <code>more</code> 一致</p>
+<ul>
+<li>查看文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more passwd</span><br></pre></td></tr></table></figure>
+
+打开后默认只显示一屏内容，终端底部显示当前阅读的进度。可以使用 <code>Enter</code> 键向下滚动一行，使用 <code>Space</code> 键向下滚动一屏，按下 <code>h</code> 显示帮助，<code>q</code> 退出。</li>
+</ul>
+<h5 id="head命令与tail命令"><a href="#head命令与tail命令" class="headerlink" title="head命令与tail命令"></a>head命令与tail命令</h5><ul>
+<li>查看文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tail</span> /etc/passwd</span><br></pre></td></tr></table></figure></li>
+<li>查看文件后几行<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tail</span> -n 1 /etc/passwd</span><br><span class="line"><span class="comment"># 加上 -n 参数，后面紧跟行数</span></span><br><span class="line"><span class="comment"># -f可以动态查看日志，做到监视的目的</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="file命令"><a href="#file命令" class="headerlink" title="file命令"></a>file命令</h5><ul>
+<li>查看文件类型<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file /bin/ls</span><br></pre></td></tr></table></figure>
+
+ps Linux中的文件类型不是通过后缀来区分的，而是依照文件的内容进行处理</li>
+</ul>
+<h5 id="whereis命令"><a href="#whereis命令" class="headerlink" title="whereis命令"></a>whereis命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">whereis <span class="built_in">who</span></span><br><span class="line">whereis find</span><br></pre></td></tr></table></figure>
+
+<p><code>whereis</code> 只能搜索二进制文件(-b)，man 帮助文件(-m)和源代码文件(-s)。如果想要获得更全面的搜索结果可以使用 <code>locate</code> 命令。</p>
+<h5 id="locate命令"><a href="#locate命令" class="headerlink" title="locate命令"></a>locate命令</h5><p>使用 <code>locate</code> 命令查找文件也不会遍历硬盘，它通过查询 <code>/var/lib/mlocate/mlocate.db</code> 数据库来检索信息。不过这个数据库也不是实时更新的，系统会使用定时任务每天自动执行 <code>updatedb</code> 命令来更新数据库。所以有时候你刚添加的文件，它可能会找不到，需要手动执行一次 <code>updatedb</code> 命令（在我们的环境中必须先执行一次该命令）。注意这个命令也不是内置的命令，例如在我们的环境中就需要手动安装，然后执行更新。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install locate</span><br><span class="line">sudo updatedb</span><br></pre></td></tr></table></figure>
+
+<p>它可以用来查找指定目录下的不同文件类型</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locate /etc/sh</span><br><span class="line"><span class="comment"># 注意，它不只是在 /etc 目录下查找，还会自动递归子目录进行查找。</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查找 &#x2F;usr&#x2F;share&#x2F; 下所有 jpg 文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locate /usr/share/\*.jpg</span><br><span class="line"><span class="comment"># *号前面的反斜杠转义一定要添加，否则无法找到</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="which命令"><a href="#which命令" class="headerlink" title="which命令"></a>which命令</h5><p><code>which</code> 本身是 Shell 内建的一个命令，我们通常使用 <code>which</code> 来确定是否安装了某个指定的程序，因为它只从 <code>PATH</code> 环境变量指定的路径中去搜索命令并且返回第一个搜索到的结果。也就是说，我们可以看到某个系统命令是否存在以及执行的到底是哪一个地方的命令。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> man</span><br><span class="line"><span class="built_in">which</span> nginx</span><br><span class="line"><span class="built_in">which</span> ping</span><br></pre></td></tr></table></figure>
+
+<h5 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h5><p><code>find</code> 应该是这几个命令中最强大的了，它不但可以通过文件类型、文件名进行查找而且可以根据文件的属性（如文件的时间戳，文件的权限等）进行搜索。<code>find</code> 命令强大到，要把它讲明白至少需要单独好几节课程才行，我们这里只介绍一些常用的内容。</p>
+<ul>
+<li>语法<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find [path][option] [action] </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="tee命令"><a href="#tee命令" class="headerlink" title="tee命令"></a>tee命令</h5><p>在标准输出到屏幕不变的情况下保存在文件中</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;Hello World!&#x27;</span> | <span class="built_in">tee</span> filename</span><br></pre></td></tr></table></figure>
+
+<h5 id="tree命令"><a href="#tree命令" class="headerlink" title="tree命令"></a>tree命令</h5><h4 id="目录路径"><a href="#目录路径" class="headerlink" title="目录路径"></a>目录路径</h4><h5 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">cd</span> ~ <span class="comment">#进入home目录 # 或者 cd /home/&lt;你的用户名&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绝对路径</span></span><br><span class="line"><span class="built_in">cd</span> /usr/local/bin</span><br><span class="line"><span class="comment"># 相对路径</span></span><br><span class="line"><span class="built_in">cd</span> ../../usr/local/bin</span><br><span class="line"><span class="comment">#提示：在进行目录切换的过程中请多使用 Tab 键自动补全，可避免输入错误，连续按两次 Tab 可以显示全部候选结果。</span></span><br></pre></td></tr></table></figure>
+
+<p>这个命令可以看到路径下的树结构</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tree /</span><br><span class="line">/*</span><br><span class="line">如果没有安装那么需要先 sudo apt-get install tree (先update)</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<p><img src="/linuxMenu.png" alt="img"></p>
+<h5 id="cp命令-1"><a href="#cp命令-1" class="headerlink" title="cp命令"></a>cp命令</h5><ol>
+<li>复制文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> <span class="built_in">test</span> father/son/grandson <span class="comment">#将之前创建的 test 文件复制到 /home/shiyanlou/father/son/grandson 目录中</span></span><br></pre></td></tr></table></figure></li>
+<li>复制目录<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line"><span class="built_in">mkdir</span> family</span><br><span class="line"><span class="built_in">cp</span> -r father family</span><br><span class="line"><span class="comment">#要成功复制目录需要加上 -r 或者 -R 参数，表示递归复制，就是说有点目录及其下面的子目录层层进入复制的意思：</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h5><p>获取当前路径</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span> <span class="comment">#获取当前路径</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h5><p>新建目录</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> mydir <span class="comment">#当前路径下创建mydir目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p father/son/grandson</span><br><span class="line"><span class="comment"># 这里需要注意到-p参数可以同时创建一个多级目录，即便不存在父目录也是可以的</span></span><br></pre></td></tr></table></figure>
+
+<p>还有一点需要注意的是，若当前目录已经创建了一个 test 文件，再使用 <code>mkdir test</code> 新建同名的文件夹，系统会报错文件已存在。这符合 Linux 一切介文件的理念。</p>
+<p>若当前目录存在一个 test 文件夹，则 <code>touch</code> 命令，则会更改该文件夹的时间戳而不是新建文件。</p>
+<h4 id="文本命令（文本编辑三剑客）"><a href="#文本命令（文本编辑三剑客）" class="headerlink" title="文本命令（文本编辑三剑客）"></a>文本命令（文本编辑三剑客）</h4><h5 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h5><h5 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h5><h5 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h5><h5 id="cut"><a href="#cut" class="headerlink" title="* cut"></a>* cut</h5><h4 id="文件打包压缩"><a href="#文件打包压缩" class="headerlink" title="文件打包压缩"></a>文件打包压缩</h4><p>压缩文件说明</p>
+<table>
+<thead>
+<tr>
+<th>文件后缀名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*.zip</code></td>
+<td>zip 程序打包压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.rar</code></td>
+<td>rar 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.7z</code></td>
+<td>7zip 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.tar</code></td>
+<td>tar 程序打包，未压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.gz</code></td>
+<td>gzip 程序（GNU zip）压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.xz</code></td>
+<td>xz 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.bz2</code></td>
+<td>bzip2 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.tar.gz</code></td>
+<td>tar 打包，gzip 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.tar.xz</code></td>
+<td>tar 打包，xz 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*tar.bz2</code></td>
+<td>tar 打包，bzip2 程序压缩的文件</td>
+</tr>
+<tr>
+<td><code>*.tar.7z</code></td>
+<td>tar 打包，7z 程序压缩的文件</td>
+</tr>
+</tbody></table>
+<h5 id="zip命令"><a href="#zip命令" class="headerlink" title="zip命令"></a>zip命令</h5><ul>
+<li>打包文件夹<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zip -r -q -o shiyanlou.zip /home/shiyanlou/Desktop</span><br><span class="line"><span class="built_in">du</span> -h shiyanlou.zip</span><br><span class="line">file shiyanlou.zip</span><br><span class="line"><span class="comment">#上面命令将目录 /home/shiyanlou/Desktop 打包成一个文件，并查看了打包后文件的大小和类型。第一行命令中，-r 参数表示递归打包包含子目录的全部内容，-q 参数表示为安静模式，即不向屏幕输出信息，-o，表示输出文件，需在其后紧跟打包输出文件名。后面使用 du 命令查看打包后文件的大小（后面会具体说明该命令）。</span></span><br></pre></td></tr></table></figure></li>
+<li>设置压缩级别为 9 和 1（9 最大，1 最小），重新打包<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zip -r -9 -q -o shiyanlou_9.zip /home/shiyanlou/Desktop -x ~/*.zip</span><br><span class="line">zip -r -1 -q -o shiyanlou_1.zip /home/shiyanlou/Desktop -x ~/*.zip</span><br><span class="line"><span class="comment">#这里添加了一个参数用于设置压缩级别 -[1-9]，1 表示最快压缩但体积大，9 表示体积最小但耗时最久。最后那个 -x 是为了排除我们上一次创建的 zip 文件，否则又会被打包进这一次的压缩文件中，注意：这里只能使用绝对路径，否则不起作用。</span></span><br></pre></td></tr></table></figure></li>
+<li>创建加密zip包<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip -r -e -o shiyanlou_encryption.zip /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#使用 -e 参数可以创建加密压缩包</span></span><br></pre></td></tr></table></figure></li>
+<li>windows适配<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip -r -l -o shiyanlou.zip /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#需要加上 -l 参数将 LF 转换为 CR+LF 来达到以上目的。</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="unzip命令"><a href="#unzip命令" class="headerlink" title="unzip命令"></a>unzip命令</h5><ul>
+<li>解压命令<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip shiyanlou.zip</span><br></pre></td></tr></table></figure></li>
+<li>使用安静模式，将文件解压到指定目录：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip -q shiyanlou.zip -d ziptest</span><br><span class="line"><span class="comment"># -q表示安静模式 -d表示文件解压的指定目录，如果上述目录不存在，将会自动创建</span></span><br></pre></td></tr></table></figure></li>
+<li>查看压缩包内的内容<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip -l shiyanlou.zip</span><br><span class="line"><span class="comment"># -l参数可以查看压缩包的内容</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>PS</p>
+<p><strong>注意：</strong> 使用 unzip 解压文件时我们同样应该注意兼容问题，不过这里我们关心的不再是上面的问题，而是中文编码的问题，通常 Windows 系统上面创建的压缩文件，如果有有包含中文的文档或以中文作为文件名的文件时默认会采用 GBK 或其它编码，而 Linux 上面默认使用的是 UTF-8 编码，如果不加任何处理，直接解压的话可能会出现中文乱码的问题（有时候它会自动帮你处理），为了解决这个问题，我们可以在解压时指定编码类型。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -O GBK 中文压缩文件.zip</span><br></pre></td></tr></table></figure>
+
+<h5 id="du命令"><a href="#du命令" class="headerlink" title="du命令"></a>du命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">du</span> -h -d 0 *.zip ~ | <span class="built_in">sort</span></span><br><span class="line"><span class="comment"># h， --human-readable（顾名思义，你可以试试不加的情况）</span></span><br><span class="line"><span class="comment"># d， --max-depth（所查看文件的深度）</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h5><p>在 Linux 上面更常用的是 <code>tar</code> 工具，tar 原本只是一个打包工具，只是同时还是实现了对 7z、gzip、xz、bzip2 等工具的支持，这些压缩工具本身只能实现对文件或目录（单独压缩目录中的文件）的压缩，没有实现对文件的打包压缩，所以我们也无需再单独去学习其他几个工具，tar 的解压和压缩都是同一个命令，只需参数不同，使用比较方便。</p>
+<ul>
+<li>创建一个tar包<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/shiyanlou</span><br><span class="line">tar -P -cf shiyanlou.tar /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment">#上面命令中，-P 保留绝对路径符，-c 表示创建一个 tar 包文件，-f 用于指定创建的文件名，注意文件名必须紧跟在 -f 参数之后，比如不能写成 tar -fc shiyanlou.tar，可以写成 tar -f shiyanlou.tar -c ~。你还可以加上 -v 参数以可视的的方式输出打包的文件。</span></span><br></pre></td></tr></table></figure></li>
+<li>解包一个文件到指定路径的已存在目录<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> tardir</span><br><span class="line">tar -xf shiyanlou.tar -C tardir</span><br><span class="line"><span class="comment">#  -x 参数 解包  -C参数 已存在路径</span></span><br></pre></td></tr></table></figure></li>
+<li>只查看不解包文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -tf shiyanlou.tar</span><br><span class="line"><span class="comment"># -t参数</span></span><br></pre></td></tr></table></figure></li>
+<li>解包时保留文件属性和跟随链接（符号链接或软链接）<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -cphf etc.tar /etc</span><br><span class="line"><span class="comment"># -p 保留文件的属性  -h 备份链接指向的源文件而不是链接本身</span></span><br></pre></td></tr></table></figure></li>
+<li>对其他压缩文件格式解压<table>
+<thead>
+<tr>
+<th>压缩文件格式</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*.tar.gz</code></td>
+<td><code>-z</code></td>
+</tr>
+<tr>
+<td><code>*.tar.xz</code></td>
+<td><code>-J</code></td>
+</tr>
+<tr>
+<td><code>*tar.bz2</code></td>
+<td><code>-j</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li>创建tar.gz文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -czf shiyanlou.tar.gz /home/shiyanlou/Desktop</span><br><span class="line"><span class="comment"># 这里的-z就是表示为gz文件</span></span><br></pre></td></tr></table></figure></li>
+<li>解压 <code>*.tar.gz</code>文件<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzf shiyanlou.tar.gz</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="组合命令"><a href="#组合命令" class="headerlink" title="组合命令"></a>组合命令</h4><h5 id="cut命令"><a href="#cut命令" class="headerlink" title="cut命令"></a>cut命令</h5><p>打印<code>/etc/passwd</code>文件中以<code>:</code>为分隔符的第 1 个字段和第 6 个字段分别表示用户名和其家目录：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cut</span> /etc/passwd -d <span class="string">&#x27;:&#x27;</span> -f 1,6</span><br></pre></td></tr></table></figure>
+
+<p>打印<code>/etc/passwd</code>文件中每一行的前 N 个字符：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前五个（包含第五个）</span></span><br><span class="line">$ <span class="built_in">cut</span> /etc/passwd -c -5</span><br><span class="line"><span class="comment"># 前五个之后的（包含第五个）</span></span><br><span class="line">$ <span class="built_in">cut</span> /etc/passwd -c 5-</span><br><span class="line"><span class="comment"># 第五个</span></span><br><span class="line">$ <span class="built_in">cut</span> /etc/passwd -c 5</span><br><span class="line"><span class="comment"># 2到5之间的（包含第五个）</span></span><br><span class="line">$ <span class="built_in">cut</span> /etc/passwd -c 2-5</span><br></pre></td></tr></table></figure>
+
+<h5 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h5><p>结合正则表达式可以实现很复杂却很高效的匹配和查找</p>
+<h6 id="一般形式"><a href="#一般形式" class="headerlink" title="一般形式"></a>一般形式</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep [命令选项]... 用于匹配的表达式 [文件]...</span><br></pre></td></tr></table></figure>
+
+<p>搜索<code>/home/shiyanlou</code>目录下所有包含”shiyanlou”的文本文件，并显示出现在文本中的行号：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ grep -rnI <span class="string">&quot;shiyanlou&quot;</span> ~</span><br><span class="line"><span class="comment"># -r 参数表示递归搜索子目录中的文件</span></span><br><span class="line"><span class="comment"># -n表示打印匹配项行号</span></span><br><span class="line"><span class="comment"># -I表示忽略二进制文件</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2022/04/24/Linux%E5%AE%9D%E5%85%B8/grepShow.png" alt="grepShow"></p>
+<p>匹配字段中使用正则表达式</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看环境变量中以&quot;yanlou&quot;结尾的字符串</span></span><br><span class="line"><span class="variable">$</span> export | grep <span class="string">&quot;.*yanlou<span class="variable">$</span>&quot;</span></span><br><span class="line"><span class="comment"># $表示一行的末尾</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="wc命令"><a href="#wc命令" class="headerlink" title="wc命令"></a>wc命令</h5><p>统计并输出一个文件中行、单词和字节的数目，比如输出<code>/etc/passwd</code>文件的统计信息:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">wc</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>分别只输出行数、单词数、字节数、字符数和输入文本中最长一行的字节数：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 行数</span></span><br><span class="line">$ <span class="built_in">wc</span> -l /etc/passwd</span><br><span class="line"><span class="comment"># 单词数</span></span><br><span class="line">$ <span class="built_in">wc</span> -w /etc/passwd</span><br><span class="line"><span class="comment"># 字节数</span></span><br><span class="line">$ <span class="built_in">wc</span> -c /etc/passwd</span><br><span class="line"><span class="comment"># 字符数</span></span><br><span class="line">$ <span class="built_in">wc</span> -m /etc/passwd</span><br><span class="line"><span class="comment"># 最长行字节数</span></span><br><span class="line">$ <span class="built_in">wc</span> -L /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<h5 id="xargs命令"><a href="#xargs命令" class="headerlink" title="xargs命令"></a>xargs命令</h5><blockquote>
+<p>xargs 是一条 UNIX 和类 UNIX 操作系统的常用命令。它的作用是将参数列表转换成小块分段传递给其他命令，以避免参数列表过长的问题。</p>
+</blockquote>
+<p>处理产生大量输出结果的命令如 find，locate 和 grep 的结果</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> cut <span class="literal">-d</span>: <span class="literal">-f1</span> &lt; /etc/passwd | <span class="built_in">sort</span> | xargs <span class="built_in">echo</span></span><br><span class="line"><span class="comment"># 将/etc/passwd文件按:分割取第一个字段排序后，使用echo命令生成一个列表</span></span><br></pre></td></tr></table></figure>
+
+<p>PS</p>
+<p><strong>注意：对于西文字符来说，一个字符就是一个字节，但对于中文字符一个汉字是大于 2 个字节的，具体数目是由字符编码决定的</strong></p>
+<p><img src="https://doc.shiyanlou.com/document-uid735639labid63timestamp1532414808838.png" alt="此处输入图片的描述"></p>
+<p>结合管道，统计 &#x2F;etc 下面所有目录数：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> -dl /etc/*/ | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/document-uid600404labid6125timestamp1523946094712.png" alt="此处输入图片的描述"></p>
+<h5 id="sort命令"><a href="#sort命令" class="headerlink" title="sort命令"></a>sort命令</h5><p>将输入按照一定方式排序，然后再输出</p>
+<p>支持的排序：按字典排序，数字排序，按月份排序，随机排序，反转排序，指定特定字段进行排序等等</p>
+<p>字典排序&#x2F;反转排序&#x2F;按特定字段排序：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /etc/passwd | <span class="built_in">sort</span></span><br><span class="line">$ <span class="built_in">cat</span> /etc/passwd | <span class="built_in">sort</span> -r</span><br><span class="line">$ <span class="built_in">cat</span> /etc/passwd | <span class="built_in">sort</span> -t<span class="string">&#x27;:&#x27;</span> -k 3</span><br><span class="line"><span class="comment"># -t参数用于指定字段的分隔符，这里是以&quot;:&quot;作为分隔符</span></span><br><span class="line"><span class="comment"># -k [字段号] 用于指定对哪一个字段进行排序</span></span><br></pre></td></tr></table></figure>
+
+<p>这里<code>/etc/passwd</code>文件的第三个字段为数字，默认情况下是以字典序排序的，如果要按照数字排序就要加上<code>-n</code>参数：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /etc/passwd | <span class="built_in">sort</span> -t<span class="string">&#x27;:&#x27;</span> -k 3 -n</span><br></pre></td></tr></table></figure>
+
+<p>注意观察第二个冒号后的数字：</p>
+<p><img src="https://doc.shiyanlou.com/document-uid735639labid63timestamp1532414849333.png" alt="此处输入图片的描述"></p>
+<h5 id="uniq命令"><a href="#uniq命令" class="headerlink" title="uniq命令"></a>uniq命令</h5><p>过滤或者输出重复行</p>
+<h6 id="过滤重复行"><a href="#过滤重复行" class="headerlink" title="过滤重复行"></a>过滤重复行</h6><p>使用<code>history</code>命令查看最近执行过的命令（实际为读取${SHELL}_history 文件,如我们环境中的~&#x2F;.zsh_history 文件），去掉命令后面的参数然后去掉重复的命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">history</span> | <span class="built_in">cut</span> -c 8- | <span class="built_in">cut</span> -d <span class="string">&#x27; &#x27;</span> -f 1 | <span class="built_in">uniq</span></span><br></pre></td></tr></table></figure>
+
+<p>去重效果不明显——<strong>因为<code>uniq</code>命令只能去连续重复的行，不是全文去重</strong></p>
+<p>要达到预期效果，我们先排序：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">history</span> | <span class="built_in">cut</span> -c 8- | <span class="built_in">cut</span> -d <span class="string">&#x27; &#x27;</span> -f 1 | <span class="built_in">sort</span> | <span class="built_in">uniq</span></span><br><span class="line"><span class="comment"># 或者$ history | cut -c 8- | cut -d &#x27; &#x27; -f 1 | sort -u</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="输出重复行"><a href="#输出重复行" class="headerlink" title="输出重复行"></a>输出重复行</h6><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出重复过的行（重复的只输出一个）及重复次数</span></span><br><span class="line"><span class="built_in">history</span> | cut <span class="literal">-c</span> <span class="number">8</span>- | cut <span class="literal">-d</span> <span class="string">&#x27; &#x27;</span> <span class="operator">-f</span> <span class="number">1</span> | <span class="built_in">sort</span> | uniq <span class="literal">-dc</span></span><br><span class="line"><span class="comment"># 输出所有重复的行</span></span><br><span class="line"><span class="built_in">history</span> | cut <span class="literal">-c</span> <span class="number">8</span>- | cut <span class="literal">-d</span> <span class="string">&#x27; &#x27;</span> <span class="operator">-f</span> <span class="number">1</span> | <span class="built_in">sort</span> | uniq <span class="literal">-D</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="定时服务"><a href="#定时服务" class="headerlink" title="定时服务"></a>定时服务</h4><p><img src="https://labfile.oss.aliyuncs.com/courses/2585/at%2Bcron%2Banacron.png" alt="at+cron+anacron.png"></p>
+<h5 id="at命令"><a href="#at命令" class="headerlink" title="at命令"></a>at命令</h5><ul>
+<li><p>安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install at</span><br></pre></td></tr></table></figure></li>
+<li><p>检查at服务是否启动：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep -v grep | grep atd</span><br></pre></td></tr></table></figure></li>
+<li><p>启动</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service atd start</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://labfile.oss.aliyuncs.com/courses/2585/at1.png" alt="at1.png"></p>
+</li>
+<li><p>使用</p>
+<p>添加计划任务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">at now + 1 minute</span><br><span class="line">at&gt; <span class="built_in">date</span> &gt;&gt; at.log</span><br><span class="line">at&gt; &lt;EOT&gt;  <span class="comment"># Ctrl+D结束</span></span><br><span class="line"><span class="comment"># 上述命令表示1分钟之后执行任务date</span></span><br><span class="line"><span class="comment"># 按Ctrl+D结束任务编辑</span></span><br></pre></td></tr></table></figure>
+
+<p>灵活的指定时间的形式：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2022年 05月 11日 星期三 10:24:00 CST</span></span><br><span class="line">at -f file now + 1 minutes <span class="comment"># job X at Wed May 11 10:25:00 2022</span></span><br><span class="line">at -f file 4pm + 3 days <span class="comment"># job 11 at Sat May 14 16:00:00 2022</span></span><br><span class="line">at -f file noon Jul 31 <span class="comment"># 12点</span></span><br><span class="line">at -f file 6:00 tomorrow</span><br><span class="line">at -f file tomorrow</span><br><span class="line">at -f file 10am 05/15/2022</span><br><span class="line">at -f file teatime <span class="comment">#下午4点</span></span><br><span class="line">at -f file.sh 05pm + 3 days  <span class="comment"># 3天后的下午5点</span></span><br><span class="line">at -f file.sh tomorrow <span class="comment"># 明天  today</span></span><br><span class="line">at -f file.sh noon <span class="comment"># 中午 midnight/teatime</span></span><br><span class="line">at -f file.sh 16:00 05/05/2021 <span class="comment"># 完整的日期和时间</span></span><br></pre></td></tr></table></figure></li>
+<li><p>用户控制</p>
+<ul>
+<li>&#x2F;etc&#x2F;at.allow</li>
+<li>&#x2F;etc&#x2F;at.deny</li>
+</ul>
+<p>at命令先查询 <code>/etc/at.allow</code> 文件，凡事出现在该文件中的用户都可以使用at命令，这个就是所谓的<code>白名单</code>。如果没有这个文件，则查找 <code>/etc/at.deny</code>，这个就是 <code>黑名单</code> ，凡是不在该文件中的用户都可以使用at命令。一般系统都是允许所有正常用户使用at命令，所以在&#x2F;etc目录中存放一个空的at.deny文件。</p>
+<p>查看当前等待运行的任务。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">atq  <span class="comment">#查看当前还有哪些待执行任务</span></span><br><span class="line"></span><br><span class="line">atrm &lt;num&gt; <span class="comment">#删除计划任务，后跟的是任务的号码</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="crontab命令"><a href="#crontab命令" class="headerlink" title="crontab命令"></a>crontab命令</h5><p>常见于设置周期性被执行的命令，实现自动进行系统管理的目的</p>
+<p>crontab 命令从输入设备读取指令，并将其存放于 crontab 文件中，以供之后读取和执行。通常，crontab 储存的指令被守护进程激活，crond 为其守护进程，crond 常常在后台运行，每一分钟会检查一次是否有预定的作业需要执行。</p>
+<p>通过 crontab 命令，我们可以在固定的间隔时间执行指定的系统指令或 shell 　 script 脚本。时间间隔的单位可以是分钟、小时、日、月、周的任意组合。</p>
+<h6 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Example of job definition:</span></span><br><span class="line"><span class="comment"># .---------------- minute (0 - 59)</span></span><br><span class="line"><span class="comment"># |  .------------- hour (0 - 23)</span></span><br><span class="line"><span class="comment"># |  |  .---------- day of month (1 - 31)</span></span><br><span class="line"><span class="comment"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span></span><br><span class="line"><span class="comment"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span></span><br><span class="line"><span class="comment"># |  |  |  |  |</span></span><br><span class="line"><span class="comment"># *  *  *  *  * user-name command to be executed</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h6><p>crontab 在本实验环境中需要做一些特殊的准备，首先我们会启动 rsyslog，以便我们可以通过日志中的信息来了解我们的任务是否真正的被执行了（在本实验环境中需要手动启动，而在自己本地中 Ubuntu 会默认自行启动不需要手动启动）</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y rsyslog</span><br><span class="line">sudo service rsyslog start</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081468201394787" alt="service-rsyslog-start"></p>
+<p>在本实验环境中 crontab 也是不被默认启动的，同时不能在后台由 upstart 来管理，所以需要我们来启动它:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cron -f &amp;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523941816405.png" alt="此处输入图片的描述"></p>
+<h6 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h6><p>添加一个计划任务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+
+<p>第一次启动会出现这样一个画面，这是让我们选择编辑的工具，选择第二个基本的 vim 就可以了。有的系统中没有提示，直接就是vim编辑器，也有的系统中第一个选项是nano编辑器。</p>
+<p><img src="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523941985569.png" alt="此处输入图片的描述"></p>
+<p>而选择后我们会进入这样一个画面，这就是添加计划的地方了，与一般的配置文档相同，以#号开头的都是注释</p>
+<p>每行的开头五个域，指定计划任务执行的时间和日期等，从左开始依次是：</p>
+<ul>
+<li>分钟 m(minute)</li>
+<li>小时 h(hour)</li>
+<li>日 dom(day of month)</li>
+<li>月 mon(month)</li>
+<li>星期 dow(day of week)</li>
+</ul>
+<p>最后是要执行的命令，也可以是脚本</p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081468202029108" alt="实验楼"></p>
+<p>详细的格式可以使用前面学习到的 man 命令查看帮助信息：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man crontab</span><br></pre></td></tr></table></figure>
+
+<p>在了解命令格式之后，我们通过这样的一个例子来完成一个任务的添加，在文档的最后一排加上这样一排命令，该任务是每分钟我们会在<code>/home/shiyanlou</code> 目录下创建一个以当前的年月日时分秒为名字的空白文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/1 * * * * <span class="built_in">touch</span> /home/shiyanlou/$(<span class="built_in">date</span> +\%Y\%m\%d\%H\%M\%S)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>注意</strong> “ % ” 在 crontab 文件中，有结束命令行、换行、重定向的作用，前面加 ” \ ” 符号转义，否则，“ % ” 符号将执行其结束命令行或者换行的作用，并且其后的内容会被做为标准输入发送给前面的命令。</p>
+</blockquote>
+<p>添加成功后我们会得到最后一排 <code>installing new crontab</code> 的一个提示。实际上，刚才编辑没有保存之前是一个临时文件，当保存成功的时候才添加了计划任务。这个保存的配置文件不是 <code>/etc/crontab</code>，而是在 <code>/var/spool/cron/crontabs</code> 目录中增加一个与用户名同名的配置文件。</p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081468203483143" alt="实验楼"></p>
+<p>可以通过如下指令来查看当前用户有哪些计划任务。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br></pre></td></tr></table></figure>
+
+<p>正确的保存并且添加成功了该任务</p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081468204230683" alt="实验楼"></p>
+<p>虽然我们添加了任务，但是如果 cron 的守护进程并没有启动，它根本不会监测到有任务，当然也就不会执行计划任务，可以通过以下 2 种方式来确定 cron 是否成功的在后台启动，默默的按计划执行任务，若是没有就得参照3.2中的准备命令。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep cron</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line">pgrep cron</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523942683532.png" alt="此处输入图片的描述"></p>
+<p>通过下图可以看到任务在创建之后，执行了几次，生成了一些文件，且每分钟生成一个：</p>
+<p><img src="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523943532369.png" alt="此处输入图片的描述"></p>
+<p>通过如下命令可以查看执行任务命令之后在日志中的信息反馈</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">tail</span> -f /var/log/syslog</span><br></pre></td></tr></table></figure>
+
+<p>从图中我们可以看到分别在 13 点 28、29、30 分的 01 秒为我们在 shiyanlou 用户的家目录下创建了文件</p>
+<p><img src="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523943327065.png" alt="此处输入图片的描述"></p>
+<p>当我们并不需要这个任务的时候我们可以使用这么一个命令去删除任务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -r</span><br></pre></td></tr></table></figure>
+
+<p>通过图中我们可以看出我们删除之后再查看任务列表，系统显示该用户没有计划任务了。</p>
+<p><img src="https://doc.shiyanlou.com/document-uid600404labid6124timestamp1523943647348.png" alt="此处输入图片的描述"></p>
+<h6 id="深入"><a href="#深入" class="headerlink" title="深入"></a>深入</h6><p>每个用户使用 <code>crontab -e</code> 添加计划任务，都会在 <code>/var/spool/cron/crontabs</code> 中添加一个该用户自己的任务文档，这样目的是为了隔离。</p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081468206283987" alt="实验楼"></p>
+<p>如果是系统级别的定时任务，只需要以 sudo 权限编辑 <code>/etc/crontab</code> 文件就可以。</p>
+<p>cron 服务监测时间最小单位是分钟，所以 cron 会每分钟去读取一次 <code>/etc/crontab</code> 与 <code>/var/spool/cron/crontabs</code> 里面的內容。</p>
+<p>在 &#x2F;etc 目录下，cron 相关的目录有下面几个：</p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081468206856712" alt="实验楼"></p>
+<p>每个目录的作用：</p>
+<ol>
+<li><code>/etc/cron.daily</code>，目录下的脚本会每天执行一次，在每天的 6 点 25 分时运行；</li>
+<li><code>/etc/cron.hourly</code>，目录下的脚本会每个小时执行一次，在每小时的 17 分钟时运行；</li>
+<li><code>/etc/cron.monthly</code>，目录下的脚本会每月执行一次，在每月 1 号的 6 点 52 分时运行；</li>
+<li><code>/etc/cron.weekly</code>，目录下的脚本会每周执行一次，在每周第七天的 6 点 47 分时运行；</li>
+</ol>
+<p>系统默认执行时间可以根据需求进行修改。</p>
+<p>在 &#x2F;etc 目录中，还有一个 <code>/etc/cron.d</code> 目录，其中存放一些cron计划任务的配置文件，相应的任务也会得到执行，其配置格式与 <code>/etc/crontab</code> 文件相同。例如：可以放置跟apache的计划任务，文件名可以命名为 &#x2F;etc&#x2F;cron.d&#x2F;httpd。</p>
+<h5 id="anacron命令"><a href="#anacron命令" class="headerlink" title="anacron命令"></a>anacron命令</h5><p>执行按天为最小计划时间单位的计划任务</p>
+<p>并不要求计算机24×7连续运行，对于一些笔记本或者台式计算机来说，经常处于关机不工作状态，如果使用cron就会错过计划任务，但是使用anacron就可以在下一次启动后执行计划任务</p>
+<h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y anacron</span><br></pre></td></tr></table></figure>
+
+<p>然后可以看到&#x2F;etc&#x2F;anacrontab文件，打开可以查看文件的内容</p>
+<p><img src="https://labfile.oss.aliyuncs.com/courses/2585/anacron1.png" alt="anacron1.png"></p>
+<p>anacron的配置跟cron配置不同，包含四个域：</p>
+<p><img src="https://labfile.oss.aliyuncs.com/courses/2585/anacron2.png" alt="anacron2.png"></p>
+<p>这四个域表示的含义如下图所示：</p>
+<p><img src="https://labfile.oss.aliyuncs.com/courses/2585/anacron3.png" alt="anacron3.png"></p>
+<ul>
+<li><p>period： 指明天数</p>
+<ul>
+<li>1 - daily</li>
+<li>7 - weekly</li>
+<li>30 - monthly</li>
+<li>N - number of days</li>
+<li>@monthly - 每月执行job</li>
+</ul>
+</li>
+<li><p>delay： 执行job之前延迟的分钟数</p>
+</li>
+<li><p>identifier：记录job执行的时间戳的文件名</p>
+</li>
+<li><p>command：要执行的job，命令或者shell脚本。</p>
+<p>在&#x2F;var&#x2F;spool&#x2F;anacron&#x2F;目录下会出现一些文件，这些文件对应着配置的job，记录了最近一次执行job的日期。</p>
+</li>
+</ul>
+<h4 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h4><h5 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h5><p> <code>top</code> 实时的查看进程的状态，以及系统的一些信息（如 CPU、内存信息等）</p>
+<p> <code>ps</code> 来静态查看当前的进程信息</p>
+<p> <code>pstree</code> 来查看当前活跃进程的树形结构</p>
+<h6 id="top工具"><a href="#top工具" class="headerlink" title="top工具"></a>top工具</h6><p>常用的一个查看工具，能实时的查看我们系统的一些关键信息的变化:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469070319324" alt="实验楼"></p>
+<p>top 是一个在前台执行的程序，所以执行后便进入到这样的一个交互界面，正是因为交互界面我们才可以实时的获取到系统与进程的信息。在交互界面中我们可以通过一些指令来操作和筛选。</p>
+<p> top 显示的第一排</p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>top</td>
+<td>表示当前程序的名称</td>
+</tr>
+<tr>
+<td>11:05:18</td>
+<td>表示当前的系统的时间</td>
+</tr>
+<tr>
+<td>up 8 days,17:12</td>
+<td>表示该机器已经启动了多长时间</td>
+</tr>
+<tr>
+<td>1 user</td>
+<td>表示当前系统中只有一个用户</td>
+</tr>
+<tr>
+<td>load average: 0.29,0.20,0.25</td>
+<td>分别对应 1、5、15 分钟内 cpu 的平均负载</td>
+</tr>
+</tbody></table>
+<p>load average 在 wikipedia 中的解释是 the system load is a measure of the amount of work that a computer system is doing 也就是对当前 CPU 工作量的度量，具体来说也就是指运行队列的平均长度，也就是等待 CPU 的平均进程数相关的一个计算值。</p>
+<p>假设我们的系统是单 CPU、单内核的，把它比喻成是一条单向的桥，把 CPU 任务比作汽车。</p>
+<ul>
+<li>load &#x3D; 0 的时候意味着这个桥上并没有车，cpu 没有任何任务；</li>
+<li>load &lt; 1 的时候意味着桥上的车并不多，一切都还是很流畅的，cpu 的任务并不多，资源还很充足；</li>
+<li>load &#x3D; 1 的时候就意味着桥已经被车给占满了，没有一点空隙，cpu 的已经在全力工作了，所有的资源都被用完了，当然还好，这还在能力范围之内，只是有点慢而已；</li>
+<li>load &gt; 1 的时候就意味着不仅仅是桥上已经被车占满了，就连桥外都被占满了，cpu 已经在全力工作，系统资源的用完了，但是还是有大量的进程在请求，在等待。若是这个值大于２、大于３，表示进程请求超过 CPU 工作能力的 2 到 ３ 倍。而若是这个值 &gt; 5 说明系统已经在超负荷运作了。</li>
+</ul>
+<p>这是单个 CPU 单核的情况，而实际生活中我们需要将得到的这个值除以我们的核数来看。我们可以通过以下的命令来查看 CPU 的个数与核心数</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看物理CPU的个数</span></span><br><span class="line"><span class="comment">#cat /proc/cpuinfo |grep &quot;physical id&quot;|sort |uniq|wc -l</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#每个cpu的核心数</span></span><br><span class="line"><span class="built_in">cat</span> /proc/cpuinfo |grep <span class="string">&quot;physical id&quot;</span>|grep <span class="string">&quot;0&quot;</span>|<span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure>
+
+<p>通过上面的指数我们可以得知 load 的临界值为 1 ，但是在实际生活中，比较有经验的运维或者系统管理员会将临界值定为 0.7。这里的指数都是除以核心数以后的值，不要混淆了</p>
+<ul>
+<li>若是 load &lt; 0.7 并不会去关注他；</li>
+<li>若是 0.7&lt; load &lt; 1 的时候我们就需要稍微关注一下了，虽然还可以应付但是这个值已经离临界不远了；</li>
+<li>若是 load &#x3D; 1 的时候我们就需要警惕了，因为这个时候已经没有更多的资源的了，已经在全力以赴了；</li>
+<li>若是 load &gt; 5 的时候系统已经快不行了，这个时候你需要加班解决问题了</li>
+</ul>
+<p>通常我们都会先看 15 分钟的值来看这个大体的趋势，然后再看 5 分钟的值对比来看是否有下降的趋势。</p>
+<p>查看 busybox 的代码可以知道，数据是每 5 秒钟就检查一次活跃的进程数，然后计算出该值，然后 load 从 <code>/proc/loadavg</code> 中读取的。而这个 load 的值是如何计算的呢，这是 load 的计算的源码</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define FSHIFT      11          /* nr of bits of precision */</span></span><br><span class="line"><span class="comment">#define FIXED_1     (1&lt;&lt;FSHIFT) /* 1.0 as fixed-point(定点) */</span></span><br><span class="line"><span class="comment">#define LOAD_FREQ   (5*HZ)      /* 5 sec intervals，每隔5秒计算一次平均负载值 */</span></span><br><span class="line"><span class="comment">#define CALC_LOAD(load, exp, n)     \</span></span><br><span class="line">         load *= exp;               \</span><br><span class="line">         load += n*(FIXED_1 - exp); \</span><br><span class="line">         load &gt;&gt;= FSHIFT;</span><br><span class="line"></span><br><span class="line">unsigned long avenrun[3];</span><br><span class="line"></span><br><span class="line">EXPORT_SYMBOL(avenrun);</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">* calc_load - given tick count, update the avenrun load estimates.</span><br><span class="line">* This is called <span class="keyword">while</span> holding a write_lock on xtime_lock.</span><br><span class="line">*/</span><br><span class="line">static inline void calc_load(unsigned long ticks)</span><br><span class="line">&#123;</span><br><span class="line">        unsigned long active_tasks; /* fixed-point */</span><br><span class="line">        static int count = LOAD_FREQ;</span><br><span class="line">        count -= ticks;</span><br><span class="line">        <span class="keyword">if</span> (count &lt; 0) &#123;</span><br><span class="line">                count += LOAD_FREQ;</span><br><span class="line">                active_tasks = count_active_tasks();</span><br><span class="line">                CALC_LOAD(avenrun[0], EXP_1, active_tasks);</span><br><span class="line">                CALC_LOAD(avenrun[1], EXP_5, active_tasks);</span><br><span class="line">                CALC_LOAD(avenrun[2], EXP_15, active_tasks);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>有兴趣的朋友可以研究一下，是如何计算的。代码中的后面这部分相当于它的计算公式</p>
+</blockquote>
+<p>top 的第二行数据，基本上第二行是进程的一个情况统计</p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tasks: 26 total</td>
+<td>进程总数</td>
+</tr>
+<tr>
+<td>1 running</td>
+<td>1 个正在运行的进程数</td>
+</tr>
+<tr>
+<td>25 sleeping</td>
+<td>25 个睡眠的进程数</td>
+</tr>
+<tr>
+<td>0 stopped</td>
+<td>没有停止的进程数</td>
+</tr>
+<tr>
+<td>0 zombie</td>
+<td>没有僵尸进程数</td>
+</tr>
+</tbody></table>
+<p>来看 top 的第三行数据，这一行基本上是 CPU 的一个使用情况的统计了</p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Cpu(s): 1.0%us</td>
+<td>用户空间进程占用 CPU 百分比</td>
+</tr>
+<tr>
+<td>1.0% sy</td>
+<td>内核空间运行占用 CPU 百分比</td>
+</tr>
+<tr>
+<td>0.0%ni</td>
+<td>用户进程空间内改变过优先级的进程占用 CPU 百分比</td>
+</tr>
+<tr>
+<td>97.9%id</td>
+<td>空闲 CPU 百分比</td>
+</tr>
+<tr>
+<td>0.0%wa</td>
+<td>等待输入输出的 CPU 时间百分比</td>
+</tr>
+<tr>
+<td>0.1%hi</td>
+<td>硬中断(Hardware IRQ)占用 CPU 的百分比</td>
+</tr>
+<tr>
+<td>0.0%si</td>
+<td>软中断(Software IRQ)占用 CPU 的百分比</td>
+</tr>
+<tr>
+<td>0.0%st</td>
+<td>(Steal time) 是 hypervisor 等虚拟服务中，虚拟 CPU 等待实际 CPU 的时间的百分比</td>
+</tr>
+</tbody></table>
+<p>CPU 利用率是对一个时间段内 CPU 使用状况的统计，通过这个指标可以看出在某一个时间段内 CPU 被占用的情况，而 Load Average 是 CPU 的 Load，它所包含的信息不是 CPU 的使用率状况，而是在一段时间内 CPU 正在处理以及等待 CPU 处理的进程数情况统计信息，这两个指标并不一样。</p>
+<p>来看 top 的第四行数据，这一行基本上是内存的一个使用情况的统计了：</p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>8176740 total</td>
+<td>物理内存总量</td>
+</tr>
+<tr>
+<td>8032104 used</td>
+<td>使用的物理内存总量</td>
+</tr>
+<tr>
+<td>144636 free</td>
+<td>空闲内存总量</td>
+</tr>
+<tr>
+<td>313088 buffers</td>
+<td>用作内核缓存的内存量</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>系统中可用的物理内存最大值并不是 free 这个单一的值，而是 free + buffers + swap 中的 cached 的和</p>
+</blockquote>
+<p>来看 top 的第五行数据，这一行基本上是交换区的一个使用情况的统计了</p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>total</td>
+<td>交换区总量</td>
+</tr>
+<tr>
+<td>used</td>
+<td>使用的交换区总量</td>
+</tr>
+<tr>
+<td>free</td>
+<td>空闲交换区总量</td>
+</tr>
+<tr>
+<td>cached</td>
+<td>缓冲的交换区总量,内存中的内容被换出到交换区，而后又被换入到内存，但使用过的交换区尚未被覆盖</td>
+</tr>
+</tbody></table>
+<p>再下面就是进程的一个情况了</p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PID</td>
+<td>进程 id</td>
+</tr>
+<tr>
+<td>USER</td>
+<td>该进程的所属用户</td>
+</tr>
+<tr>
+<td>PR</td>
+<td>该进程执行的优先级 priority 值</td>
+</tr>
+<tr>
+<td>NI</td>
+<td>该进程的 nice 值</td>
+</tr>
+<tr>
+<td>VIRT</td>
+<td>该进程任务所使用的虚拟内存的总数</td>
+</tr>
+<tr>
+<td>RES</td>
+<td>该进程所使用的物理内存数，也称之为驻留内存数</td>
+</tr>
+<tr>
+<td>SHR</td>
+<td>该进程共享内存的大小</td>
+</tr>
+<tr>
+<td>S</td>
+<td>该进程进程的状态: S&#x3D;sleep R&#x3D;running Z&#x3D;zombie</td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>该进程 CPU 的利用率</td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>该进程内存的利用率</td>
+</tr>
+<tr>
+<td>TIME+</td>
+<td>该进程活跃的总时间</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>该进程运行的名字</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>注意</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>NICE 值</strong>叫做静态优先级，是用户空间的一个优先级值，其取值范围是-20 至 19。这个值越小，表示进程”优先级”越高，而值越大“优先级”越低。nice 值中的 -20 到 19，中 -20 优先级最高， 0 是默认的值，而 19 优先级最低</p>
+</blockquote>
+<blockquote>
+<p><strong>PR 值</strong>表示 Priority 值叫动态优先级，是进程在内核中实际的优先级值，进程优先级的取值范围是通过一个宏定义的，这个宏的名称是 MAX_PRIO，它的值为 140。Linux 实际上实现了 140 个优先级范围，取值范围是从 0-139，这个值越小，优先级越高。而这其中的 0 - 99 是实时进程的值，而 100 - 139 是给用户的。</p>
+</blockquote>
+<blockquote>
+<p>其中 PR 中的 100 to 139 值部分有这么一个对应 <code>PR = 20 + (-20 to +19)</code>，这里的 -20 to +19 便是 nice 值，所以说两个虽然都是优先级，而且有千丝万缕的关系，但是他们的值，他们的作用范围并不相同</p>
+</blockquote>
+<blockquote>
+<p><strong>VIRT</strong>任务所使用的虚拟内存的总数，其中包含所有的代码，数据，共享库和被换出 swap 空间的页面等所占据空间的总数</p>
+</blockquote>
+<p>在上文我们曾经说过 top 是一个前台程序，所以是一个可以交互的</p>
+<table>
+<thead>
+<tr>
+<th>常用交互命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>q</td>
+<td>退出程序</td>
+</tr>
+<tr>
+<td>I</td>
+<td>切换显示平均负载和启动时间的信息</td>
+</tr>
+<tr>
+<td>P</td>
+<td>根据 CPU 使用百分比大小进行排序</td>
+</tr>
+<tr>
+<td>M</td>
+<td>根据驻留内存大小进行排序</td>
+</tr>
+<tr>
+<td>i</td>
+<td>忽略闲置和僵死的进程，这是一个开关式命令</td>
+</tr>
+<tr>
+<td>k</td>
+<td>终止一个进程，系统提示输入 PID 及发送的信号值。一般终止进程用 15 信号，不能正常结束则使用 9 信号。安全模式下该命令被屏蔽。</td>
+</tr>
+</tbody></table>
+<h6 id="ps工具"><a href="#ps工具" class="headerlink" title="ps工具"></a>ps工具</h6><p>ps 也是我们最常用的查看进程的工具之一</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469086224826" alt="实验楼"></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps axjf</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469086474033" alt="实验楼"></p>
+<p>总体了解下会出现哪些信息给我们，这些信息又代表着什么（更多的 keywords 大家可以通过 <code>man ps</code> 了解）</p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>F</td>
+<td>进程的标志（process flags），当 flags 值为 1 则表示此子程序只是 fork 但没有执行 exec，为 4 表示此程序使用超级管理员 root 权限</td>
+</tr>
+<tr>
+<td>USER</td>
+<td>进程的拥有用户</td>
+</tr>
+<tr>
+<td>PID</td>
+<td>进程的 ID</td>
+</tr>
+<tr>
+<td>PPID</td>
+<td>其父进程的 PID</td>
+</tr>
+<tr>
+<td>SID</td>
+<td>session 的 ID</td>
+</tr>
+<tr>
+<td>TPGID</td>
+<td>前台进程组的 ID</td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>进程占用的 CPU 百分比</td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>占用内存的百分比</td>
+</tr>
+<tr>
+<td>NI</td>
+<td>进程的 NICE 值</td>
+</tr>
+<tr>
+<td>VSZ</td>
+<td>进程使用虚拟内存大小</td>
+</tr>
+<tr>
+<td>RSS</td>
+<td>驻留内存中页的大小</td>
+</tr>
+<tr>
+<td>TTY</td>
+<td>终端 ID</td>
+</tr>
+<tr>
+<td>S or STAT</td>
+<td>进程状态</td>
+</tr>
+<tr>
+<td>WCHAN</td>
+<td>正在等待的进程资源</td>
+</tr>
+<tr>
+<td>START</td>
+<td>启动进程的时间</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>进程消耗 CPU 的时间</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>命令的名称和参数</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>TPGID</strong>栏写着-1 的都是没有控制终端的进程，也就是守护进程</p>
+</blockquote>
+<blockquote>
+<p><strong>STAT</strong>表示进程的状态，而进程的状态有很多，如下表所示</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>R</td>
+<td>Running.运行中</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Interruptible Sleep.等待调用</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Uninterruptible Sleep.不可中断睡眠</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Stoped.暂停或者跟踪状态</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Dead.即将被撤销</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Zombie.僵尸进程</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Paging.内存交换</td>
+</tr>
+<tr>
+<td>N</td>
+<td>优先级低的进程</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>优先级高的进程</td>
+</tr>
+<tr>
+<td>s</td>
+<td>进程的领导者</td>
+</tr>
+<tr>
+<td>L</td>
+<td>锁定状态</td>
+</tr>
+<tr>
+<td>l</td>
+<td>多线程状态</td>
+</tr>
+<tr>
+<td>+</td>
+<td>前台进程</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>其中的 D 是不能被中断睡眠的状态，处在这种状态的进程不接受外来的任何 signal，所以无法使用 kill 命令杀掉处于 D 状态的进程，无论是 <code>kill</code>，<code>kill -9</code> 还是 <code>kill -15</code>，一般处于这种状态可能是进程 I&#x2F;O 的时候出问题了。</p>
+</blockquote>
+<p>ps 工具有许多的参数，下面解释部分常用的参数</p>
+<p>使用 <code>-l</code> 参数可以显示自己这次登录的 bash 相关的进程信息罗列出来</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -l</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469088103140" alt="实验楼"></p>
+<p>相对来说我们更加常用下面这个命令，他将会罗列出所有的进程信息</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469089342412" alt="实验楼"></p>
+<p>若是查找其中的某个进程的话，我们还可以配合着 grep 和正则表达式一起使用</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep zsh</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469089837027" alt="实验楼"></p>
+<p>此外我们还可以查看时，将连同部分的进程呈树状显示出来</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps axjf</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469090040956" alt="实验楼"></p>
+<p>自定义所需要的参数显示</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -afxo user,ppid,pid,pgid,<span class="built_in">command</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469004994601" alt="实验楼"></p>
+<p>可以使用 man 来获取更多相关的信息</p>
+<h6 id="pstree工具"><a href="#pstree工具" class="headerlink" title="pstree工具"></a>pstree工具</h6><p>很直接的看到相同的进程数量，最主要可以看到所有进程之间的相关性</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pstree</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469090893467" alt="实验楼"></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pstree -up</span><br><span class="line"></span><br><span class="line"><span class="comment">#参数选择：</span></span><br><span class="line"><span class="comment">#-A  ：各程序树之间以 ASCII 字元來連接；</span></span><br><span class="line"><span class="comment">#-p  ：同时列出每个 process 的 PID；</span></span><br><span class="line"><span class="comment">#-u  ：同时列出每个 process 的所屬账户名称。</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469091089249" alt="实验楼"></p>
+<h5 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h5><h6 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h6><p>当一个进程结束的时候或者要异常结束的时候，会向其父进程返回一个或者接收一个 SIGHUP 信号而做出的结束进程或者其他的操作，这个 SIGHUP 信号不仅可以由系统发送，可以使用 kill 来发送这个信号来操作进程的结束或者重启等等</p>
+<p>用 kill 来操作下一些不属于 job 范畴的进程，直接对 pid 下手</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#首先我们使用图形界面打开了 gedit、gvim，用 ps 可以查看到</span></span><br><span class="line">ps aux</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用9这个信号强制结束 gedit 进程</span></span><br><span class="line"><span class="built_in">kill</span> -9 1608</span><br><span class="line"></span><br><span class="line"><span class="comment">#我们再查找这个进程的时候就找不到了</span></span><br><span class="line">ps aux | grep gedit</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469092567061" alt="实验楼"></p>
+<p><img src="https://dn-simplecloud.shiyanlou.com/1135081469092779938" alt="实验楼"></p>
+<h6 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h6><p>靠该进程的优先级值来判定进程调度的优先级</p>
+<p>优先级的值就是 PR 与 nice 来控制与体现</p>
+<p>nice 的值我们是可以通过 nice 命令来修改的，而需要注意的是 nice 值可以调整的范围是 -20 ~ 19，其中 root 有着至高无上的权力，既可以调整自己的进程也可以调整其他用户的程序，并且是所有的值都可以用，而普通用户只可以调制属于自己的进程，并且其使用的范围只能是 0 ~ 19，因为系统为了避免一般用户抢占系统资源而设置的一个限制</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#这个实验在环境中无法做，因为权限不够，可以自己在本地尝试</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#打开一个程序放在后台，或者用图形界面打开</span></span><br><span class="line"><span class="built_in">nice</span> -n -5 vim &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment">#用 ps 查看其优先级</span></span><br><span class="line">ps -afxo user,ppid,pid,<span class="built_in">stat</span>,pri,ni,time,<span class="built_in">command</span> | grep vim</span><br></pre></td></tr></table></figure>
+
+<p>还可以用 renice 来修改已经存在的进程的优先级，同样因为权限的原因在实验环境中无法尝试</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">renice -5 pid</span><br></pre></td></tr></table></figure>
+
+<h4 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h4><h5 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">who</span> am i</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">who</span> mom likes</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/document-uid735639labid3timestamp1531731170296.png" alt="3-2.1-1"></p>
+<p>输出的第一列表示打开当前伪终端的用户的用户名（要查看当前登录用户的用户名，去掉空格直接使用 <code>whoami</code> 即可），第二列的 <code>pts/0</code> 中 <code>pts</code> 表示伪终端，所谓伪是相对于 <code>/dev/tty</code> 设备而言的，前面课程中控制台与终端时的那七个虚拟控制台吗？使用 <code>[Ctrl]</code>+<code>[Alt]</code>+<code>[F1]～[F7]</code> 进行切换的 <code>/dev/tty</code> 设备么，这是“真终端”，伪终端就是当你在图形用户界面使用 <code>/dev/tty7</code> 时每打开一个终端就会产生一个伪终端，<code>pts/0</code> 后面那个数字就表示打开的伪终端序号，你可以尝试再打开一个终端，然后在里面输入 <code>who am i</code>，看第二列是不是就变成 <code>pts/1</code> 了，第三列则表示当前伪终端的启动时间。</p>
+<p>还有一点需要注意的是，在某些环境中 <code>who am i</code> 和 <code>who mom likes</code> 命令不会输出任何内容，这是因为当前使用的 SHELL 不是登录时的 SHELL，没有用户与 who 的 stdin 相关联，因此不会输出任何内容。例如：可能如下图所示，输入这些命令却没有任何提示。</p>
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583140204433" alt="图片描述"></p>
+<p>此时如果打开一个登录 SHELL 的终端例如 Tmux，然后在新的终端里执行上述命令即可。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tmux</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583140710447" alt="图片描述"></p>
+<p><code>who</code> 命令其它常用参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-a</code></td>
+<td>打印能打印的全部</td>
+</tr>
+<tr>
+<td><code>-d</code></td>
+<td>打印死掉的进程</td>
+</tr>
+<tr>
+<td><code>-m</code></td>
+<td>同<code>am i</code>，<code>mom likes</code></td>
+</tr>
+<tr>
+<td><code>-q</code></td>
+<td>打印当前登录用户数及用户名</td>
+</tr>
+<tr>
+<td><code>-u</code></td>
+<td>打印当前登录用户登录信息</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>打印运行等</td>
+</tr>
+</tbody></table>
+<h5 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h5><p>在 Linux 系统里， <code>root</code> 账户拥有整个系统至高无上的权利，比如 新建&#x2F;添加 用户。</p>
+<blockquote>
+<p>root 权限，系统权限的一种，与 SYSTEM 权限可以理解成一个概念，但高于 Administrator 权限，root 是 Linux 和 UNIX 系统中的超级管理员用户帐户，该帐户拥有整个系统至高无上的权力，所有对象他都可以操作，所以很多黑客在入侵系统的时候，都要把权限提升到 root 权限，这个操作等同于在 Windows 下就是将新建的非法帐户添加到 Administrators 用户组。更比如安卓操作系统中（基于 Linux 内核）获得 root 权限之后就意味着已经获得了手机的最高权限，这时候你可以对手机中的任何文件（包括系统文件）执行所有增、删、改、查的操作。</p>
+</blockquote>
+<p>大部分 Linux 系统在安装时都会建议用户新建一个用户而不是直接使用 <code>root</code>用户进行登录，当然也有直接使用 <code>root</code> 登录的，例如 <code>Kali</code>（基于 Debian 的 Linux 发行版，集成大量工具软件，主要用于<strong>数字取证</strong>的操作系统）。一般我们登录系统时都是以普通账户的身份登录的，要创建用户需要 <code>root</code> 权限，这里就要用到 <code>sudo</code> 这个命令了。不过使用这个命令有两个前提：</p>
+<ul>
+<li>要知道当前登录用户的密码</li>
+<li>当前用户必须在 <code>sudo</code> 用户组。</li>
+</ul>
+<p>说明：<code>shiyanlou</code> 用户也属于 <code>sudo</code> 用户组。</p>
+<h6 id="su，su-与-sudo"><a href="#su，su-与-sudo" class="headerlink" title="su，su- 与 sudo"></a>su，su- 与 sudo</h6><p><strong>需要注意 Linux 环境下输入密码是不会显示的。</strong></p>
+<p><code>su &lt;user&gt;</code> 可以切换到用户 <code>user</code>，执行时需要输入目标用户的密码，<code>sudo &lt;cmd&gt;</code> 可以以特权级别运行 <code>cmd</code> 命令，需要当前用户属于 <code>sudo</code> 组，且需要输入当前用户的密码。<code>su - &lt;user&gt;</code> 命令也是切换用户，但是同时用户的<strong>环境变量</strong>和<strong>工作目录</strong>也会跟着改变成目标用户所对应的。</p>
+<p><strong>【试一试】</strong> 现在我们新建一个叫 <code>lilei</code> 的用户：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo adduser lilei</span><br></pre></td></tr></table></figure>
+
+<p>实验楼的环境目前设置为 <code>shiyanlou</code> 用户执行 <code>sudo</code> 不需要输入密码，通常此处需要按照提示输入 <code>shiyanlou</code> 密码（<strong>Linux 下密码输入是不显示任何内容的</strong>），<code>shiyanlou</code> 用户密码可以通过 <code>sudo passwd shiyanlou</code> 命令进行设置（建议不要更改，可能会影响后续检查通过）。</p>
+<p><strong>【试一试】</strong> 现在请你使用<code>passwd</code>命令给 <code>lilei</code> 用户设置密码，其他选项的一些内容你可以选择直接回车使用默认值。</p>
+<p><img src="https://doc.shiyanlou.com/document-uid735639labid3timestamp1531731216215.png" alt="3-2.2-1"></p>
+<p>这个命令不但可以添加用户到系统，同时也会默认为新用户在 <code>/home</code> 目录下创建一个工作目录：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> /home</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583141675216" alt="图片描述"></p>
+<p>现在已经创建好一个用户，并且可以使用创建的用户登录了，使用如下命令切换登录用户：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ su -l lilei</span><br></pre></td></tr></table></figure>
+
+<p>输入刚刚设置的 <code>lilei</code> 的密码，然后输入如下命令并查看输出：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">who</span> am i</span><br><span class="line">$ <span class="built_in">whoami</span></span><br><span class="line">$ <span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583142076115" alt="图片描述"></p>
+<p>退出当前用户跟退出终端一样，可以使用 <code>exit</code> 命令或者使用快捷键 <code>Ctrl+D</code>。</p>
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583142261959" alt="图片描述"></p>
+<h5 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h5><p>在 Linux 里面每个用户都有一个归属（用户组），用户组简单地理解就是一组用户的集合，它们共享一些资源和权限，同时拥有私有资源，就跟家的形式差不多。当然一个用户是可以属于多个用户组的。</p>
+<h6 id="查看属于哪些用户组"><a href="#查看属于哪些用户组" class="headerlink" title="查看属于哪些用户组"></a>查看属于哪些用户组</h6><ul>
+<li>方法一：使用 groups 命令</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">groups</span> shiyanlou</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/document-uid13labid3timestamp1454035714557.png" alt="此处输入图片的描述"></p>
+<p>其中冒号之前表示用户，后面表示该用户所属的用户组。这里可以看到 <code>shiyanlou</code> 用户属于 <code>shiyanlou</code> 用户组，每次新建用户如果不指定用户组的话，默认会自动创建一个与用户名相同的用户组（差不多就相当于家长的意思）。</p>
+<ul>
+<li>方法二：查看 <code>/etc/group</code> 文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /etc/group | <span class="built_in">sort</span></span><br></pre></td></tr></table></figure>
+
+<p>你将看到如下一堆输出，在最下面看到 <code>shiyanlou</code> 的用户组信息：</p>
+<p><img src="https://doc.shiyanlou.com/document-uid735639labid3timestamp1531731335264.png" alt="3-2.3-3"></p>
+<p>没找到？没关系，你可以使用 <code>grep</code> 命令过滤掉一些你不想看到的结果：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> /etc/group | grep -E <span class="string">&quot;shiyanlou&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/document-uid13labid3timestamp1454035698068.png" alt="此处输入图片的描述"></p>
+<ul>
+<li><p><code>/etc/group</code> 文件格式说明</p>
+<p><code>/etc/group</code> 的内容包括用户组（Group）、用户组口令、GID（组 ID） 及该用户组所包含的用户（User），每个用户组一条记录。格式如下：    </p>
+<blockquote>
+<p>group_name:password:GID:user_list</p>
+</blockquote>
+<p>你看到上面的 password 字段为一个 <code>x</code>，并不是说密码就是它，只是表示密码不可见而已。</p>
+<p>这里需要注意，如果用户的 GID 等于用户组的 GID，那么最后一个字段 <code>user_list</code> 就是空的，这里的 GID 是指用户默认所在组的 GID，可以使用 <code>id</code> 命令查看。比如 <code>shiyanlou</code> 用户，在 <code>/etc/group</code> 中的 <code>shiyanlou</code> 用户组后面是不会显示的。<code>lilei</code> 用户，在 <code>/etc/group</code> 中的 <code>lilei</code> 用户组后面是不会显示的。</p>
+</li>
+</ul>
+<h6 id="将其它用户加入-sudo-用户组"><a href="#将其它用户加入-sudo-用户组" class="headerlink" title="将其它用户加入 sudo 用户组"></a>将其它用户加入 sudo 用户组</h6><p>默认情况下新创建的用户是不具有 root 权限的，也不在 sudo 用户组，可以让其加入 sudo 用户组从而获取 root 权限：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意 Linux 上输入密码是不会显示的</span></span><br><span class="line">$ su -l lilei</span><br><span class="line">$ sudo <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583145040679" alt="图片描述"></p>
+<p>会提示 lilei 不在 sudoers 文件中，意思就是 lilei 不在 sudo 用户组中，至于 sudoers 文件（&#x2F;etc&#x2F;sudoers）最好不要动它，操作不慎会导致比较麻烦的后果。</p>
+<p>使用 <code>usermod</code> 命令可以为用户添加用户组，同样使用该命令你必需有 root 权限，你可以直接使用 root 用户为其它用户添加用户组，或者用其它已经在 sudo 用户组的用户使用 sudo 命令获取权限来执行该命令。</p>
+<p>用 shiyanlou 用户执行 sudo 命令将 lilei 添加到 sudo 用户组，让它也可以使用 sudo 命令获得 root 权限</p>
+<p>首先切换回 shiyanlou 用户</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ su - shiyanlou</span><br></pre></td></tr></table></figure>
+
+<p>此处需要输入 shiyanlou 用户密码，shiyanlou 的密码可以在右侧工具栏，SSH 直连里看到。</p>
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583145439247" alt="图片描述"></p>
+<p>当然也可以通过 <code>sudo passwd shiyanlou</code> 进行设置，或者你直接关闭当前终端打开一个新的终端。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">groups</span> lilei</span><br><span class="line">$ sudo usermod -G sudo lilei</span><br><span class="line">$ <span class="built_in">groups</span> lilei</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583145514469" alt="图片描述"></p>
+<p>然后你再切换回 lilei 用户，现在就可以使用 sudo 获取 root 权限了。</p>
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583145591124" alt="图片描述"></p>
+<h5 id="删除用户和用户组"><a href="#删除用户和用户组" class="headerlink" title="删除用户和用户组"></a>删除用户和用户组</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo deluser lilei --remove-home</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/document-uid735639labid3timestamp1531731417990.png" alt="3-2.4-1"></p>
+<p>使用 <code>--remove-home</code> 参数在删除用户时候会一并<strong>将该用户的工作目录一并删除</strong>。如果不使用那么系统会自动在 &#x2F;home 目录为该用户保留工作目录。</p>
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583146790310" alt="图片描述"></p>
+<p>删除用户组可以使用 <code>groupdel</code> 命令，倘若该群组中仍包括某些用户，则<strong>必须先删除群组中用户后，才能删除群组</strong>。</p>
+<h4 id="文件权限管理"><a href="#文件权限管理" class="headerlink" title="文件权限管理"></a>文件权限管理</h4><p>文件的访问控制权限，即哪些用户和组群可以访问文件以及可以执行什么样的操作。</p>
+<p>Unix&#x2F;Linux 系统是一个典型的多用户系统，不同的用户处于不同的地位，对文件和目录有不同的访问权限。为了保护系统的安全性，Unix&#x2F;Linux 系统除了对用户权限作了严格的界定外，还在用户身份认证、访问控制、传输安全、文件读写权限等方面作了周密的控制。</p>
+<p>在 Unix&#x2F;Linux 中的每一个文件或目录都包含有访问权限，这些访问权限决定了谁能访问和如何访问这些文件和目录。</p>
+<h5 id="查看文件权限"><a href="#查看文件权限" class="headerlink" title="查看文件权限"></a>查看文件权限</h5><p> <code>ls</code> 命令</p>
+<p>使用较长格式列出文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> -l</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583147815919" alt="图片描述"></p>
+<p><img src="https://doc.shiyanlou.com/linux_base/3-9.png" alt="img"></p>
+<p><img src="https://doc.shiyanlou.com/linux_base/3-10.png" alt="img"></p>
+<ul>
+<li>文件类型</li>
+</ul>
+<p> <strong>Linux 里面一切皆文件</strong></p>
+<p>正因为这一点才有了设备文件这一说</p>
+<p> <code>/dev</code> 目录下有各种设备文件，大都跟具体的硬件设备相关</p>
+<p> <code>socket</code>：网络套接字</p>
+<p><code>pipe</code> 管道，这个东西很重要，大家已经多次使用了</p>
+<p><code>软链接文件</code>：链接文件是分为两种的，一种是“软链接”，另一种当然是“硬链接”。软链接等同于 Windows 上的快捷方式</p>
+<ul>
+<li>文件权限</li>
+</ul>
+<p><strong>读权限</strong>，表示你可以使用 <code>cat &lt;file name&gt;</code> 之类的命令来读取某个文件的内容；</p>
+<p><strong>写权限</strong>，表示你可以编辑和修改某个文件的内容； </p>
+<p><strong>执行权限</strong>，通常指可以运行的二进制程序文件或者脚本文件，如同 Windows 上的 <code>exe</code> 后缀的文件，不过 Linux 上不是通过文件后缀名来区分文件的类型。</p>
+<p><strong>一个目录同时具有读权限和执行权限才可以打开并查看内部文件，而一个目录要有写权限才允许在其中创建其它文件</strong>，这是因为目录文件实际保存着该目录里面的文件的列表等信息。</p>
+<p>所属用户组权限，是指你所在的用户组中的所有其它用户对于该文件的权限。</p>
+<ul>
+<li>链接数</li>
+</ul>
+<blockquote>
+<p>链接到该文件所在的 inode 结点的文件名数目（涉及到 Linux 文件系统的相关概念知识，感兴趣查看 <a target="_blank" rel="noopener" href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html#major2">硬链接和软链接的联系与区别</a>）。</p>
+</blockquote>
+<ul>
+<li>文件大小</li>
+</ul>
+<blockquote>
+<p>以 inode 结点大小为单位来表示的文件大小，可以给 ls 加上 <code>-lh</code> 参数来更直观的查看文件的大小。</p>
+</blockquote>
+<p> <code>ls</code> 命令的一些其它常用的用法：</p>
+<ul>
+<li>显示除了 <code>.</code>（当前目录）和 <code>..</code>（上一级目录）之外的所有文件，包括隐藏文件（Linux 下以 <code>.</code> 开头的文件为隐藏文件）。</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> -a</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583148438097" alt="图片描述"></p>
+<p>可以同时使用 <code>-a</code> 和 <code>-l</code> 参数：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> -al</span><br></pre></td></tr></table></figure>
+
+<p>查看某一个目录的完整属性，而不是显示目录里面的文件属性：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> -dl &lt;目录名&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示所有文件大小，并以普通人类能看懂的方式呈现：</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> -asSh</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583148552984" alt="图片描述"></p>
+<p>其中小 s 为显示文件大小，大 S 为按文件大小排序，若需要知道如何按其它方式排序，可以使用 <code>man ls</code> 命令查询。</p>
+<h5 id="变更文件所有者"><a href="#变更文件所有者" class="headerlink" title="变更文件所有者"></a>变更文件所有者</h5><p><strong>若前面已经执行删除 lilei 用户的命令，这里重新创建一下。</strong></p>
+<p>切换到 <code>lilei</code> 用户，然后在 <code>/home/lilei</code> 目录新建一个文件，命名为 <code>iphone11</code>。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ su - lilei</span><br><span class="line">$ <span class="built_in">pwd</span></span><br><span class="line">$ <span class="built_in">touch</span> iphone11</span><br><span class="line">$ <span class="built_in">ls</span> -alh iphone11</span><br></pre></td></tr></table></figure>
+
+<p>可见文件所有者是 lilei ：</p>
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583148845314" alt="图片描述"></p>
+<p>现在切换回到 shiyanlou 用户，使用以下命令变更文件所有者为 <code>shiyanlou</code>。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 需要切换到 shiyanlou 用户执行以下操作</span></span><br><span class="line">$ <span class="built_in">cd</span> /home/lilei</span><br><span class="line">$ <span class="built_in">ls</span> iphone11</span><br><span class="line">$ sudo <span class="built_in">chown</span> shiyanlou iphone11</span><br></pre></td></tr></table></figure>
+
+<p>现在查看，发现文件所有者成功修改为 shiyanlou。</p>
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583148964757" alt="图片描述"></p>
+<h5 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h5><p>文件的权限有两种表示方式：</p>
+<ul>
+<li>方式一：二进制数字表示</li>
+</ul>
+<p><img src="https://doc.shiyanlou.com/linux_base/3-14.png" alt="img"></p>
+<p>每个文件有三组固定的权限，分别对应拥有者，所属用户组，其他用户，<strong>这个顺序是固定的</strong>。</p>
+<p>文件的读写执行对应字母 <code>rwx</code>，以二进制表示就是 <code>111</code>，用十进制表示就是 <code>7</code>，对进制转换不熟悉的同学可以看看 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/3117222">进制转换</a>。例如我们刚刚新建的文件 iphone11 的权限是 <code>rw-rw-rw-</code>，换成对应的十进制表示就是 666，这就表示这个文件的拥有者，所属用户组和其他用户具有读写权限，不具有执行权限。</p>
+<p>如果要将文件 <code>iphone11</code> 的权限改为只有我自己可以用，那么就可以用这个方法更改它的权限。</p>
+<p>为了演示，先在文件里加点内容：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;echo \&quot;hello shiyanlou\&quot;&quot;</span> &gt; iphone11</span><br></pre></td></tr></table></figure>
+
+<p>然后修改权限：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">chmod</span> 600 iphone11</span><br><span class="line">$ <span class="built_in">ls</span> -alh iphone11</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583149616295" alt="图片描述"></p>
+<p>切换到 lilei 用户，尝试写入和读取操作，可以看到 lilei 用户已经不能读写这个 iphone11 文件了：</p>
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583149700161" alt="图片描述"></p>
+<ul>
+<li>方式二：加减赋值操作</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">chmod</span> go-rw iphone11</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://doc.shiyanlou.com/courses/uid871732-20200302-1583150177369" alt="图片描述"></p>
+<p><code>g</code>、<code>o</code> 还有 <code>u</code> 分别表示 group（用户组）、others（其他用户） 和 user（用户），<code>+</code> 和 <code>-</code> 分别表示增加和去掉相应的权限。</p>
+<h4 id="拓展学习"><a href="#拓展学习" class="headerlink" title="拓展学习"></a>拓展学习</h4><h5 id="adduser-和-useradd-的区别"><a href="#adduser-和-useradd-的区别" class="headerlink" title="adduser 和 useradd 的区别"></a><code>adduser</code> 和 <code>useradd</code> 的区别</h5><p><code>useradd</code> 只创建用户，不会创建用户密码和工作目录，创建完了需要使用 <code>passwd &lt;username&gt;</code> 去设置新用户的密码。</p>
+<p><code>adduser</code> 在创建用户的同时，会创建工作目录和密码（提示你设置），做这一系列的操作。</p>
+<p><code>useradd</code>、<code>userdel</code> 这类操作更像是一种命令，执行完了就返回。</p>
+<p><code>adduser</code> 更像是一种程序，需要你输入、确定等一系列操作。</p>
+<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl+d</code></td>
+<td>键盘输入结束或退出终端</td>
+</tr>
+<tr>
+<td><code>Ctrl+s</code></td>
+<td>暂停当前程序，暂停后按下任意键恢复运行</td>
+</tr>
+<tr>
+<td><code>Ctrl+z</code></td>
+<td>将当前程序放到后台运行，恢复到前台为命令<code>fg</code></td>
+</tr>
+<tr>
+<td><code>Ctrl+a</code></td>
+<td>将光标移至输入行头，相当于<code>Home</code>键</td>
+</tr>
+<tr>
+<td><code>Ctrl+e</code></td>
+<td>将光标移至输入行末，相当于<code>End</code>键</td>
+</tr>
+<tr>
+<td><code>Ctrl+k</code></td>
+<td>删除从光标所在位置到行末</td>
+</tr>
+<tr>
+<td><code>Alt+Backspace</code></td>
+<td>向前删除一个单词</td>
+</tr>
+<tr>
+<td><code>Shift+PgUp</code></td>
+<td>将终端显示向上滚动</td>
+</tr>
+<tr>
+<td><code>Shift+PgDn</code></td>
+<td>将终端显示向下滚动</td>
+</tr>
+</tbody></table>
+<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><h3 id="Banner"><a href="#Banner" class="headerlink" title="Banner"></a>Banner</h3><ul>
+<li>环境配置<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update </span><br><span class="line">sudo apt-get install sysvbanner</span><br></pre></td></tr></table></figure></li>
+<li>命令代码<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">printerbanner -w 50 A</span><br><span class="line">/*</span><br><span class="line">-w 参数指定打印宽度，因为我们的环境在屏幕中显示比较小，必须要加上宽度限制。</span><br><span class="line">还有两个类似的命令toilet,figlet，也可以安装试用。</span><br><span class="line">*/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="aafire"><a href="#aafire" class="headerlink" title="aafire"></a>aafire</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libaa-bin</span><br><span class="line"><span class="comment"># 提示 command not found ，请自行解决</span></span><br><span class="line">aafire</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/11/8a3a00fbf9df6005.gif" alt="gif"></p>
+<h3 id="cacaview"><a href="#cacaview" class="headerlink" title="cacaview"></a>cacaview</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install caca-utils</span><br><span class="line">cacaview &lt;pic_file&gt;</span><br><span class="line">cacademo</span><br><span class="line">cacafire</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/17/9033169fe3c5d33b.gif"></p>
+<h3 id="asciiview"><a href="#asciiview" class="headerlink" title="asciiview"></a>asciiview</h3><p>执行以下命令安装工具包并下载图片：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install -y aview imagemagick</span><br><span class="line">wget https://labfile.oss.aliyuncs.com/courses/1/Linus.png</span><br></pre></td></tr></table></figure>
+
+<p>执行 <code>asciiview [图片文件名]</code> 即可打开图片</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@2516981474c674cb2ba848e3cfb9129ada69158b/2021/05/24/04097c727fca444a967c26f9414b2dc5.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@ab82d2a586ac84374e28c4b5ab161a313c5c06f4/2021/05/24/1e5712180a0136d3b0b76ff8d4309866.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@b0ca80fc8b37cbaa46583f14f0b3d18c5438ac3b/2021/05/24/24f620630fd03c9363d0d435c42f9a0d.png" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 软件学习笔记</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/03/16/JavaWeb%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A/" rel="next" title="JavaWeb第一次作业">
+                <i class="fa fa-chevron-left"></i> JavaWeb第一次作业
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/06/02/%E4%BA%BA%E7%B1%BB%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/" rel="prev" title="人类系统调优">
+                人类系统调优 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/770690988" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:770690988@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/sssstruggle" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/770690988/infocenter" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E4%B8%AA%E4%BA%BA%E5%AE%9D%E5%85%B8%E8%B5%84%E6%96%99%E5%90%88%E9%9B%86"><span class="nav-text">Linux个人宝典资料合集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="nav-text">基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%BB%BA%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">内建命令与外部命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FHS%E6%A0%87%E5%87%86"><span class="nav-text">FHS标准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-text">重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA-%E9%87%8D%E5%AE%9A%E5%90%91%E7%AC%A6-gt-gt-gt-lt-lt-lt"><span class="nav-text">标准输出 | 重定向符 &gt;,&gt;&gt;,&lt;,&lt;&lt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E9%94%99%E8%AF%AF%E7%9A%84%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-text">标准错误的重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B0%B8%E4%B9%85%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-text">永久重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-text">创建输出文件描述符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-text">关闭文件描述符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E5%B1%8F%E8%94%BD%E5%91%BD%E4%BB%A4%E7%9A%84%E8%BE%93%E5%87%BA"><span class="nav-text">完全屏蔽命令的输出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%A6%81%E7%82%B9"><span class="nav-text">组合命令小要点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C%E5%A4%9A%E6%9D%A1%E5%91%BD%E4%BB%A4"><span class="nav-text">顺序执行多条命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%A8%E9%83%A8%E6%89%A7%E8%A1%8C"><span class="nav-text">全部执行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%89%E9%80%89%E6%8B%A9%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="nav-text">有选择的执行</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%A1%E9%81%93"><span class="nav-text">管道</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD"><span class="nav-text">功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC%E5%86%85%E6%A0%B8"><span class="nav-text">查看版本内核</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="nav-text">帮助命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#man%E5%91%BD%E4%BB%A4"><span class="nav-text">man命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#info%E5%91%BD%E4%BB%A4"><span class="nav-text">info命令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#touch%E5%91%BD%E4%BB%A4"><span class="nav-text">touch命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cp%E5%91%BD%E4%BB%A4"><span class="nav-text">cp命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#rm%E5%91%BD%E4%BB%A4"><span class="nav-text">rm命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mv%E5%91%BD%E4%BB%A4"><span class="nav-text">mv命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#rename%E5%91%BD%E4%BB%A4"><span class="nav-text">rename命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cat%E5%91%BD%E4%BB%A4%E4%B8%8Etac%E5%91%BD%E4%BB%A4"><span class="nav-text">cat命令与tac命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#nl%E5%91%BD%E4%BB%A4"><span class="nav-text">nl命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#more%E5%91%BD%E4%BB%A4%E4%B8%8Eless%E5%91%BD%E4%BB%A4"><span class="nav-text">more命令与less命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#head%E5%91%BD%E4%BB%A4%E4%B8%8Etail%E5%91%BD%E4%BB%A4"><span class="nav-text">head命令与tail命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file%E5%91%BD%E4%BB%A4"><span class="nav-text">file命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#whereis%E5%91%BD%E4%BB%A4"><span class="nav-text">whereis命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#locate%E5%91%BD%E4%BB%A4"><span class="nav-text">locate命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#which%E5%91%BD%E4%BB%A4"><span class="nav-text">which命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#find%E5%91%BD%E4%BB%A4"><span class="nav-text">find命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tee%E5%91%BD%E4%BB%A4"><span class="nav-text">tee命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tree%E5%91%BD%E4%BB%A4"><span class="nav-text">tree命令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E8%B7%AF%E5%BE%84"><span class="nav-text">目录路径</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#cd%E5%91%BD%E4%BB%A4"><span class="nav-text">cd命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cp%E5%91%BD%E4%BB%A4-1"><span class="nav-text">cp命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#pwd%E5%91%BD%E4%BB%A4"><span class="nav-text">pwd命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mkdir%E5%91%BD%E4%BB%A4"><span class="nav-text">mkdir命令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%91%BD%E4%BB%A4%EF%BC%88%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E4%B8%89%E5%89%91%E5%AE%A2%EF%BC%89"><span class="nav-text">文本命令（文本编辑三剑客）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#grep"><span class="nav-text">grep</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sed"><span class="nav-text">sed</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#awk"><span class="nav-text">awk</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cut"><span class="nav-text">* cut</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E5%8E%8B%E7%BC%A9"><span class="nav-text">文件打包压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#zip%E5%91%BD%E4%BB%A4"><span class="nav-text">zip命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#unzip%E5%91%BD%E4%BB%A4"><span class="nav-text">unzip命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#du%E5%91%BD%E4%BB%A4"><span class="nav-text">du命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tar%E5%91%BD%E4%BB%A4"><span class="nav-text">tar命令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E5%91%BD%E4%BB%A4"><span class="nav-text">组合命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#cut%E5%91%BD%E4%BB%A4"><span class="nav-text">cut命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#grep%E5%91%BD%E4%BB%A4"><span class="nav-text">grep命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E5%BD%A2%E5%BC%8F"><span class="nav-text">一般形式</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#wc%E5%91%BD%E4%BB%A4"><span class="nav-text">wc命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xargs%E5%91%BD%E4%BB%A4"><span class="nav-text">xargs命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sort%E5%91%BD%E4%BB%A4"><span class="nav-text">sort命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#uniq%E5%91%BD%E4%BB%A4"><span class="nav-text">uniq命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4%E9%87%8D%E5%A4%8D%E8%A1%8C"><span class="nav-text">过滤重复行</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E9%87%8D%E5%A4%8D%E8%A1%8C"><span class="nav-text">输出重复行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E6%9C%8D%E5%8A%A1"><span class="nav-text">定时服务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#at%E5%91%BD%E4%BB%A4"><span class="nav-text">at命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#crontab%E5%91%BD%E4%BB%A4"><span class="nav-text">crontab命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F"><span class="nav-text">格式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-text">准备</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B7%B1%E5%85%A5"><span class="nav-text">深入</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#anacron%E5%91%BD%E4%BB%A4"><span class="nav-text">anacron命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B"><span class="nav-text">查看</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#top%E5%B7%A5%E5%85%B7"><span class="nav-text">top工具</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ps%E5%B7%A5%E5%85%B7"><span class="nav-text">ps工具</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#pstree%E5%B7%A5%E5%85%B7"><span class="nav-text">pstree工具</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AE%A1%E7%90%86"><span class="nav-text">管理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#kill%E5%91%BD%E4%BB%A4"><span class="nav-text">kill命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="nav-text">执行顺序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-text">用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7"><span class="nav-text">查看用户</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="nav-text">创建用户</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#su%EF%BC%8Csu-%E4%B8%8E-sudo"><span class="nav-text">su，su- 与 sudo</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84"><span class="nav-text">用户组</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%B1%9E%E4%BA%8E%E5%93%AA%E4%BA%9B%E7%94%A8%E6%88%B7%E7%BB%84"><span class="nav-text">查看属于哪些用户组</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%86%E5%85%B6%E5%AE%83%E7%94%A8%E6%88%B7%E5%8A%A0%E5%85%A5-sudo-%E7%94%A8%E6%88%B7%E7%BB%84"><span class="nav-text">将其它用户加入 sudo 用户组</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84"><span class="nav-text">删除用户和用户组</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="nav-text">文件权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="nav-text">查看文件权限</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%98%E6%9B%B4%E6%96%87%E4%BB%B6%E6%89%80%E6%9C%89%E8%80%85"><span class="nav-text">变更文件所有者</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="nav-text">修改文件权限</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%93%E5%B1%95%E5%AD%A6%E4%B9%A0"><span class="nav-text">拓展学习</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#adduser-%E5%92%8C-useradd-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">adduser 和 useradd 的区别</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">常用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%82%E9%A1%B9"><span class="nav-text">杂项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Banner"><span class="nav-text">Banner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aafire"><span class="nav-text">aafire</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cacaview"><span class="nav-text">cacaview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asciiview"><span class="nav-text">asciiview</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">虞程龙</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'tFhwHkc8bkgfgQwmhzrtupVR-gzGzoHsz',
+        appKey: 'zwHnoVjxXcHrTxENnsIia9E6',
+        placeholder: '欢迎交流讨论...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

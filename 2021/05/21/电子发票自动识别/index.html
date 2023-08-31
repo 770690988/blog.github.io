@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="智能发票扫描识别,sdk软件接口," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="关键词智能发票扫描识别sdk软件接口发票智能识别 发票扫描识别 自动增票识别 发票识别接口 发票识别录入 一、智能发票扫描识别sdk软件接口应用背景对于一些大型集团公司来讲，目前主要采用的依旧是分散式财务管理模式，而这就造成了企业财务管理效率不高，管理成本高等问题，同时也制约了集团企业发展战略的进行，所以需要建设FSSC财务共享中心。而一个企业想建造FSSC财务共享中心，所面临的一大难题就是需要投">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电子发票自动识别">
+<meta property="og:url" content="https://770690988.github.io/blog.github.io/2021/05/21/%E7%94%B5%E5%AD%90%E5%8F%91%E7%A5%A8%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB/index.html">
+<meta property="og:site_name" content="人工智能">
+<meta property="og:description" content="关键词智能发票扫描识别sdk软件接口发票智能识别 发票扫描识别 自动增票识别 发票识别接口 发票识别录入 一、智能发票扫描识别sdk软件接口应用背景对于一些大型集团公司来讲，目前主要采用的依旧是分散式财务管理模式，而这就造成了企业财务管理效率不高，管理成本高等问题，同时也制约了集团企业发展战略的进行，所以需要建设FSSC财务共享中心。而一个企业想建造FSSC财务共享中心，所面临的一大难题就是需要投">
+<meta property="og:locale">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@8e42e614e886c8b0c20cd869baf780c03f30caf1/2021/05/24/eaa7a14e50b21467ac522df58ec8c715.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@622ce2893b30d7bfc69e527dee6511bfe48252b7/2021/05/24/7b5978262321d0175cebfc7029749700.png">
+<meta property="article:published_time" content="2021-05-21T13:35:06.000Z">
+<meta property="article:modified_time" content="2021-05-21T13:35:06.000Z">
+<meta property="article:author" content="虞程龙">
+<meta property="article:tag" content="智能发票扫描识别">
+<meta property="article:tag" content="sdk软件接口">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@8e42e614e886c8b0c20cd869baf780c03f30caf1/2021/05/24/eaa7a14e50b21467ac522df58ec8c715.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://770690988.github.io/blog.github.io/2021/05/21/电子发票自动识别/"/>
+
+
+
+
+
+  <title>电子发票自动识别 | 人工智能</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人工智能</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人工智能与智能财务的结合</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://770690988.github.io/blog.github.io/2021/05/21/%E7%94%B5%E5%AD%90%E5%8F%91%E7%A5%A8%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人工智能">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">电子发票自动识别</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-21T21:35:06+08:00">
+                2021-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8/" itemprop="url" rel="index">
+                    <span itemprop="name">人工智能应用</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8/%E6%99%BA%E8%83%BD%E5%8F%91%E7%A5%A8/" itemprop="url" rel="index">
+                    <span itemprop="name">智能发票</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/05/21/%E7%94%B5%E5%AD%90%E5%8F%91%E7%A5%A8%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/05/21/%E7%94%B5%E5%AD%90%E5%8F%91%E7%A5%A8%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><p>智能发票扫描识别sdk软件接口发票智能识别 发票扫描识别 自动增票识别 发票识别接口 发票识别录入</p>
+<h3 id="一、智能发票扫描识别sdk软件接口应用背景"><a href="#一、智能发票扫描识别sdk软件接口应用背景" class="headerlink" title="一、智能发票扫描识别sdk软件接口应用背景"></a>一、智能发票扫描识别sdk软件接口应用背景</h3><p>对于一些大型集团公司来讲，目前主要采用的依旧是分散式财务管理模式，而这就造成了企业财务管理效率不高，管理成本高等问题，同时也制约了集团企业发展战略的进行，所以需要建设FSSC财务共享中心。<br>而一个企业想建造FSSC财务共享中心，所面临的一大难题就是需要投入大量的人力、物力参与财务数据采集和处理工作，特别是财务票据的信息采集录入工作，更是难之又难、烦之又烦。</p>
+<h3 id="二、智能发票扫描识别sdk软件接口方案介绍"><a href="#二、智能发票扫描识别sdk软件接口方案介绍" class="headerlink" title="二、智能发票扫描识别sdk软件接口方案介绍"></a>二、智能发票扫描识别sdk软件接口方案介绍</h3><p>针对企业财务部门繁重的原始票据信息采集和管理工作，国内智能识别领域推出了智能发票扫描识别sdk软件接口解决方案-奥普快票通，通过利用发票OCR扫描识别技术，批量采集增值税发票等票据的影像和信息，并输出excel表格和结构化的数据，与传统的人工录入数据相比，大大的减少了财务人员的工作量，提升了其工作效率。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@8e42e614e886c8b0c20cd869baf780c03f30caf1/2021/05/24/eaa7a14e50b21467ac522df58ec8c715.png"></p>
+<h3 id="奥普快票通智能发票扫描识别sdk软件接口技术优势："><a href="#奥普快票通智能发票扫描识别sdk软件接口技术优势：" class="headerlink" title="奥普快票通智能发票扫描识别sdk软件接口技术优势："></a>奥普快票通智能发票扫描识别sdk软件接口技术优势：</h3><p>1、支持多种发票类型：增值税专用发票、增值税普通发票、电子发票PDF版、电子发票打印版。<br>2、支持多种文件格式：支持PDF、JPG、TIF、BMP等文件格式。<br>3、支持自定义编辑模板识别，可扩展火车票、财务凭证、银行对账单、定额发票等。<br>4、智能发票扫描识别sdk软件接口性能<br>（1）关键字段识别率＞98%；<br>（2）处理速度&gt;40张&#x2F;分钟；识别时间&lt;3秒；<br>5、产品形态可提供：发票专用扫描仪 + 快票通发票OCR识别客户端软件；服务器版；webservice私有云；移动端SDK；<br>6、支持各种识别场景，如扫描的发票、拍照的发票、粘贴在A4纸上的发票、高拍仪的发票等；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@622ce2893b30d7bfc69e527dee6511bfe48252b7/2021/05/24/7b5978262321d0175cebfc7029749700.png"></p>
+<h3 id="三、智能发票扫描识别sdk软件接口应用领域"><a href="#三、智能发票扫描识别sdk软件接口应用领域" class="headerlink" title="三、智能发票扫描识别sdk软件接口应用领域"></a>三、智能发票扫描识别sdk软件接口应用领域</h3><p>1、信贷&#x2F;银行&#x2F;基金等行业：通过扫描识别增值税发票获取影像和发票数据，对企业的实际经营情况进行评估，减去大量人工整理企业资料的工作量。<br>2、拥有大量供应商的第三方平台：奥普快票通发票扫描识别解决方案可以缩减发票审核、录入、验证、流转这四个环节，极大地从中节省人力物力。<br>3、集团企业财务管理：增值税发票扫描识别获取影像和数据，并通过联网批量验真，便于企业财务发票管理、检索、对账、FSSC财务共享中心数据存储等。</p>
+<p>More info: <a target="_blank" rel="noopener" href="https://www.yuque.com/docs/share/924a3a69-5813-47e6-a6ea-75fec486e388#">more</a></p>
+<hr>
+<h2 id="人工智能简述"><a href="#人工智能简述" class="headerlink" title="人工智能简述"></a>人工智能简述</h2><h3 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h3><p>机器学习是人工智能( artificial intelligence)研究发展到一定阶段的必然产物.二十世纪五十年代到七十年代初,人工智能研究处于“推理期”,那时人们以为只要能赋予机器逻辑推理能力,机器就能具有智能.这一阶段的代表性工作主要有A. Newell和H. Simon的“逻辑理论家”( Logic Theorist)程序以及此后的“通用问题求解”( General Problem Solving)程序等,这些工作在当时取得了令人振奋的结果.例如,“逻辑理论家”程序在1952年证明了著名数学家罗素和怀特海的名著《数学原理》中的38条定理,在1963年证明了全部52 条定理,特别值得一提的是,定理2.85甚至比罗素和怀特海证明得更巧妙,A Newell 7和H. Simon因为这方面的工作获得了1975年图灵奖,然而,随着研究向前发展,人们逐渐认识到,仅具有逻辑推理能力是远远实现不了人工智能的E.A. Feigenbaum等人认为,要使机器具有智能,就必须设法使机器拥有知识在他们的倡导下,从二十世纪七十年代中期开始,人工智能研究进入了“知识期”、在这一时期,大量专家系统问世,在很多应用领域取得了大量成果.E.A Feigenbaum作为“知识工程”之父在1994年获得图灵奖.但是,人们逐渐认识到,专家系统面临“知识工程瓶颈”,简单地说,就是由人来把知识总结出来再教给计算机是相当困难的.于是,一些学者想到,如果机器自己能够学习知识该多好! 事实上,图灵在1950年关于图灵测试的文章中,就曾提到了机器学习的可能;二十世纪五十年代初已有机器学习的相关研究,例如A. Samuel著名的跳棋程序.五十年代中后期,基于神经网络的“连接主义”( connectionism)学习开始出现,代表性工作有F. Rosenblatt的感知机( Perceptron)、B. Widrow的Adaline等、在六七十年代,基于逻辑表示的“符号主义”( symbolism)学习技术蓬勃发展,代表性工作有P. Winston的“结构学习系统”、R.S. Michalski 等人的“基于逻辑的归纳学习系统”、E.B.Hunt等人的“概念学习系统”等;以决策理论为基础的学习技术以及强化学习技术等也得到发展,代表性工作有N.J. Nilson的“学习机器”等;二十多年后红极一时的统计学习理论的一些奠基性结果也是在这个时期取得的。</p>
+<h3 id="应用现状"><a href="#应用现状" class="headerlink" title="应用现状"></a>应用现状</h3><p>在过去二十年中,人类收集、存储、传输、处理数据的能力取得了飞速提升,人类社会的各个角落都积累了大量数据,亟需能有效地对数据进行分析利用的计算机算法,而机器学习恰顺应了大时代的这个迫切需求,因此该学科领域很自然地取得巨大发展、受到广泛关注.<br>今天,在计算机科学的诸多分支学科领域中,无论是多媒体、图形学,还是网络通信、软件工程,乃至体系結构、芯片设计,都能找到机器学习技术的身影,尤其是在计算机视觉、自然语言处理等”计算机应用技术”领域.机器学习已成为最重要的技术进步源泉之一.<br>机器学习还为许多交叉学科提供了重要的技术支撑.例如,”生物信息学”试图利用信息技术来研究生命现象和规律,而基因组计划的实施和基因苗物的美好愿景让人们为之心潮潔屏.生物信息学研究涉及从”生命现象”到”规律发现”的整个过程,其间必然包括数据获取、数据管理、数据分祈、仿真实验等环节,而”数据分析”恰是机器学习技术的舞台,各种机器学习技术已经在这个舞台上大放异彩.</p>
+<p>事实上,随着科学研究的基本手段从传统的“理论+实验”走向现在的“理论+实验+计算”,乃至出现“数据科学”这样的提法,机器学习的重要性日趋显著,因为“计算”的目的往往是数据分析,而数据科学的核心也恰是通过分析数据来获得价值.若要列出目前计算机科学技术中最活跃、最受瞩目的研究分支,那么机器学习必居其中.2001年,美国NASA-JPL的科学家在 Science 3杂志上专门撰文 Mjolsness and Decoste,200]指出,机器学习对科学研究的整个过程正起到越来越大的支撑作用,其进展对科技发展意义重大2003年, DARPA启动PAL计划,将机器学习的重要性上升到美国国家安全的高度来考虑众所周知,美国最尖端科技的研究通常是由NASA和 DARPA推进的,而这两大机构不约而同地强调机器学习的重要性,其意义不言而喻2006年,卡耐基梅隆大学宣告成立世界上第一个“机器学习系”,机器学习领域寞基人之一T. Mitchell教授出任首任系主任.2012年3月,美国奥巴马政府启动“大数据研究与发展计划”,美国国家科学基金会旋即在加州大学伯克利分校启动加强计划,强调要深入研究和整合大数据时代的三大关键技术机器学习、云计算、众包( crowdsourcing).显然,机器学习在大数据时代是必不可少的核心技术,道理很简单:收集、存储、传输、管理大数据的目的,是为了“利用”大数据,而如果没有机器学习技术分析数据,则“利用”无从谈起谈到对数据进行分析利用,很多人会想到“数据挖掘”( data mining),这里简单探讨一下数据挖掘与机器学习的联系.数据挖掘领域在二十世纪九十年代形成,它受到很多学科领域的影响,其中数据库、机器学习、统计学无疑影响最大Zhou,2003].数据挖掘是从海量数据中发掘知识,这就必然涉及对“海量数据”的管理和分析.大体来说,数据库领域的研究为数据挖掘提供数据管理技术,而机器学习和统计学的研究为数据挖掘提供数据分析技术.由于统计学界的研究成果通常需要经由机器学习研究来形成有效的学习算法,之后再进入数据挖掘领域,因此从这个意义上说,统计学主要是通过机器学习对数据挖掘发挥影响,而机器学习领域和数据库领域则是数据挖掘的两大支撑</p>
+<h3 id="模型评估与选择"><a href="#模型评估与选择" class="headerlink" title="模型评估与选择"></a>模型评估与选择</h3><h3 id="经验误差与过拟合"><a href="#经验误差与过拟合" class="headerlink" title="经验误差与过拟合"></a>经验误差与过拟合</h3><p>通常我们把分类错误的样本数占样本总数的比例称为”错误率”(error rate),即如果在m个样本中有a个样本分类错误,则错误率E &#x3D;: a&#x2F;m;相应的, 1 _ a&#x2F;m称为”精度”(MC皿My),即”精度&#x3D;1-错误率”.更一般地,我们把学习器的实际预测输出与样本的真实输出之间的差异称为”误差”(error), 学习器在训练集上的误差称为”训练误差”(training enor)或”经验误差”(empirical error),在新样本上的误差称为”泛化误差”(generalization error).显然,我们希望得到泛化误差小的学习器.然而,我们事先并不知道新样本是计么样,实际能做的是努力使经验误差最小化.在很多情况下,我们可以学得一个经验误差很小、在训练集上表现很好的学习器,例如甚至对所有训练样本都分类正确,即分类错误率为零,分类精度为100%,但这是不是我们想要的学习器呢?遗憾的是,这样的学巧器在多数情况下都不好.<br>我们实际希望的,是在新样本上能表现得很好的学习器.为了达到这个目的,应该从训练样本中尽可能学出适用于所有潜在样本的”普遍规律”,这样才能在遇到新样本时做出正确的判别.然而,当学习器把训练样本学得”太好”了的时候,很可能已经把训练样本自身的一些特点当作了所有潜在样本都会具有的一般性质,这样就会导致泛化性能下降.这种现象在机器学习中称为”过拟合”(overfitting). 与”过拟合”相对的是”欠拟合”(underfitting),这是指对训练样本的一般性质尚未学好.图2.1给出了关于过拟合与欠拟合的一个便于直观理解的类比.</p>
+<p>有多种因素可能导致过拟合,其中最常见的情况是由于学习能力过于强大, 以至于把训练样本所包含的不太一般的特性都学到了,而欠拟合则通常是由于学习能力低下而造成的.欠拟合比较容易克服,例如在决策树学习中扩展分支、在神经网络学习中增加训练轮数等,而过拟合则很麻烦.在后面的学习中我们将看到,过拟合是机器学习面临的关键障碍,各类学习算法都必然带有一些针对过拟合的措施;然而必须认识到,过拟合是无法彻底避免的,我们所能做的只是”缓解”,或者说减小其风险.关于这一点,可大致这样理解:</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@2516981474c674cb2ba848e3cfb9129ada69158b/2021/05/24/04097c727fca444a967c26f9414b2dc5.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@ab82d2a586ac84374e28c4b5ab161a313c5c06f4/2021/05/24/1e5712180a0136d3b0b76ff8d4309866.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@b0ca80fc8b37cbaa46583f14f0b3d18c5438ac3b/2021/05/24/24f620630fd03c9363d0d435c42f9a0d.png" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%99%BA%E8%83%BD%E5%8F%91%E7%A5%A8%E6%89%AB%E6%8F%8F%E8%AF%86%E5%88%AB/" rel="tag"># 智能发票扫描识别</a>
+          
+            <a href="/tags/sdk%E8%BD%AF%E4%BB%B6%E6%8E%A5%E5%8F%A3/" rel="tag"># sdk软件接口</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/05/21/%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81%E6%B3%95/" rel="next" title="交叉验证法">
+                <i class="fa fa-chevron-left"></i> 交叉验证法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/05/26/%E8%87%AA%E5%8A%A9%E6%B3%95/" rel="prev" title="自助法">
+                自助法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/770690988" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:770690988@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/sssstruggle" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/770690988/infocenter" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D"><span class="nav-text">关键词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%99%BA%E8%83%BD%E5%8F%91%E7%A5%A8%E6%89%AB%E6%8F%8F%E8%AF%86%E5%88%ABsdk%E8%BD%AF%E4%BB%B6%E6%8E%A5%E5%8F%A3%E5%BA%94%E7%94%A8%E8%83%8C%E6%99%AF"><span class="nav-text">一、智能发票扫描识别sdk软件接口应用背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%99%BA%E8%83%BD%E5%8F%91%E7%A5%A8%E6%89%AB%E6%8F%8F%E8%AF%86%E5%88%ABsdk%E8%BD%AF%E4%BB%B6%E6%8E%A5%E5%8F%A3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D"><span class="nav-text">二、智能发票扫描识别sdk软件接口方案介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%A5%E6%99%AE%E5%BF%AB%E7%A5%A8%E9%80%9A%E6%99%BA%E8%83%BD%E5%8F%91%E7%A5%A8%E6%89%AB%E6%8F%8F%E8%AF%86%E5%88%ABsdk%E8%BD%AF%E4%BB%B6%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF%E4%BC%98%E5%8A%BF%EF%BC%9A"><span class="nav-text">奥普快票通智能发票扫描识别sdk软件接口技术优势：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%99%BA%E8%83%BD%E5%8F%91%E7%A5%A8%E6%89%AB%E6%8F%8F%E8%AF%86%E5%88%ABsdk%E8%BD%AF%E4%BB%B6%E6%8E%A5%E5%8F%A3%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="nav-text">三、智能发票扫描识别sdk软件接口应用领域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E8%BF%B0"><span class="nav-text">人工智能简述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2"><span class="nav-text">发展历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%8E%B0%E7%8A%B6"><span class="nav-text">应用现状</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9"><span class="nav-text">模型评估与选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%8F%E9%AA%8C%E8%AF%AF%E5%B7%AE%E4%B8%8E%E8%BF%87%E6%8B%9F%E5%90%88"><span class="nav-text">经验误差与过拟合</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">虞程龙</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'tFhwHkc8bkgfgQwmhzrtupVR-gzGzoHsz',
+        appKey: 'zwHnoVjxXcHrTxENnsIia9E6',
+        placeholder: '欢迎交流讨论...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="人工智能,离散数学," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、命题逻辑全章节思维导图  1·1 命题和逻辑连接词注意点连接词的优先顺序为：  如果出现的连接词同级，又无括号时，则按从左到右 的顺序运算; 若遇有括号时，应该先进行括号中的运算. 1·3 命题公式的等价演算基本等价式  重点为上述的5 6 11 1·4 命题公式的范式初等和有限个命题变元或其否定组成的析取式 初等积有限个命题变元或其否定组成的合取式 析取范式 合取范式 1·5  命题公式的推">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散数学">
+<meta property="og:url" content="https://770690988.github.io/blog.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/index.html">
+<meta property="og:site_name" content="人工智能">
+<meta property="og:description" content="一、命题逻辑全章节思维导图  1·1 命题和逻辑连接词注意点连接词的优先顺序为：  如果出现的连接词同级，又无括号时，则按从左到右 的顺序运算; 若遇有括号时，应该先进行括号中的运算. 1·3 命题公式的等价演算基本等价式  重点为上述的5 6 11 1·4 命题公式的范式初等和有限个命题变元或其否定组成的析取式 初等积有限个命题变元或其否定组成的合取式 析取范式 合取范式 1·5  命题公式的推">
+<meta property="og:locale">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/mt1.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/1.3.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/1.3.2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/1.4.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/1.4.2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.3.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.3.2.png">
+<meta property="og:image" content="https://770690988.github.io/2.3.3.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.3.4.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.3.5.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.4.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.4.2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.1.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.1.2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.1.3.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.1.4.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.1.5.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.2.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.2.2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.2.3.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.2.4.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.2.5.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.3.1.png">
+<meta property="og:image" content="https://770690988.github.io/3.3.2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl4.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl6.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl7.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl2.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl2.2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.3.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.4.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.5.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.2.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.1.png">
+<meta property="og:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.1.png">
+<meta property="article:published_time" content="2021-06-29T14:01:02.000Z">
+<meta property="article:modified_time" content="2021-06-29T14:01:02.000Z">
+<meta property="article:author" content="虞程龙">
+<meta property="article:tag" content="人工智能">
+<meta property="article:tag" content="离散数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://770690988.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://770690988.github.io/blog.github.io/2021/06/29/离散数学/"/>
+
+
+
+
+
+  <title>离散数学 | 人工智能</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人工智能</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人工智能与智能财务的结合</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://770690988.github.io/blog.github.io/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人工智能">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">离散数学</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-29T22:01:02+08:00">
+                2021-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E7%A7%91%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">学科学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E7%A7%91%E5%AD%A6%E4%B9%A0/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">离散数学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、命题逻辑"><a href="#一、命题逻辑" class="headerlink" title="一、命题逻辑"></a>一、命题逻辑</h2><p><strong>全章节思维导图</strong></p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/1.png" alt="img"></p>
+<h3 id="1·1-命题和逻辑连接词"><a href="#1·1-命题和逻辑连接词" class="headerlink" title="1·1 命题和逻辑连接词"></a>1·1 命题和逻辑连接词</h3><h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>连接词的优先顺序为：</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/mt1.1.png" alt="img"></p>
+<p>如果出现的连接词同级，又无括号时，则按从左到右</p>
+<p>的顺序运算; 若遇有括号时，应该先进行括号中的运算.</p>
+<h3 id="1·3-命题公式的等价演算"><a href="#1·3-命题公式的等价演算" class="headerlink" title="1·3 命题公式的等价演算"></a>1·3 命题公式的等价演算</h3><h4 id="基本等价式"><a href="#基本等价式" class="headerlink" title="基本等价式"></a>基本等价式</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/1.3.1.png" alt="img"></p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/1.3.2.png" alt="img"></p>
+<p>重点为上述的5 6 11</p>
+<h3 id="1·4-命题公式的范式"><a href="#1·4-命题公式的范式" class="headerlink" title="1·4 命题公式的范式"></a>1·4 命题公式的范式</h3><h4 id="初等和"><a href="#初等和" class="headerlink" title="初等和"></a>初等和</h4><p>有限个命题变元或其否定组成的析取式</p>
+<h4 id="初等积"><a href="#初等积" class="headerlink" title="初等积"></a>初等积</h4><p>有限个命题变元或其否定组成的合取式</p>
+<h4 id="析取范式"><a href="#析取范式" class="headerlink" title="析取范式"></a>析取范式</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/1.4.1.png" alt="img"></p>
+<h4 id="合取范式"><a href="#合取范式" class="headerlink" title="合取范式"></a>合取范式</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/1.4.2.png" alt="img"></p>
+<h3 id="1·5-命题公式的推理演算"><a href="#1·5-命题公式的推理演算" class="headerlink" title="1·5  命题公式的推理演算"></a>1·5  命题公式的推理演算</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>从前提开始来构造一个有限公式序列，其中每个命题公式或者是已知的前提，或者是由前面的命题公式应用推理规则得到的结论，最后使得这个公式序列中的最后一个公式即为结论。称此方法为演绎推理</p>
+<h4 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h4><ul>
+<li>P规则（前提引入规则）</li>
+</ul>
+<p>在任何步骤中都可以引入前提 作为公式序列中的公式。</p>
+<ul>
+<li>T规则（结论引入规则）（可理解为整体的替换以及出答案）</li>
+</ul>
+<p>在任何步骤中都可以将已有公式的逻辑结论作为序列中的新公式。</p>
+<ul>
+<li>E规则（置换规则）（可理解为用公式进行计算）</li>
+</ul>
+<p>在任何步骤中都可以用公式中的命题公式等价的公式作为序列中的新公式。</p>
+<ul>
+<li>附加前提法1（CP规则）</li>
+</ul>
+<p>将非<em>B</em>加入前提，若推出矛盾(0)，则得证推理正确.</p>
+<h2 id="二、谓词逻辑"><a href="#二、谓词逻辑" class="headerlink" title="二、谓词逻辑"></a>二、谓词逻辑</h2><p><strong>全章节思维导图</strong></p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.png" alt="img"></p>
+<h3 id="2·1-个体词、谓词与量词"><a href="#2·1-个体词、谓词与量词" class="headerlink" title="2·1 个体词、谓词与量词"></a>2·1 个体词、谓词与量词</h3><p>全称量词</p>
+<p>存在量词</p>
+<h3 id="2·3-谓词公式的等价演算"><a href="#2·3-谓词公式的等价演算" class="headerlink" title="2·3 谓词公式的等价演算"></a>2·3 谓词公式的等价演算</h3><h4 id="基本等价式第一组（同1-3-的基本等价式）"><a href="#基本等价式第一组（同1-3-的基本等价式）" class="headerlink" title="基本等价式第一组（同1.3 的基本等价式）"></a>基本等价式第一组（同1.3 的基本等价式）</h4><h4 id="基本等价式第二组"><a href="#基本等价式第二组" class="headerlink" title="基本等价式第二组"></a>基本等价式第二组</h4><ul>
+<li><p>量词否定律</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.3.1.png" alt="img"></p>
+</li>
+<li><p>量词辖域收缩与扩张律</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.3.2.png" alt="img"></p>
+</li>
+<li><p>量词分配律</p>
+<p><img src="/2.3.3.png" alt="img"></p>
+</li>
+<li><p>量词交换律</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.3.4.png" alt="img"></p>
+</li>
+</ul>
+<h4 id="前束范式"><a href="#前束范式" class="headerlink" title="前束范式"></a>前束范式</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.3.5.png" alt="img"></p>
+<h3 id="2·4-谓词公式的推理演算"><a href="#2·4-谓词公式的推理演算" class="headerlink" title="2·4 谓词公式的推理演算"></a>2·4 谓词公式的推理演算</h3><h4 id="推理规则"><a href="#推理规则" class="headerlink" title="推理规则"></a>推理规则</h4><ul>
+<li><p>US规则（全称量词消去规则）</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.4.1.png" alt="img"></p>
+</li>
+<li><p>ES规则（存在量词消去规则）</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2.4.2.png" alt="img"></p>
+</li>
+</ul>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li><p>所有4个量词的推理规则都只能在前束范式中使用。</p>
+</li>
+<li><p>先ES后US  先是存在量词的引入，再是全称量词的引入</p>
+</li>
+</ul>
+<h2 id="三、集合与关系"><a href="#三、集合与关系" class="headerlink" title="三、集合与关系"></a>三、集合与关系</h2><p><strong>全章节思维导图</strong></p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.png" alt="img"></p>
+<h3 id="3·1-集合及运算"><a href="#3·1-集合及运算" class="headerlink" title="3·1 集合及运算"></a>3·1 集合及运算</h3><h4 id="幂集"><a href="#幂集" class="headerlink" title="幂集"></a>幂集</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.1.1.png" alt="img"></p>
+<h4 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.1.2.png" alt="img"></p>
+<h4 id="集合的基本运算"><a href="#集合的基本运算" class="headerlink" title="集合的基本运算"></a>集合的基本运算</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.1.3.png" alt="img"></p>
+<p>需要注意的是这里的第五个即对称差！</p>
+<h4 id="集合的运算性质"><a href="#集合的运算性质" class="headerlink" title="集合的运算性质"></a>集合的运算性质</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.1.4.png" alt="img"></p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.1.5.png" alt="img"></p>
+<p>重点为第二张图</p>
+<h3 id="3·2-二元关系及其运算"><a href="#3·2-二元关系及其运算" class="headerlink" title="3·2 二元关系及其运算"></a>3·2 二元关系及其运算</h3><h4 id="序偶定义"><a href="#序偶定义" class="headerlink" title="序偶定义"></a>序偶定义</h4><p>由两个元素 <em>x</em> 和 <em>y</em>，按照一定的顺序组成的二元组称为有序对，记作&lt;*x*,*y*&gt;，通常称为序偶。</p>
+<h4 id="序偶性质"><a href="#序偶性质" class="headerlink" title="序偶性质"></a>序偶性质</h4><ul>
+<li><p>有序性</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.2.1.png" alt="img"></p>
+</li>
+</ul>
+<h4 id="元组定义"><a href="#元组定义" class="headerlink" title="元组定义"></a>元组定义</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.2.2.png" alt="img"></p>
+<h4 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.2.3.png" alt="img"></p>
+<h4 id="笛卡尔积的性质"><a href="#笛卡尔积的性质" class="headerlink" title="笛卡尔积的性质"></a>笛卡尔积的性质</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.2.4.png" alt="img"></p>
+<h4 id="二元关系"><a href="#二元关系" class="headerlink" title="二元关系"></a>二元关系</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.2.5.png" alt="img"></p>
+<h4 id="复合关系"><a href="#复合关系" class="headerlink" title="复合关系"></a>复合关系</h4><p>简单理解为传递关系</p>
+<h3 id="3·3-二元关系的性质与闭包"><a href="#3·3-二元关系的性质与闭包" class="headerlink" title="3·3 二元关系的性质与闭包"></a>3·3 二元关系的性质与闭包</h3><h4 id="关系的5个性质"><a href="#关系的5个性质" class="headerlink" title="关系的5个性质"></a>关系的5个性质</h4><ul>
+<li><p>自反性</p>
+<p>对角线全为1</p>
+</li>
+<li><p>反自反性</p>
+<p>对角线全为0</p>
+</li>
+<li><p>对称性</p>
+<p>关于对角线对称</p>
+</li>
+<li><p>反对称性</p>
+<p>所有的点与对角线非对称</p>
+</li>
+<li><p>传递性</p>
+</li>
+</ul>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3.3.1.png" alt="img"></p>
+<p><img src="/3.3.2.png" alt="img"></p>
+<h2 id="有序性图的基本概念"><a href="#有序性图的基本概念" class="headerlink" title="有序性图的基本概念"></a>有序性图的基本概念</h2><h3 id="5·1-图的基本概念"><a href="#5·1-图的基本概念" class="headerlink" title="5·1  图的基本概念"></a>5·1  图的基本概念</h3><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl1.png" alt="img"></p>
+<ul>
+<li><p>平凡图表示G（1，0）及图中只有一个孤立点，否则不是</p>
+</li>
+<li><p>|R(V1 )|表示图G中连接点集V1 外部与内部点的边的条数</p>
+</li>
+<li><p>设G是(<em>p</em>, <em>q</em>)简单图，若δ(G) &#x3D; <em>D</em>(G) &#x3D; <em>r</em> ，则称G是<em>r</em>度正则图。</p>
+</li>
+<li><p><em>p</em> − 1度正则图称为完全图，记为K<em>p</em></p>
+</li>
+<li><p>设G &#x3D; ⟨V, E⟩是简单图且V&#x3D;V1∪V2, V1∩V2&#x3D;∅。若∀(<em>u</em>,<em>v</em>) ∈ E，均有<em>u</em> ∈ V1, <em>v</em> ∈ V2或<em>u</em> ∈ V2,  <em>v</em> ∈ V1，则称G为二部图（或二分图）</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl2.png" alt="img"></p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.png" alt="img"></p>
+</li>
+</ul>
+<h4 id="是否可图化"><a href="#是否可图化" class="headerlink" title="是否可图化"></a>是否可图化</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl4.png" alt="img"></p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.png" alt="img"></p>
+<h4 id="补图"><a href="#补图" class="headerlink" title="补图"></a>补图</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl6.png" alt="img"></p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl7.png" alt="img"></p>
+<h3 id="5·2-图的连通性"><a href="#5·2-图的连通性" class="headerlink" title="5·2 图的连通性"></a>5·2 图的连通性</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl2.1.png" alt="img"></p>
+<p>简而言之</p>
+<ul>
+<li><p>能从头走到尾即位<strong>通路</strong>其中，如果这条通路首尾相连，那么又称为<strong>回路</strong>。</p>
+</li>
+<li><p>如果上面的路中没有重合边则为<strong>简单通路&#x2F;回路</strong>。</p>
+</li>
+<li><p>如果上面路中没有经过一个点两次及以上则成为<strong>基本通路&#x2F;回路</strong>。（路径&#x2F;圈）</p>
+</li>
+<li><p>基本回路判定</p>
+<p>如果非零图G中无奇点，则G中<strong>必有</strong>基本回路。</p>
+</li>
+</ul>
+<h4 id="图中的距离"><a href="#图中的距离" class="headerlink" title="图中的距离"></a>图中的距离</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl2.2.png" alt="img"></p>
+<h4 id="连通分图"><a href="#连通分图" class="headerlink" title="连通分图"></a>连通分图</h4><p>非连通图G中的极大连通子图。也就是<em>V</em>关于连通关系<em>R</em>的等价类的导出子图。</p>
+<h4 id="连通图的判定定理"><a href="#连通图的判定定理" class="headerlink" title="连通图的判定定理"></a>连通图的判定定理</h4><ul>
+<li><p>1：若一个图中恰有2个奇点，则这2个奇点之间连通。</p>
+</li>
+<li><p>2：在<em>p</em>阶简单图G中，若对G的每对顶点<em>u</em>,<em>v</em>，都有 </p>
+<p><em>d</em>(<em>u</em>) + <em>d</em>(<em>v</em>) ≥ <em>p</em> − 1, ∀<em>u</em>, <em>v</em> ∈ V </p>
+<p>则G是连通图。</p>
+<p>证明：用反证法。若G不是连通图，则它至少有二个连通分</p>
+<p>图，设其中一个连通分图有<em>n</em>个(<em>n</em> ≥)顶点，<em>u**0</em>是其中的一个顶</p>
+<p>点，其余各连通分图共含有<em>p-n</em>个顶点， <em>v**0</em>是其中的一个顶</p>
+<p>点.则<em>d</em>(<em>u**0</em>) ≤ <em>n</em> − 1, <em>d</em>(<em>v**0</em>) ≤ <em>p-n</em> − 1</p>
+<p>二式相加得<em>d</em>(<em>u**0</em>) + <em>d</em>(<em>v**0</em>) ≤<em>p</em>− 2</p>
+<p>推论  在<em>p</em>阶简单图G中，若 δ(G) ≥ (<em>p</em>−1)&#x2F;2，则G是连通图。</p>
+</li>
+<li><p>3： (<em>p</em>, <em>q</em>)简单图G若有<em>k</em>个连通分图，则边数</p>
+<p>​       <em>q</em> ≤ (<em>p</em>−<em>k</em>)(<em>p</em>−<em>k</em>+1) &#x2F;2</p>
+</li>
+<li><p>4：若(<em>p</em>, <em>q</em>)图G是连通图，则<em>q</em> ≥ <em>p</em> − 1 。</p>
+<p>证明：用数学归纳法。</p>
+<p><em>p</em><em>&#x3D;<em>1时， <em>q</em></em>&#x3D;0</em></p>
+<p>假设<em>p</em> ≤<em>n</em>时，有<em>q</em> ≥ <em>p</em> − 1 </p>
+<p>当<em>p</em><em>&#x3D;</em> <em>n</em> <em>+<em>1时，可以看作</em>n</em>个顶点的图加一个顶点，因为是连通图，这个顶点与<em>n</em>个顶点的图至少有一条边相连，因此</p>
+<p><em>q</em> ≥ <em>n</em> − 1+1,即<em>q</em> ≥ （<em>n</em>+1 ）− 1&#x3D; <em>p</em> − 1 </p>
+</li>
+<li><p>5：简单图<em>G</em>&#x3D;&lt;<em>V*,<em>E</em>&gt;是二部图当且仅当</em>G*中没有长度为奇数的基本回路。</p>
+</li>
+<li><p>图的删除</p>
+<p><em>G</em>-<em>v</em>: 从<em>G</em>中删除<em>v</em>及关联的边</p>
+<p><em>G</em>-<em>V</em> ¢: 从<em>G</em>中删除<em>V</em> ¢中所有的顶点及关联的边</p>
+<p><em>G</em>-<em>e</em> : 从<em>G</em>中删除<em>e</em></p>
+<p><em>G</em>-<em>E</em>¢: 从<em>G</em>中删除<em>E</em>¢中所有边</p>
+</li>
+</ul>
+<h4 id="点割集"><a href="#点割集" class="headerlink" title="点割集"></a><strong>点割集</strong></h4><p>设图<em>G</em>&#x3D;&lt;*V*,*E*&gt;, 点子集V1 ⊆ V <em>,</em> 若</p>
+<p>(1)G- V1是平凡图或其连通分图数大于G的连通分图数</p>
+<p>(2)∀V2⊂ V1, G- V2的连通分图数不大于G的连通分图数</p>
+<p>则称V1为<em>G</em>的点割集. </p>
+<p>若V1&#x3D;{<em>v</em>}为点割集, 则称<em>v</em>为割点.</p>
+<h4 id="边割集："><a href="#边割集：" class="headerlink" title="边割集："></a><strong>边割集</strong>：</h4><p>设图<em>G</em>&#x3D;&lt;*V*,*E*&gt;, 边子集E1 ⊆ E <em>,</em> 若</p>
+<p>(1)G- E1是平凡图或其连通分图数大于G的连通分图数</p>
+<p>(2)∀E2⊂ E1, G- E2的连通分图数不大于G的连通分图数</p>
+<p>则称E1为<em>G</em>的<strong>边割集</strong>. 简称<strong>割集</strong>。</p>
+<p>若E1&#x3D;{<em>e</em>}为割集, 则称<em>e</em>为<strong>割边</strong>或<strong>桥</strong>.</p>
+<h4 id="点连通度"><a href="#点连通度" class="headerlink" title="点连通度"></a>点连通度</h4><p>图G &#x3D; ⟨V, E⟩的点连通度是指为了由G产生一个不连通图或者平凡图，而需从G中去掉的最少的顶点数，记为κ(G)</p>
+<p> κ(G)&#x3D;min{|V1| V1为G的点割集}</p>
+<ul>
+<li>性质1 非连通图和平凡图的点连通度是0</li>
+<li>性质2  连通图中若有割点，则点连通度是1。</li>
+<li>性质3  κ(K<em>p</em>)&#x3D;<em>p</em> − 1</li>
+</ul>
+<h4 id="边连通度"><a href="#边连通度" class="headerlink" title="边连通度"></a>边连通度</h4><p>图G &#x3D; ⟨V, E⟩的边连通度是指为了由G产生一个不连通图或者平凡图，而需从G中去掉的最少的边数，记为λ(G) </p>
+<p>λ(G) &#x3D;min{|E1| E1为G的割集}</p>
+<ul>
+<li>性质1 非连通图和平凡图的点连通度是0</li>
+<li>性质2  连通图中若有割点，则点连通度是1。</li>
+<li>性质3  λ(K<em>p</em>)&#x3D;<em>p</em> − 1</li>
+</ul>
+<h3 id="5-4-图的矩阵表示"><a href="#5-4-图的矩阵表示" class="headerlink" title="5.4 图的矩阵表示"></a>5.4 图的矩阵表示</h3><h4 id="G的邻接矩阵"><a href="#G的邻接矩阵" class="headerlink" title="G的邻接矩阵"></a>G的邻接矩阵</h4><p>设G&#x3D;&lt;<em>V*,<em>E</em>&gt;是</em>p<em>阶图, 其中</em>V*&#x3D;{<em>v</em>1, <em>v</em>2, …, <em>vp</em>}, <em>p</em>阶方阵 AG&#x3D;( <em>aij</em> )<em>p</em>´<em>p</em>为图<em>G</em>的邻接矩阵, 其中元素<em>aij</em>为起点<em>vi</em>终点<em>vj</em>的边的数目。</p>
+<p>简单表示即 竖着表示V1 V2 V3 V4…的点 横着表示V1 V2 V3 V4…的点，数字表示有几条线</p>
+<p>0表示不连接</p>
+<p>n表示有n条线</p>
+<p>成环时即主对角线上相应的点值为1（不是2）</p>
+<h4 id="G的关联矩阵"><a href="#G的关联矩阵" class="headerlink" title="G的关联矩阵"></a>G的关联矩阵</h4><p>设<em>G</em>&#x3D;&lt;<em>V*,<em>E</em>&gt;是(<em>p</em>,<em>q</em>)图, <em>V</em>&#x3D;{<em>v</em>1, <em>v</em>2, …, <em>v**p</em>}, <em>E</em>&#x3D;{<em>e</em>1, <em>e</em>2, …, <em>e**q</em>}, <em>p</em>×</em>q<em>阶矩阵 MG&#x3D;( <em>m**ij</em> )<em>p</em>´</em>q<em>为图</em>G<em>的关联矩阵, 其中元素</em>m<strong>ij<em>为</em>v</strong>i<em>与e**j</em>的关联次数。</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.1.png" alt="img"></p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.2.png" alt="img"></p>
+<p>简单表示即 竖着表示V1 V2 V3 V4…的点 横着表示e1 e2 e3 e4…的线</p>
+<p>1表示有关联；</p>
+<p>0表示无关联；</p>
+<p>2表示成环</p>
+<ul>
+<li><p>例题：</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.3.png" alt="img"></p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.4.png" alt="img"></p>
+</li>
+</ul>
+<h4 id="带权图"><a href="#带权图" class="headerlink" title="带权图"></a>带权图</h4><ul>
+<li><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl3.5.png" alt="img"></p>
+<p>其中的L1 L2…都是题目提供的</p>
+</li>
+</ul>
+<h3 id="5-5-树"><a href="#5-5-树" class="headerlink" title="5.5 树"></a>5.5 树</h3><h4 id="树"><a href="#树" class="headerlink" title="树"></a>树</h4><ul>
+<li>无基本回路的连通图</li>
+</ul>
+<h4 id="平凡树"><a href="#平凡树" class="headerlink" title="平凡树"></a>平凡树</h4><ul>
+<li>平凡图</li>
+</ul>
+<h4 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h4><ul>
+<li>每个连通分图都是树的非连通图</li>
+</ul>
+<h4 id="树叶"><a href="#树叶" class="headerlink" title="树叶"></a>树叶</h4><ul>
+<li>树中度数为1的顶点</li>
+</ul>
+<h4 id="分支点"><a href="#分支点" class="headerlink" title="分支点"></a>分支点</h4><ul>
+<li>树中度数大于等于2的顶点</li>
+</ul>
+<h4 id="等价关系"><a href="#等价关系" class="headerlink" title="等价关系"></a>等价关系</h4><ul>
+<li><em>G</em>中任意两个顶点之间存在唯一的基本通路</li>
+<li><em>G</em>是连通的且<em>G</em>中任何边均为桥</li>
+<li><em>G</em>是连通的且<em>q</em>&#x3D;<em>p</em>-1</li>
+<li><em>G</em>中无回路且<em>q</em>&#x3D;<em>p</em>-1</li>
+<li><em>G</em>中没有基本回路, 但在任何两个不同的顶点之间加一条新边后所得图中有唯一的一个含新边的基本回路。</li>
+</ul>
+<h4 id="阶数的计算"><a href="#阶数的计算" class="headerlink" title="阶数的计算"></a>阶数的计算</h4><p>！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！</p>
+<h4 id="定理-1"><a href="#定理-1" class="headerlink" title="定理"></a>定理</h4><ul>
+<li>设<em>T</em>是连通图<em>G</em>的一棵生成树, 则<ul>
+<li>G的任何基本回路都至少包含T的一条弦</li>
+<li>若<em>e</em>为T的弦，则G中存在一条且只存在一条只含弦<em>e**，</em>其余都是枝的基本回路，称为G的对应T的弦<em>e</em>的基本回路</li>
+<li>G的任一割集都至少含有T的一条枝</li>
+<li>若<em>e</em>为T的枝，则G中恰好存在一个只含枝<em>e**，</em>其余都是弦的割集，称为G的对应T的枝<em>e</em>的基本割集。</li>
+</ul>
+</li>
+</ul>
+<h4 id="求基本回路的算法"><a href="#求基本回路的算法" class="headerlink" title="求基本回路的算法"></a>求基本回路的算法</h4><p>设弦<em>e</em>&#x3D;(<em>u</em>,<em>v</em>), 先求生成树<em>T</em>中<em>u</em>到<em>v</em>的基本路</p>
+<p>径<em>G**uv</em>, 再加上弦<em>e</em>. </p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.1.png" alt="img"></p>
+<p>例如上图红色的是枝，黑色的是弦</p>
+<p><em>Ce</em>&#x3D;(<em>e,b,</em> <em>c</em>), <em>Cf</em>&#x3D;(<em>f,</em> <em>a,</em> <em>b,</em> <em>c</em>), </p>
+<p><em>Cg</em>&#x3D;(<em>g,</em> <em>a,</em> <em>b,</em> <em>c,</em> <em>d)</em></p>
+<p>（即只能过一条弦）</p>
+<h4 id="求基本割集的算法"><a href="#求基本割集的算法" class="headerlink" title="求基本割集的算法"></a>求基本割集的算法</h4><p>设<em>a</em>为生成树<em>T</em>的树枝, <em>T</em>-<em>a</em>由两</p>
+<p>棵子树<em>T</em>1与<em>T</em>2组成, 则</p>
+<p>   <em>Sa</em>&#x3D;{<em>e</em> | <em>e</em>Î<em>E</em>(<em>G</em>)且<em>e</em>的两个端点分别属于<em>T</em>1与<em>T</em>2} .</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.1.png" alt="img"></p>
+<p>例如上图红色的是枝，黑色的是弦</p>
+<p>则<em>Sa</em>&#x3D;{<em>a</em>, <em>f</em>, <em>g</em>},   <em>Sb</em>&#x3D;{<em>b</em>, <em>e</em>, <em>f</em>, <em>g</em>},</p>
+<p>  <em>Sc</em>&#x3D;{<em>c</em>, <em>e</em>, <em>f</em> <em>g</em>}, <em>Sd</em>&#x3D;{<em>d</em>, <em>g</em>}</p>
+<p>（即只能割一条枝）</p>
+<h4 id="回路合并"><a href="#回路合并" class="headerlink" title="回路合并"></a>回路合并</h4><p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.2.png" alt="img"></p>
+<h4 id="基本回路的性质"><a href="#基本回路的性质" class="headerlink" title="基本回路的性质"></a>基本回路的性质</h4><p>连通图中的任一条回路都可以表成对应它所含弦的基本回路</p>
+<p>的合并.</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.1.png" alt="img"></p>
+<p>例如, <em>abcf</em>&#x3D;<em>Cf</em>  </p>
+<p>​      <em>aef</em>&#x3D;<em>Ce</em>困<em>Cf</em>    </p>
+<p>​      <em>aedg</em>&#x3D;<em>Ce困Cg</em>   </p>
+<p>​      <em>bcdgfe</em>&#x3D;<em>Ce</em>困<em>Cf</em>困<em>Cg</em>  </p>
+<h4 id="基本割集的性质"><a href="#基本割集的性质" class="headerlink" title="基本割集的性质"></a>基本割集的性质</h4><p>连通图中的任一割集都可以表成对应它所含树枝的基本割集</p>
+<p>的对称差.</p>
+<p><img src="/2021/06/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/tl5.1.png" alt="img"></p>
+<p>例如 {<em>g</em>,<em>d</em>}&#x3D;<em>S**d</em>   </p>
+<p>​     {<em>a</em>,<em>b</em>,<em>e</em>}&#x3D;<em>S**a</em>Å<em>S**b</em>  </p>
+<p>​     {<em>a</em>,<em>e</em>,<em>c</em>}&#x3D;<em>S**a</em>Å<em>S**c</em>  </p>
+<p>​     {<em>b</em>,<em>e</em>,<em>f</em>,<em>d</em>}&#x3D;<em>S**b</em>Å<em>S**d</em>   </p>
+<h3 id="5-6-最小生成树"><a href="#5-6-最小生成树" class="headerlink" title="5.6 最小生成树"></a>5.6 最小生成树</h3><h4 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h4><ul>
+<li>带权图中权最小的生成树</li>
+</ul>
+<h4 id="Kruskal算法基本描述"><a href="#Kruskal算法基本描述" class="headerlink" title="Kruskal算法基本描述"></a>Kruskal算法基本描述</h4><p>（1）先构造一个只含 n 个顶点，而边集为空的子图，若将</p>
+<p>该子图中各个顶点看成是各棵树上的根结点，则它是一个含</p>
+<p>有 n 棵树的一个森林。</p>
+<p>（2）从带权图的边集 E 中选取一条权值最小的边，若该条</p>
+<p>边的两个顶点分属不同的树，则将其加入子图，也就是说，</p>
+<p>将这两个顶点分别所在的两棵树合成一棵树；反之，若该条</p>
+<p>边的两个顶点已落在同一棵树上，则不可取，而应该取下一</p>
+<p>条权值最小的边再试之。</p>
+<p>（3）依次类推，直至森林中只有一棵树，也即子图中含有 n-1条边为止。</p>
+<h4 id="Prim算法基本描述"><a href="#Prim算法基本描述" class="headerlink" title="Prim算法基本描述"></a>Prim算法基本描述</h4><p>（1）初始化：Vnew&#x3D; {<em>v</em>}，其中<em>v</em>为集合V中的任一节点（起始点），Enew&#x3D; { }（空集）。</p>
+<p>（2）重复下列操作，直到Vnew&#x3D; V：</p>
+<p>①在集合E中选取权值最小的边&lt;<em>u, v*&gt;，其中</em>u*为集合Vnew中</p>
+<p>的元素，而<em>v</em>不在Vnew集合当中，并且<em>v</em>∈V（如果存在有多条满足前述条件即具有相同权值的边，则可任意选取其中之一）。</p>
+<p>②将v加入集合Vnew中，将&lt;*u, v*&gt;边加入集合Enew中；</p>
+<p>（3）使用集合Vnew和Enew来描述所得到的最小生成树。</p>
+<h3 id="5·7-欧拉图与哈密尔顿图"><a href="#5·7-欧拉图与哈密尔顿图" class="headerlink" title="5·7 欧拉图与哈密尔顿图"></a>5·7 欧拉图与哈密尔顿图</h3><h4 id="欧拉图"><a href="#欧拉图" class="headerlink" title="欧拉图"></a>欧拉图</h4><h5 id="欧拉通路"><a href="#欧拉通路" class="headerlink" title="欧拉通路:"></a>欧拉通路:</h5><p>图中行遍所有顶点且恰好经过每条边一次的通路. </p>
+<h5 id="欧拉回路"><a href="#欧拉回路" class="headerlink" title="欧拉回路:"></a>欧拉回路:</h5><p>图中行遍所有顶点且恰好经过每条边一次的回路.</p>
+<h5 id="欧拉图-1"><a href="#欧拉图-1" class="headerlink" title="欧拉图:"></a>欧拉图:</h5><p>有欧拉回路的图.</p>
+<h5 id="半欧拉图"><a href="#半欧拉图" class="headerlink" title="半欧拉图:"></a>半欧拉图:</h5><p>有欧拉通路,但无欧拉回路的图.</p>
+<h5 id="额外说明"><a href="#额外说明" class="headerlink" title="额外说明"></a>额外说明</h5><ul>
+<li><p>规定平凡图为欧拉图.</p>
+</li>
+<li><p>欧拉通路是简单通路, 欧拉回路是简单回路.</p>
+</li>
+<li><p>环不影响图的欧拉性.</p>
+</li>
+</ul>
+<h5 id="欧拉图定理"><a href="#欧拉图定理" class="headerlink" title="欧拉图定理"></a>欧拉图定理</h5><ul>
+<li>图<em>G</em>是非平凡的连通图，则G是欧拉图当且仅当<em>G</em>中无奇点。</li>
+</ul>
+<p>证明1</p>
+<p>若<em>G</em>是连通的而且是欧拉图，则欧拉回路既包含所有的边，也包含所有顶点。对该欧拉回路上的每一个顶点，若有一条边以该顶点为出发点，必然对应另一条边以该点为终止点。因为这样的边成对出现，并且不重复，所以每个顶点的度数必然为偶数。</p>
+<ul>
+<li>图<em>G</em>是非平凡的连通图，则<em>G</em>是半欧拉图当且仅当<em>G</em>恰有两个奇点,而且这二个奇点即是欧拉通路的起点和终点。证明:</li>
+</ul>
+<p>证明2</p>
+<p>若G是连通的而且是半欧拉图，则欧拉通路包含所有的边，也包含了所有顶点。沿着该欧拉通路前进，则只有起点和终点经过奇数次，其他顶点必然经历偶数次，即入顶点和出顶点的次数成对，所以G中恰有两个奇点。</p>
+<ul>
+<li>若连通图G中恰有2<em>n</em>个奇点，则G可以表示为至少<em>n</em>条简单通路的边不相交的并。</li>
+</ul>
+<h4 id="哈密尔顿图"><a href="#哈密尔顿图" class="headerlink" title="哈密尔顿图"></a>哈密尔顿图</h4><h5 id="哈密顿通路"><a href="#哈密顿通路" class="headerlink" title="哈密顿通路:"></a>哈密顿通路:</h5><p>经过图中所有顶点一次且仅一次的通路.</p>
+<h5 id="哈密顿回路"><a href="#哈密顿回路" class="headerlink" title="哈密顿回路:"></a>哈密顿回路:</h5><p>经过图中所有顶点一次且仅一次的回路.</p>
+<h5 id="哈密顿图"><a href="#哈密顿图" class="headerlink" title="哈密顿图:"></a>哈密顿图:</h5><p>具有哈密顿回路的图.</p>
+<h5 id="半哈密顿图"><a href="#半哈密顿图" class="headerlink" title="半哈密顿图:"></a>半哈密顿图:</h5><p>具有哈密顿通路而无哈密顿回路的图.</p>
+<h5 id="几点说明"><a href="#几点说明" class="headerlink" title="几点说明"></a>几点说明</h5><ul>
+<li><p>平凡图是哈密顿图.</p>
+</li>
+<li><p>哈密顿通路是基本通路，哈密顿回路是基本回路.</p>
+</li>
+<li><p>环与平行边不影响图的哈密顿性.</p>
+</li>
+</ul>
+<h5 id="注意点-1"><a href="#注意点-1" class="headerlink" title="注意点"></a>注意点</h5><ul>
+<li><p>每个哈密尔顿图都连通</p>
+</li>
+<li><p>哈密尔顿图的每个顶点的度数大于等于2</p>
+</li>
+<li><p>一个图若有哈密尔顿回路，则 度数为2的顶点所关联的两条边一定在哈密尔顿回路上。 </p>
+</li>
+<li><p>若某图有哈密尔顿回路，则 必须在该哈密尔顿回路中出 现的边不能构成一个未经过 所有顶点的回路</p>
+</li>
+</ul>
+<h5 id="定理-2"><a href="#定理-2" class="headerlink" title="定理"></a>定理</h5><ul>
+<li><p>若G是(<em>p</em>, <em>q</em>)简单图，且p ≥ 3，若对于G中任意二点<em>u</em>, <em>v</em>都有</p>
+<p><em>d</em>(<em>u</em>) + <em>d</em>(<em>v</em>) ≥ <em>p</em> </p>
+<p>则G是哈密尔顿图。</p>
+</li>
+<li><p>若G是(<em>p</em>, <em>q</em>)简单图，且p ≥ 2，若对于G中任意二点<em>u</em>, <em>v</em>都有</p>
+<p><em>d</em>(<em>u</em>) + <em>d</em>(<em>v</em>) ≥ <em>p</em>*-*1</p>
+<p>则G是半哈密尔顿图。</p>
+</li>
+<li><p>设G是哈密尔顿图，从G中任意去除<em>k</em>个点以及与之关</p>
+<p>联的边后所得到的图记为G’，则G’的连通分图数不超过<em>k</em>。</p>
+<p>也即对于任意<em>V</em>1Ì<em>V</em>且<em>V</em>1¹Æ, 均有 <em>p</em>(<em>G</em>-<em>V</em>1)£|<em>V</em>1|.</p>
+<p>证：设<em>C</em>为<em>G</em>中一条哈密顿回路, 有<em>p</em>(<em>C</em>-<em>V</em>1) £ |<em>V</em>1|. 又因为</p>
+<p><em>C</em>Í<em>G,</em> 故 <em>p</em>(<em>G</em>-<em>V</em>1) £ <em>p</em>(<em>C</em>-<em>V</em>1) £ |<em>V</em>1|.</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@2516981474c674cb2ba848e3cfb9129ada69158b/2021/05/24/04097c727fca444a967c26f9414b2dc5.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@ab82d2a586ac84374e28c4b5ab161a313c5c06f4/2021/05/24/1e5712180a0136d3b0b76ff8d4309866.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@b0ca80fc8b37cbaa46583f14f0b3d18c5438ac3b/2021/05/24/24f620630fd03c9363d0d435c42f9a0d.png" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag"># 人工智能</a>
+          
+            <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag"># 离散数学</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/06/29/%E5%90%84%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F/" rel="next" title="各个排序方式">
+                <i class="fa fa-chevron-left"></i> 各个排序方式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/07/01/%E4%B8%AD%E7%BA%A7%E8%B4%A2%E5%8A%A1%E4%BC%9A%E8%AE%A1%E8%80%83%E8%AF%95%E8%A6%81%E7%82%B9%E6%B1%87%E6%80%BB/" rel="prev" title="中级财务会计考试要点汇总">
+                中级财务会计考试要点汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/770690988" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:770690988@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/sssstruggle" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/770690988/infocenter" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91"><span class="nav-text">一、命题逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%C2%B71-%E5%91%BD%E9%A2%98%E5%92%8C%E9%80%BB%E8%BE%91%E8%BF%9E%E6%8E%A5%E8%AF%8D"><span class="nav-text">1·1 命题和逻辑连接词</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-text">注意点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1%C2%B73-%E5%91%BD%E9%A2%98%E5%85%AC%E5%BC%8F%E7%9A%84%E7%AD%89%E4%BB%B7%E6%BC%94%E7%AE%97"><span class="nav-text">1·3 命题公式的等价演算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%AD%89%E4%BB%B7%E5%BC%8F"><span class="nav-text">基本等价式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1%C2%B74-%E5%91%BD%E9%A2%98%E5%85%AC%E5%BC%8F%E7%9A%84%E8%8C%83%E5%BC%8F"><span class="nav-text">1·4 命题公式的范式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E5%92%8C"><span class="nav-text">初等和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E7%A7%AF"><span class="nav-text">初等积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%90%E5%8F%96%E8%8C%83%E5%BC%8F"><span class="nav-text">析取范式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E5%8F%96%E8%8C%83%E5%BC%8F"><span class="nav-text">合取范式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1%C2%B75-%E5%91%BD%E9%A2%98%E5%85%AC%E5%BC%8F%E7%9A%84%E6%8E%A8%E7%90%86%E6%BC%94%E7%AE%97"><span class="nav-text">1·5  命题公式的推理演算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E7%90%86"><span class="nav-text">定理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91"><span class="nav-text">二、谓词逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2%C2%B71-%E4%B8%AA%E4%BD%93%E8%AF%8D%E3%80%81%E8%B0%93%E8%AF%8D%E4%B8%8E%E9%87%8F%E8%AF%8D"><span class="nav-text">2·1 个体词、谓词与量词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%C2%B73-%E8%B0%93%E8%AF%8D%E5%85%AC%E5%BC%8F%E7%9A%84%E7%AD%89%E4%BB%B7%E6%BC%94%E7%AE%97"><span class="nav-text">2·3 谓词公式的等价演算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%AD%89%E4%BB%B7%E5%BC%8F%E7%AC%AC%E4%B8%80%E7%BB%84%EF%BC%88%E5%90%8C1-3-%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AD%89%E4%BB%B7%E5%BC%8F%EF%BC%89"><span class="nav-text">基本等价式第一组（同1.3 的基本等价式）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%AD%89%E4%BB%B7%E5%BC%8F%E7%AC%AC%E4%BA%8C%E7%BB%84"><span class="nav-text">基本等价式第二组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E6%9D%9F%E8%8C%83%E5%BC%8F"><span class="nav-text">前束范式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%C2%B74-%E8%B0%93%E8%AF%8D%E5%85%AC%E5%BC%8F%E7%9A%84%E6%8E%A8%E7%90%86%E6%BC%94%E7%AE%97"><span class="nav-text">2·4 谓词公式的推理演算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E7%90%86%E8%A7%84%E5%88%99"><span class="nav-text">推理规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text">注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E9%9B%86%E5%90%88%E4%B8%8E%E5%85%B3%E7%B3%BB"><span class="nav-text">三、集合与关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3%C2%B71-%E9%9B%86%E5%90%88%E5%8F%8A%E8%BF%90%E7%AE%97"><span class="nav-text">3·1 集合及运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%82%E9%9B%86"><span class="nav-text">幂集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E6%95%B0"><span class="nav-text">计数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="nav-text">集合的基本运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E8%BF%90%E7%AE%97%E6%80%A7%E8%B4%A8"><span class="nav-text">集合的运算性质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%C2%B72-%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97"><span class="nav-text">3·2 二元关系及其运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%8F%E5%81%B6%E5%AE%9A%E4%B9%89"><span class="nav-text">序偶定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%8F%E5%81%B6%E6%80%A7%E8%B4%A8"><span class="nav-text">序偶性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%83%E7%BB%84%E5%AE%9A%E4%B9%89"><span class="nav-text">元组定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="nav-text">笛卡尔积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-text">笛卡尔积的性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB"><span class="nav-text">二元关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E5%85%B3%E7%B3%BB"><span class="nav-text">复合关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%C2%B73-%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB%E7%9A%84%E6%80%A7%E8%B4%A8%E4%B8%8E%E9%97%AD%E5%8C%85"><span class="nav-text">3·3 二元关系的性质与闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%845%E4%B8%AA%E6%80%A7%E8%B4%A8"><span class="nav-text">关系的5个性质</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%80%A7%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">有序性图的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5%C2%B71-%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">5·1  图的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%AF%E5%90%A6%E5%8F%AF%E5%9B%BE%E5%8C%96"><span class="nav-text">是否可图化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E5%9B%BE"><span class="nav-text">补图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%C2%B72-%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7"><span class="nav-text">5·2 图的连通性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E4%B8%AD%E7%9A%84%E8%B7%9D%E7%A6%BB"><span class="nav-text">图中的距离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E9%80%9A%E5%88%86%E5%9B%BE"><span class="nav-text">连通分图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E9%80%9A%E5%9B%BE%E7%9A%84%E5%88%A4%E5%AE%9A%E5%AE%9A%E7%90%86"><span class="nav-text">连通图的判定定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%82%B9%E5%89%B2%E9%9B%86"><span class="nav-text">点割集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%B9%E5%89%B2%E9%9B%86%EF%BC%9A"><span class="nav-text">边割集：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%82%B9%E8%BF%9E%E9%80%9A%E5%BA%A6"><span class="nav-text">点连通度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%B9%E8%BF%9E%E9%80%9A%E5%BA%A6"><span class="nav-text">边连通度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E5%9B%BE%E7%9A%84%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA"><span class="nav-text">5.4 图的矩阵表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#G%E7%9A%84%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5"><span class="nav-text">G的邻接矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#G%E7%9A%84%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5"><span class="nav-text">G的关联矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%A6%E6%9D%83%E5%9B%BE"><span class="nav-text">带权图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-%E6%A0%91"><span class="nav-text">5.5 树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91"><span class="nav-text">树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B3%E5%87%A1%E6%A0%91"><span class="nav-text">平凡树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%AE%E6%9E%97"><span class="nav-text">森林</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E5%8F%B6"><span class="nav-text">树叶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%82%B9"><span class="nav-text">分支点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E5%85%B3%E7%B3%BB"><span class="nav-text">等价关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%B6%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-text">阶数的计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-1"><span class="nav-text">定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B1%82%E5%9F%BA%E6%9C%AC%E5%9B%9E%E8%B7%AF%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-text">求基本回路的算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B1%82%E5%9F%BA%E6%9C%AC%E5%89%B2%E9%9B%86%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-text">求基本割集的算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E8%B7%AF%E5%90%88%E5%B9%B6"><span class="nav-text">回路合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%9B%9E%E8%B7%AF%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-text">基本回路的性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%89%B2%E9%9B%86%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-text">基本割集的性质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-text">5.6 最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-text">最小生成树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Kruskal%E7%AE%97%E6%B3%95%E5%9F%BA%E6%9C%AC%E6%8F%8F%E8%BF%B0"><span class="nav-text">Kruskal算法基本描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Prim%E7%AE%97%E6%B3%95%E5%9F%BA%E6%9C%AC%E6%8F%8F%E8%BF%B0"><span class="nav-text">Prim算法基本描述</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%C2%B77-%E6%AC%A7%E6%8B%89%E5%9B%BE%E4%B8%8E%E5%93%88%E5%AF%86%E5%B0%94%E9%A1%BF%E5%9B%BE"><span class="nav-text">5·7 欧拉图与哈密尔顿图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E5%9B%BE"><span class="nav-text">欧拉图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E9%80%9A%E8%B7%AF"><span class="nav-text">欧拉通路:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF"><span class="nav-text">欧拉回路:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E5%9B%BE-1"><span class="nav-text">欧拉图:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%8A%E6%AC%A7%E6%8B%89%E5%9B%BE"><span class="nav-text">半欧拉图:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%9D%E5%A4%96%E8%AF%B4%E6%98%8E"><span class="nav-text">额外说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E5%9B%BE%E5%AE%9A%E7%90%86"><span class="nav-text">欧拉图定理</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%88%E5%AF%86%E5%B0%94%E9%A1%BF%E5%9B%BE"><span class="nav-text">哈密尔顿图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E9%80%9A%E8%B7%AF"><span class="nav-text">哈密顿通路:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%9E%E8%B7%AF"><span class="nav-text">哈密顿回路:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%BE"><span class="nav-text">哈密顿图:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%8A%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%BE"><span class="nav-text">半哈密顿图:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%87%A0%E7%82%B9%E8%AF%B4%E6%98%8E"><span class="nav-text">几点说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9-1"><span class="nav-text">注意点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-2"><span class="nav-text">定理</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">虞程龙</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'tFhwHkc8bkgfgQwmhzrtupVR-gzGzoHsz',
+        appKey: 'zwHnoVjxXcHrTxENnsIia9E6',
+        placeholder: '欢迎交流讨论...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

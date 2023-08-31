@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="软件学习笔记,JAVA,JAVASE," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Java学习笔记JavaSE学习基本原理JVM JVM是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令、管理数据、内存、寄存器，包含在JDK中。 对于不同的平台，有不同的虚拟机 由于Java虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，导出运行”  JDK 全称为（Java Development Kit） Java开发工具包 JDK  &#x3D; JRE + Java的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java">
+<meta property="og:url" content="https://770690988.github.io/blog.github.io/2021/09/16/Java/index.html">
+<meta property="og:site_name" content="人工智能">
+<meta property="og:description" content="Java学习笔记JavaSE学习基本原理JVM JVM是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令、管理数据、内存、寄存器，包含在JDK中。 对于不同的平台，有不同的虚拟机 由于Java虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，导出运行”  JDK 全称为（Java Development Kit） Java开发工具包 JDK  &#x3D; JRE + Java的">
+<meta property="og:locale">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@f764933c3477e95cc2e4541b64da4da67009d4b1/2021/09/25/aa4a1d849fead6799e36eb2010d727f8.png">
+<meta property="article:published_time" content="2021-09-16T12:45:55.000Z">
+<meta property="article:modified_time" content="2021-09-16T12:45:55.000Z">
+<meta property="article:author" content="虞程龙">
+<meta property="article:tag" content="软件学习笔记">
+<meta property="article:tag" content="JAVA">
+<meta property="article:tag" content="JAVASE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@f764933c3477e95cc2e4541b64da4da67009d4b1/2021/09/25/aa4a1d849fead6799e36eb2010d727f8.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://770690988.github.io/blog.github.io/2021/09/16/Java/"/>
+
+
+
+
+
+  <title>Java | 人工智能</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">人工智能</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人工智能与智能财务的结合</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://770690988.github.io/blog.github.io/2021/09/16/Java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="人工智能">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-16T20:45:55+08:00">
+                2021-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">软件学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/JAVA/JAVASE/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVASE</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/JAVA/JAVASE/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">语言学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/09/16/Java/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/09/16/Java/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Java学习笔记"><a href="#Java学习笔记" class="headerlink" title="Java学习笔记"></a>Java学习笔记</h1><h2 id="JavaSE学习"><a href="#JavaSE学习" class="headerlink" title="JavaSE学习"></a>JavaSE学习</h2><h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><h4 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h4><ol>
+<li>JVM是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令、管理数据、内存、寄存器，包含在JDK中。</li>
+<li>对于不同的平台，有不同的虚拟机</li>
+<li>由于Java虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，导出运行”</li>
+</ol>
+<h4 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h4><ol>
+<li>全称为（Java Development Kit） Java开发工具包 JDK  &#x3D; JRE + Java的开发工具</li>
+<li>JDK提供给Java开发者使用，其中包含了java的开发工具，自然包括了JRE。所以安装了JDK，就不用管再单独安装JRE</li>
+</ol>
+<h4 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h4><ol>
+<li>全程为（Java Runtime Environment）Java运行环境 JRE &#x3D; JVM + Java核心类库</li>
+<li>由于包括了JVM虚拟机，所以如果仅仅想要运行Java程序，那么只需要安装一个JRE即可</li>
+</ol>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li>JAVA文件有中文的时候记得在Javac的时候要转换成GBK编码才可以成功编译。(或者在javac的时候按照后面的例子进行编译    javac -encoding UTF-8 XX.java)</li>
+<li>编译后每一个类都会对应一个class的文件</li>
+<li>文件名必须和Public的类的名字一模一样</li>
+</ul>
+<h3 id="转义符"><a href="#转义符" class="headerlink" title="转义符"></a>转义符</h3><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\t</td>
+<td>一个制表位，实现对齐的功能</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行符</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>一个\</td>
+</tr>
+<tr>
+<td>\“</td>
+<td>一个”</td>
+</tr>
+<tr>
+<td>\‘</td>
+<td>一个’</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>一个回车。注意，并不会换行！</td>
+</tr>
+</tbody></table>
+<h3 id="DOS命令"><a href="#DOS命令" class="headerlink" title="DOS命令"></a>DOS命令</h3><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>md XX</td>
+<td>创建XX的目录</td>
+</tr>
+<tr>
+<td>rd  XX</td>
+<td>删除XX的目录</td>
+</tr>
+<tr>
+<td>copy XX</td>
+<td>拷贝XX文件</td>
+</tr>
+<tr>
+<td>del XX</td>
+<td>删除XX文件</td>
+</tr>
+<tr>
+<td>echo XX &gt; YY</td>
+<td>输入XX内容到文件YY</td>
+</tr>
+<tr>
+<td>move</td>
+<td>剪切</td>
+</tr>
+</tbody></table>
+<h3 id="Java-API使用"><a href="#Java-API使用" class="headerlink" title="Java API使用"></a>Java API使用</h3><h3 id="java-API下载"><a href="#java-API下载" class="headerlink" title="java_API下载;"></a><a href="Java8_API.CHM">java_API下载</a>;</h3><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>占用空间</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte[字节]</td>
+<td>1字节</td>
+<td>-128~127</td>
+</tr>
+<tr>
+<td>short[短整型]</td>
+<td>2字节</td>
+<td>-2^15~2^15-1</td>
+</tr>
+<tr>
+<td>int[整型]</td>
+<td>4字节</td>
+<td>-2^31~2^31-1</td>
+</tr>
+<tr>
+<td>long[长整型]</td>
+<td>8字节</td>
+<td>-2^63~2^63-1</td>
+</tr>
+</tbody></table>
+<p>Java的整型常量（具体值）默认为int型，声明long类型之后需加上‘l’或者’L‘</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">n3</span> <span class="operator">=</span> <span class="number">1L</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>占用存储空间</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float(单精度)</td>
+<td>4字节</td>
+<td>-3.403E38~3.403E38</td>
+</tr>
+<tr>
+<td>double（双精度）</td>
+<td>8字节</td>
+<td>1.798E308~1.798E308</td>
+</tr>
+</tbody></table>
+<p>浮点数的构成：</p>
+<p>浮点数 &#x3D; 符号位 + 指数位 + 尾数位</p>
+<p>其中尾数部分可能丢失，造成精度损失，小数都是近似值</p>
+<p>例： </p>
+<p>十进制  5.12   512.0f   .512</p>
+<p>科学计数法： 5.12e2 [5.12<em>10^2]      5.12E-2 [5.12</em>&#x2F;10^2]</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">1.1</span>; <span class="comment">//写法错误，会默认为double类型，double转化为float有损失</span></span><br><span class="line"><span class="type">float</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">1.1F</span>; <span class="comment">//完全正确，写成1.1f也是可以的</span></span><br><span class="line"><span class="type">double</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">1.1f</span>; <span class="comment">//可以编译，小的放到大的空间可以实现</span></span><br></pre></td></tr></table></figure>
+
+<p>p.s.</p>
+<ol>
+<li><p>通常情况下应该使用double类型而不是float类型，因为double更加精确（float会舍去很多的尾巴部分）</p>
+</li>
+<li><p>使用陷阱：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> <span class="variable">num11</span> <span class="operator">=</span> <span class="number">2.7</span>;</span><br><span class="line"><span class="type">double</span> <span class="variable">num12</span> <span class="operator">=</span> <span class="number">8.1</span> / <span class="number">3</span>;<span class="comment">//根据数学计算的基本原则，这里的答案应该是2.7</span></span><br><span class="line">System.out.println(num11);</span><br><span class="line">System.out.println(num12);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">但是通过程序的计算和输出你会发现，这里num11输出很正常的2.7，但是num12输出的却是很奇怪的2.6999999999997。这个问题是计算机内部的问题而非数学的问题。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>由于这个情况而言，要谨慎使用两个计算后的小数进行比较是否相等，正确的方式应该是对于两个数的绝对值的差值大小分类比较（使用java API）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (num11 == num12)&#123; <span class="comment">//该写法错误</span></span><br><span class="line">    System.out.println(<span class="string">&quot;相等&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(Math.abs(num11 - num12)); <span class="comment">//使用java API 进行查看</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(Math.abs(num11 - num12) &lt; <span class="number">0.00001</span>)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;差值非常小接近于规定的精度&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于系统自动的转化格式需要进行考虑</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> <span class="variable">d1</span> <span class="operator">=</span> <span class="number">10</span> + <span class="number">1.1</span>;<span class="comment">//在这个例子中是错误的</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1.1在运算过程中默认转化的是double类型的，所以运算完之后也是double，当double转化为float自然就会报错。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">如果要进行修改的话可以</span></span><br><span class="line"><span class="comment">float = 10 + 1.1f; 或者float = 10 + 1.1F;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>牢记大空间不能赋值给小空间</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">byte</span> <span class="variable">b</span> <span class="operator">=</span> a;<span class="comment">//会报错，因为原先就是int类型，即便数字并不大</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h4><p>具体编码方式是Unicode编码（Unicode编码ascii编码）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> <span class="variable">C1</span> <span class="operator">=</span> <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"><span class="type">char</span> <span class="variable">C2</span> <span class="operator">=</span> <span class="string">&#x27;\t&#x27;</span>;</span><br><span class="line"><span class="type">char</span> <span class="variable">C3</span> <span class="operator">=</span> <span class="string">&#x27;虞&#x27;</span>;<span class="comment">//不能用&quot;&quot;因为&quot;&quot;表示的是字符串</span></span><br><span class="line"><span class="type">char</span> <span class="variable">C4</span> <span class="operator">=</span> <span class="number">97</span>;</span><br></pre></td></tr></table></figure>
+
+<p>UTF-8实质上就是对于Unicode编码的一个改进。</p>
+<p>P.S.（byte,short）类型和char类型之前无法自动转化，但是可以进行运算，运算后的结果为int类型，int无法自动转化为char,但是反过来可以</p>
+<h4 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h4><p>占用空间：1字节（true和false两种状态）</p>
+<p>适用逻辑运算，一般情况下用于if while等判断语句</p>
+<p>不可以只用0或者非0的值来表示真假，只能使用true或者false</p>
+<p>P.S.布尔类型不参与运算，也不能参与类型的自动转化</p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">i = i++;</span><br><span class="line">System.out.println(i);</span><br><span class="line"><span class="comment">//最后输出的结果依旧为1，因为会把i值先放到temp内部最后再赋值所以1保持不变</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">i = ++i;</span><br><span class="line">System.out.println(i);</span><br><span class="line"><span class="comment">//最后的输出结果为2，因为这里是先自增再赋值</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%</td>
+<td>取余数</td>
+</tr>
+<tr>
+<td>~</td>
+<td>按位取反</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>按位与</td>
+</tr>
+<tr>
+<td>|</td>
+<td>按位或</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>算术左移</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>算术右移</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>逻辑右移，不存在&lt;&lt;&lt;</td>
+</tr>
+</tbody></table>
+<ol>
+<li>算术右移：低位溢出，符号位不变，用符号位补溢出的高位</li>
+<li>A % B 其中如果A为小数也是可以计算的但是结果和double一样存在着很小的误差</li>
+</ol>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><table>
+<thead>
+<tr>
+<th>逻辑运算符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a^b</td>
+<td>逻辑疑惑，ab不同则为true</td>
+</tr>
+</tbody></table>
+<h4 id="符合阈值运算符"><a href="#符合阈值运算符" class="headerlink" title="符合阈值运算符"></a>符合阈值运算符</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">byte</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">6</span>;</span><br><span class="line">b += <span class="number">2</span>;<span class="comment">//这一项可以运行，因为等价为b = (byte)(b + 2);</span></span><br><span class="line">b = b + <span class="number">2</span>;<span class="comment">//这一项不可以运行，因为后面的2默认为int大到小的数据没法自动转化</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int a = 10;</span><br><span class="line">int b = 20;</span><br><span class="line">int result;</span><br><span class="line">result = a &gt; b a++ : b--;</span><br></pre></td></tr></table></figure>
+
+<h3 id="原码、反码、补码"><a href="#原码、反码、补码" class="headerlink" title="原码、反码、补码"></a><font color = "#ff0000">原码、反码、补码</font></h3><ol>
+<li>二进制的最高位表示符号位：0表示正数，1表示负数</li>
+<li>正数的原码、反码、补码都一样</li>
+<li>负数的反码 &#x3D; 符号位不变其余位取反</li>
+<li>负数的补码 &#x3D; 负数的反码 + 1 负数的反码 &#x3D; 负数的补码 - 1 </li>
+<li>0的反码和补码都是0</li>
+<li>java没有无符号数，换言之，java中的数都是有符号的</li>
+<li>计算机运算的时候都是以补码放方式进行运算的</li>
+<li>当我们看运行结果的时候，需要看他的原码（！！！）</li>
+</ol>
+<h3 id="进制问题"><a href="#进制问题" class="headerlink" title="进制问题"></a>进制问题</h3><h4 id="表示"><a href="#表示" class="headerlink" title="表示"></a>表示</h4><p>2进制：0b1011010</p>
+<p>8进制：05512</p>
+<p>16进制：0x1dabb &#x2F;  0X1daabb</p>
+<h4 id="转化"><a href="#转化" class="headerlink" title="转化"></a>转化</h4><h3 id="数组扩容"><a href="#数组扩容" class="headerlink" title="数组扩容"></a>数组扩容</h3><h3 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h3><ol>
+<li>概念：Java DataBase Connectivity Java 数据库连接，Java语言操作数据库<ul>
+<li>JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类</li>
+</ul>
+</li>
+<li>快速入门<ul>
+<li>步骤：<ol>
+<li>导入驱动jar包<ol>
+<li>复制mysql-connector-java-8.0.26.jar到项目的libs目录下</li>
+<li>右键选择add as library</li>
+</ol>
+</li>
+<li>注册驱动</li>
+<li>获取数据库连接对象 Connection</li>
+<li>定义sql</li>
+<li>获取执行sql语句的对象 Statement</li>
+<li>执行sql，接受返回操作</li>
+<li>处理结果</li>
+<li>释放内存</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ol>
+<li><p>概念：Extensible Markup Language 可扩展标记语言</p>
+<ul>
+<li>可扩展：标签都是自定义的。<user> <student></li>
+</ul>
+</li>
+<li><p>功能</p>
+<ul>
+<li>存储数据<ol>
+<li>配置文件</li>
+<li>在网络中传输</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>xml与html的区别</p>
+<ol>
+<li>xml标签都是自定义，html标签是预定义</li>
+<li>xml的语法严格，html的语法松散</li>
+<li>xml用于存储数据，html用于展示数据</li>
+</ol>
+<p>两者都是w3c(万维网联盟)</p>
+</li>
+</ol>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><ul>
+<li><p>基本语法</p>
+<ol>
+<li>第一行必须是文档声明，空行都不行</li>
+<li>xml文档中有且只有一个根标签</li>
+<li>属性值必须用引号引起来（单双都可以）</li>
+<li>文件结尾必须以.xml结尾</li>
+<li>标签必须正确关闭（&lt;name&gt;&lt;&#x2F;name&gt; or &lt;br&#x2F;&gt;）</li>
+<li>xml的标签名称区分大小写</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&#x27;1.0&#x27; ?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">users</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span> <span class="attr">id</span>=<span class="string">&#x27;1&#x27;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>zhangsan<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>23<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">gender</span>&gt;</span>male<span class="tag">&lt;/<span class="name">gender</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span> <span class="attr">id</span>=<span class="string">&#x27;2&#x27;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>lisi<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>24<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">gender</span>&gt;</span>female<span class="tag">&lt;/<span class="name">gender</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">users</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组成部分</p>
+<ol>
+<li><p>文档声明</p>
+<ol>
+<li><p>格式:&lt;?xml 属性列表 ?&gt;</p>
+</li>
+<li><p>属性列表：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>version</td>
+<td>版本号（必须有）</td>
+</tr>
+<tr>
+<td>encoding</td>
+<td>编码方式</td>
+</tr>
+<tr>
+<td>standalone</td>
+<td>是否独立（yes&#x2F;no）</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+</li>
+<li><p>指令(了解即可)</p>
+<p>结合CSS的：&lt;?xml-stylesheet trpe&#x3D;”text&#x2F;css” href&#x3D;”a.css” ?&gt;</p>
+<p>xml文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&#x27;1.0&#x27; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet trpe=<span class="string">&quot;text/css&quot;</span> href=<span class="string">&quot;a.css&quot;</span> ?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">users</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span> <span class="attr">id</span>=<span class="string">&#x27;1&#x27;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>zhangsan<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>23<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">gender</span>&gt;</span>male<span class="tag">&lt;/<span class="name">gender</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span> <span class="attr">id</span>=<span class="string">&#x27;2&#x27;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>lisi<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>24<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">gender</span>&gt;</span>female<span class="tag">&lt;/<span class="name">gender</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">users</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>a.css文件</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name&#123;</span><br><span class="line">	<span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>标签:标签名称自定义的</p>
+<ul>
+<li>规则<ol>
+<li>名称可以包含字母、数字以及其他字符</li>
+<li>名称不能以数字或者标点符号开始</li>
+<li>名称不能以字母 xml(或者XML、Xml 等等)开始</li>
+<li>名称不能包含空格</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>属性</p>
+<p>id属性值唯一</p>
+</li>
+<li><p>文本</p>
+<p>注释方式和html一样</p>
+<ul>
+<li><p>CDATA区：在改区域中的数据会被原样展示</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">id</span>=<span class="string">&#x27;2&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>lisi<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>24<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">gender</span>&gt;</span>female<span class="tag">&lt;/<span class="name">gender</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    &lt;![CDATA[</span><br><span class="line">    	if (a &lt; b &amp;&amp; a &gt; c)&#123;&#125;</span><br><span class="line">    ]]&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>约束：规定在xml文档的书写规则</p>
+<ul>
+<li><p>分类</p>
+<ol>
+<li>DTD：一种简单的约束技术</li>
+<li>Schema：一种复杂的约束技术</li>
+</ol>
+</li>
+<li><p>DTD：</p>
+<p>引入dtd文档到xml文档中</p>
+<ul>
+<li><p>内部dtd：将约束规则定义在xml文档中</p>
+<p>内部：&lt;!DOCTYPE 根标签名 [ 约束内容 ] SYSTEM “dtd文件的位置”&gt;</p>
+</li>
+<li><p>外部dtd：将约束规则定义在外部的dtd文件中</p>
+<ul>
+<li>本地：&lt;!DOCTYPE 根标签名 SYSTEM “dtd文件的位置”&gt;</li>
+<li>网络：&lt;!DOCTYPE 根标签名 PUBLIC “dtd文件名字” “dtd文件的位置URL”&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h4><p>操作xml文档，将文档中的数据读取到内存中</p>
+<ul>
+<li>操作xml文档<ol>
+<li>解析（读取）：将文档中的数据读取到内存中</li>
+<li>写入：将内存中的数据保存到xml文档中。持久化的存储</li>
+</ol>
+</li>
+<li>解析xml的方式<ol>
+<li>DOM：将标记语言加载进内存，在内存中形成一颗dom树<ul>
+<li>优点：操作方便，可以对文档进行CRUD的所有操作</li>
+<li>缺点：占内存</li>
+</ul>
+</li>
+<li>SAX：逐行读取，基于时间驱动。<ul>
+<li>优点：不占内存</li>
+<li>缺点：只能读取，不能增删改</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>xml常见的解析器<ol>
+<li>JAXP：sun公司提供的解析器，支持dom和sax两种思想</li>
+<li>DOM4J：一款非常优秀的解析器</li>
+<li>Jsoup：java的HTML解析器，可以直接解析（URL、html等）<ul>
+<li>快速入门<ul>
+<li>步骤<ol>
+<li>导入jar包</li>
+<li>获取Document对象</li>
+<li>获取对应的标签Element对象</li>
+<li>获取数据</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PULL：Android操作系统内置的解析器（sax方式的）</li>
+</ol>
+</li>
+</ul>
+<h3 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h3><h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><p><img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@f764933c3477e95cc2e4541b64da4da67009d4b1/2021/09/25/aa4a1d849fead6799e36eb2010d727f8.png"></p>
+<h4 id="获取Class对象的方式"><a href="#获取Class对象的方式" class="headerlink" title="获取Class对象的方式"></a>获取Class对象的方式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">&quot;全类名&quot;</span>);<span class="comment">//将字节码文件加载进内存，返回Class对象</span></span><br><span class="line">XX.class;<span class="comment">//通过类名XX的属性class获取</span></span><br><span class="line">XX.getClass();<span class="comment">//getClass()方法在Object类中定义XX表示对象</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*具体效果*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//1.Class.forName(&quot;全类名&quot;) 多用于配置文件，将类定义在配置文件中。读取文件，加载类</span></span><br><span class="line"><span class="type">Class</span> <span class="variable">cls1</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;cn.itcase.domain.Person&quot;</span>);</span><br><span class="line">System.out.println(cls1);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.类名.class 多用于参数的传递</span></span><br><span class="line"><span class="type">Class</span> <span class="variable">cls2</span> <span class="operator">=</span> Person.class;</span><br><span class="line">System.out.println(cls2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.对象.getClass()  多用于对象的获取字节码的方式</span></span><br><span class="line"><span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line"><span class="type">Class</span> <span class="variable">cls3</span> <span class="operator">=</span> p.getClass();</span><br><span class="line">System.out.println(cls3);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">P.S. 同一个对象获取的Class值相同</span></span><br><span class="line"><span class="comment">     不同对象所获取的Class值不相同</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Class对象功能"><a href="#Class对象功能" class="headerlink" title="Class对象功能"></a>Class对象功能</h4><ul>
+<li><p>获取功能</p>
+<ol>
+<li>获取成员变量们<ul>
+<li>Field[] getFields() &#x2F;&#x2F;获取所有public的成员变量</li>
+<li>Field getField(String name) &#x2F;&#x2F;获取传入String的public成员变量</li>
+<li>Field[] getDeclareFields() &#x2F;&#x2F;获取所有成员变量(包括其中private、protect等)</li>
+<li>Field getDeclareFiled(String name) &#x2F;&#x2F;获取传入String的(包括其中private、protect等)</li>
+</ul>
+</li>
+<li>获取构造方法们<ul>
+<li>Constructor[] getConstructors()</li>
+<li>Constructor getConstructor(类….parameterTypes)</li>
+<li>Constructor[] getDeclaredConstructors()</li>
+<li>Constructor getDeclaredConstructor(类….parameterTypes)</li>
+</ul>
+</li>
+<li>获取成员方法们<ul>
+<li>Method[] getMethods()</li>
+<li>Method getMethod(String name,类… parameterTypes)</li>
+<li>Method[] getDeclaredMethods()</li>
+<li>Method getDeclaredMethod(String name,类… parameterTypes)</li>
+</ul>
+</li>
+<li>获取类名<ul>
+<li>String.getName();</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Field : 成员变量</p>
+<ul>
+<li><p>操作</p>
+<ol>
+<li>设置值<ul>
+<li>void set(Object obj, Object value)</li>
+</ul>
+</li>
+<li>获取值<ul>
+<li>get(Object obj)</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Field</span> <span class="variable">a</span> <span class="operator">=</span> personClass.getField(<span class="string">&quot;a&quot;</span>);</span><br><span class="line"><span class="comment">//设置值</span></span><br><span class="line"><span class="comment">//这里需要注意，如果说设定的值为private类型等，那么前面的getField变成getDeclareField</span></span><br><span class="line"><span class="comment">//并且加上这么一句</span></span><br><span class="line"><span class="comment">//a.setAccessible(true);即可防止报错</span></span><br><span class="line">a.set(p.<span class="string">&quot;张三&quot;</span>); </span><br><span class="line">System.out.println(p)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取值</span></span><br><span class="line"><span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line"><span class="type">Object</span> <span class="variable">value</span> <span class="operator">=</span> a.get(p);</span><br><span class="line">System.out.println(value);</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@2516981474c674cb2ba848e3cfb9129ada69158b/2021/05/24/04097c727fca444a967c26f9414b2dc5.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@ab82d2a586ac84374e28c4b5ab161a313c5c06f4/2021/05/24/1e5712180a0136d3b0b76ff8d4309866.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@b0ca80fc8b37cbaa46583f14f0b3d18c5438ac3b/2021/05/24/24f620630fd03c9363d0d435c42f9a0d.png" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 软件学习笔记</a>
+          
+            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+          
+            <a href="/tags/JAVASE/" rel="tag"># JAVASE</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/09/05/Vue/" rel="next" title="Vue">
+                <i class="fa fa-chevron-left"></i> Vue
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/09/23/DOS%E5%91%BD%E4%BB%A4/" rel="prev" title="DOS命令">
+                DOS命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/770690988" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:770690988@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/sssstruggle" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://user.qzone.qq.com/770690988/infocenter" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-text">Java学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaSE%E5%AD%A6%E4%B9%A0"><span class="nav-text">JavaSE学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-text">基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM"><span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK"><span class="nav-text">JDK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JRE"><span class="nav-text">JRE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E7%AC%A6"><span class="nav-text">转义符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS%E5%91%BD%E4%BB%A4"><span class="nav-text">DOS命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-API%E4%BD%BF%E7%94%A8"><span class="nav-text">Java API使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-API%E4%B8%8B%E8%BD%BD"><span class="nav-text">java_API下载;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="nav-text">整数类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E7%B1%BB%E5%9E%8B"><span class="nav-text">浮点类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B"><span class="nav-text">字符类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="nav-text">布尔类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%A6%E5%90%88%E9%98%88%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">符合阈值运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">三元运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E3%80%81%E8%A1%A5%E7%A0%81"><span class="nav-text">原码、反码、补码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E5%88%B6%E9%97%AE%E9%A2%98"><span class="nav-text">进制问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA"><span class="nav-text">表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AC%E5%8C%96"><span class="nav-text">转化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%89%A9%E5%AE%B9"><span class="nav-text">数组扩容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC"><span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XML"><span class="nav-text">XML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-text">语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90"><span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet"><span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84"><span class="nav-text">反射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96Class%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-text">获取Class对象的方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Class%E5%AF%B9%E8%B1%A1%E5%8A%9F%E8%83%BD"><span class="nav-text">Class对象功能</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">虞程龙</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'tFhwHkc8bkgfgQwmhzrtupVR-gzGzoHsz',
+        appKey: 'zwHnoVjxXcHrTxENnsIia9E6',
+        placeholder: '欢迎交流讨论...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
